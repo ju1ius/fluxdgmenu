@@ -17,6 +17,6 @@ See the INSTALL file for installing instructions.
 
 -----------------------------------------------------------------------
 FluXDGMenu is heavily inspired by:
-- xdg-menu (http://cvs.fedoraproject.org/viewvc/devel/Fluxbox/xdg-menu)
+- xdg-menu (http://cvs.fedoraproject.org/viewvc/devel/openbox/xdg-menu)
 - mint-fm2 (http://packages.linuxmint.com/pool/main/m/mint-fm2/)
 
