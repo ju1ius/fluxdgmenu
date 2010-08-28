@@ -1,0 +1,24 @@
+Source: fluxdgmenu
+Section: admin
+Priority: extra
+Maintainer: Jules Bernable <jules.bernable@laposte.net>
+Build-Depends: debhelper (>= 7.0.50~)
+Standards-Version: 3.8.4
+Homepage: http://github.com/ju1ius/fluxdgmenu
+Vcs-Git: git://github.com/ju1ius/fluxdgmenu.git
+Vcs-Browser: http://github.com/ju1ius/fluxdgmenu
+
+Package: fluxdgmenu
+Architecture: all
+Depends: fluxbox, bash, inotify-tools, python (>= 2.4), python (<< 3), python-xdg (>=0.19)
+Description: An automated XDG Menu system for Fluxbox.
+  FluXDGMenu monitors for newly installed/removed applications, and maintains a submenu, listing and categorizing them like the Gnome/Xfce/Lxde menu.
+  The package installs a menu file "/etc/xdg/menus/fxm-applications.menu",
+  which allows you to configure the menu as you see fit.
+  For infos about editing the menu file, see:
+  http://standards.freedesktop.org/menu-spec/latest/ar01s04.html
+  Features:
+    * Auto generates and auto updates a Fluxbox "Applications" submenu in compliance with www.freedesktop.org standards thereby giving a familiar menu.
+    * Support for localizations: the menu generated will be in the system default language where available.
+    * Support for icons: the icons are chosen in the current icon theme
+

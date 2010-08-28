@@ -1,0 +1,57 @@
+Debian systems
+==============
+
+If you're running a Debian based system or any distribution using apt and/or dpkg,
+then you really should install the deb package, as fluxdgmenu uses dpkg triggers
+to update the menu each time a package is installed/removed.
+If you install from source, you'll need to run the menu daemon.
+
+
+Installing from a package:
+===========================
+
+Debian package
+--------------
+
+After installing the package:
+
+add the following line to your ~/.fluxbox/menu file
+[include] (~/.fluxbox/fluxdgmenu/cache)
+
+
+Other types of packages
+-----------------------
+
+start the daemon
+/usr/lib/fluxdgmenu/fxm-daemon start
+
+If you want it to start automatically at login,
+add the following line to your ~/.fluxbox/startup file
+/usr/lib/fluxdgmenu/fxm-daemon start &
+
+Then refer to the Debian package instructions
+
+For more infos, see http://wiki.github.com/ju1ius/fluxdgmenu/
+
+
+Installing from source:
+=======================
+
+copy the "fluxdgmenu/usr/lib/fluxdgmenu" directory to your "/usr/lib directory"
+$ sudo cp -R fluxdgmenu/usr/lib/fluxdgmenu /usr/lib
+
+copy the "fluxdgmenu/etc/xdg/menus/fxm-applications.menu" file to your "/etc/xdg/menus" directory
+$ sudo cp fluxdgmenu/etc/xdg/menus/fxm-applications.menu /etc/xdg/menus
+
+start the daemon
+/usr/lib/fluxdgmenu/fxm-daemon start
+
+If you want it to start automatically at login,
+add the following line to your ~/.config/openbox/autostart.sh file
+/usr/lib/fluxdgmenu/fxm-daemon start &
+
+add the following line to your ~/.fluxbox/menu file
+[include] (~/.fluxbox/fluxdgmenu/cache)
+
+For more infos, see http://wiki.github.com/ju1ius/fluxdgmenu/
+
