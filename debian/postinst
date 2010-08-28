@@ -1,5 +1,5 @@
 #!/bin/sh
-# postinst script for marchobmenu
+# postinst script for fluxdgmenu
 #
 # see: dh_installdeb(1)
 
