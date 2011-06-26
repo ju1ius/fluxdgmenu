@@ -1,28 +1,19 @@
 #! /bin/bash
 
-MENU_NAME="fxm-applications"
-
-if [[ -n $1 ]] ; then ACTION=$1 ; else ACTION="usage" ; fi
-
-set -e
 set -u
 
-#############################################
-#		MAIN VARIABLES
-#--------------------------------------------
-# Get proper paths and names
+################################################################################
+#		VARIABLES
+#-------------------------------------------------------------------------------
 APP_PATH=$(readlink -f $0)
 APP_DIR=$(dirname $APP_PATH)
 APP_DAEMON=$(basename $APP_PATH)
 
-MENU_FILE="/etc/xdg/menus/$MENU_NAME.menu"
-if [[ ! -f $MENU_FILE ]]
-then
-  echo ">>> Error: Menu file not found ! ($MENU_FILE)"
-  exit 1
-fi
+PID=$$
 
-BUILD_CMD="$APP_DIR/mom.py $MENU_NAME"
+# Needed if script was called with sudo
+USER=$(whoami | sed 's/ .*//')
+HOME=/home/$USER
 
 WDIR="$HOME/.fluxbox/fluxdgmenu"
 if [[ ! -d $WDIR ]]
@@ -30,119 +21,207 @@ then
   mkdir -p $WDIR
 fi
 
-CACHE_FILE=$WDIR/cache
-
-# MONITORED DIRECTORIES
-# .directory files
-WATCHEDDIRS[0]="/usr/share/desktop-directories"
-WATCHEDDIRS[1]="/usr/local/share/desktop-directories"
-WATCHEDDIRS[2]="$HOME/.local/share/desktop-directories"
-# .desktop files
-WATCHEDDIRS[3]="/usr/share/applications"
-WATCHEDDIRS[4]="/usr/local/share/applications"
-WATCHEDDIRS[5]="$HOME/.local/share/applications"
-# LXDE Stuff
-WATCHEDDIRS[6]="/etc/xdg/menus/lxde-applications-merged"
-WATCHEDDIRS[7]="$HOME/.config/menus/lxde-applications-merged"
-
-#		/MAIN VARIABLES
-#############################################
-
-
-############################################
-#		EXTRA VARIABLES
-#--------------------------------------------
-# Define variables for daemon functions
-PID=$$
-PIDFILE="$WDIR/$APP_DAEMON.pid"
 LOGFILE="$WDIR/$APP_DAEMON.log"
-#		/EXTRA VARIABLES
-#############################################
+PIDFILE="$WDIR/$APP_DAEMON.pid"
 
-#############################################
+BUILD_CMD="$APP_DIR/fxm.py"
+CACHE_FILE="$WDIR/menu.cache"
+
+PKG_NAME='fluxdgmenu'
+TRIGGERS_DB="/var/lib/dpkg/triggers/File"
+
+MONITORED=(
+  # .directory files
+  [0]="/usr/share/desktop-directories"
+  [1]="/usr/local/share/desktop-directories"
+  [2]="/home/*/.local/share/desktop-directories"
+  # .desktop files
+  [3]="/usr/share/applications"
+  [4]="/usr/local/share/applications"
+  [5]="/home/*/.local/share/applications"
+  # LXDE Stuff
+  [6]="/etc/xdg/menus/lxde-applications-merged"
+  [7]="/home/*/.config/menus/lxde-applications-merged"
+)
+EXCLUDED=(
+  [0]="/.local/share/applications/menu-xdg/"
+)
+
+#-------------------------------------------------------------------------------
+#		/VARIABLES
+################################################################################
+
+
+
+################################################################################
 #		FUNCTIONS
-#--------------------------------------------
-trapFunct ()
+#-------------------------------------------------------------------------------
+check_triggers()
 {
-  TOKILL=($(ps -C \
-    "inotifywait -q -m -r --format %e %w%f -e create -e delete -e move -e modify","$APP_DAEMON" \
-    -o pid= | grep -v -e "$PID" -e "^$"
-  ))
-  for i in ${TOKILL[@]}
+  if grep $PKG_NAME $TRIGGERS_DB
+  then
+    cat << _ERROR
+  Uh oh...
+  It seems you have dpkg-triggers running for $PKG_NAME
+  You must disable them before starting the daemon.
+  Run:
+  $ $APP_DAEMON disable-triggers
+  Or:
+  $ $APP_DAEMON help
+  if you want to know more about dpkg-triggers
+_ERROR
+    exit 1
+  fi
+}
+#################################################
+# Public API
+#------------------------------------------------
+start()
+{
+  check_triggers
+  stop
+  update
+  # Get watched directories for the current user
+  WATCHED=$(for d in "${MONITORED[@]}"
   do
-    checkUser=$(ps -p $i -o user= | cat)
-    if [[ "$checkUser" = "$USER" && -n "$checkUser" ]]
-    then
-      kill -9 $i
-    fi
-  done
-  if [[ -f "$PIDFILE" ]] ; then rm "$PIDFILE" ; fi
+    tmp=$(echo "$d" | sed "s/*/$USER/" )
+    if [[ -d $tmp ]]; then echo "$tmp"; fi;
+  done)
+  #
+  EXCLUDES=$(for pattern in "${EXCLUDED[@]}"
+  do
+    echo "-e $pattern"
+  done)
+  #
+  $APP_WATCH -d \
+    -c "$BUILD_CMD > $CACHE_FILE" \
+    $EXCLUDES \
+    $WATCHED > $LOGFILE
 }
 
-updateMenu ()
+stop()
+{
+  pkill -u "$USER" fxm-watch
+}
+
+update()
 {
   $BUILD_CMD > $CACHE_FILE
 }
 
-watchFunct ()
+show()
 {
-  WATCH=$(for d in ${WATCHEDDIRS[@]}; do if [[ -d $d ]] ; then echo $d ; fi ; done)
-  inotifywait -q -m -r --format '%e %w%f' -e create -e delete -e move -e modify $WATCH \
-  | while read line
-  do
-    echo $line >> $LOGFILE
-    updateMenu
-  done
+  cat $CACHE_FILE
 }
 
-daemonStart ()
+disable_triggers()
 {
-  trapFunct
-  updateMenu
-  nohup $0 run  >$LOGFILE 2>&1 &
-  exec 3>&-
-  exec 2>&-
-  exec 1>&-
-  exit 0
+  if [[ -e $TRIGGERS_DB ]]
+  then
+    sudo sed -i -e "/$PKG_NAME$/d" $TRIGGERS_DB
+  else
+    echo "Your system doesn't support dpkg-triggers. Please use the daemon instead."
+    exit 1
+  fi
 }
 
-daemonStop ()
+enable_triggers()
 {
-  trapFunct
+  if [[ -e $TRIGGERS_DB ]]
+  then
+    stop
+    disable_triggers
+    for d in "${MONITORED[@]}"
+    do
+      echo "$d $PKG_NAME" | sudo tee -a $TRIGGERS_DB
+    done
+  else
+    echo "Your system doesn't support dpkg-triggers. Please use the daemon instead."
+    exit 1
+  fi
 }
 
-run ()
+synopsis()
 {
-  trap "trapFunct; exit" INT TERM EXIT
-  echo $PID > $PIDFILE
-  watchFunct
-  trap - INT TERM EXIT
+cat << _USAGE
+$APP_DAEMON - monitors installed applications to generate a Fluxbox Applications Menu
+
+Synopsis
+--------
+$APP_DAEMON help             - Prints the help message and exits
+$APP_DAEMON start            - Starts the menu daemon
+$APP_DAEMON stop             - Stops the menu daemon
+$APP_DAEMON update           - Regenerates the menu
+$APP_DAEMON enable-triggers  - Add dpkg-triggers (see $APP_DAEMON help for more infos)
+$APP_DAEMON disable-triggers - Remove dpkg-triggers (see $APP_DAEMON help for more infos)
+_USAGE
 }
 
+usage ()
+{
+  synopsis
+cat << _USAGE
+About dpkg-triggers:
+--------------------
+  dpkg-triggers are a Debian/Apt specific way to trigger actions
+  when a new package is installed/removed.
+  They allow MarchOBMenu to update the menu without the overhead
+  of running a daemon.
+
+  However, they only work with packages installed by apt or dpkg.
+  This is why they are not enabled by default.
+
+  If you wish to activate this feature, first stop the daemon:
+  $ $APP_DAEMON stop
+  Then execute:
+  $ $APP_DAEMON enable-triggers
+
+  From now on, if you install a program in a non-standard way,
+  like compiling from source, or a wine application,
+  you'll need to explicitly update the menu by executing:
+  $ $APP_DAEMON update
+
+  You can deactivate this feature later it by executing:
+  $ $APP_DAEMON disable-triggers
+_USAGE
+
+}
+#-------------------------------------------------------------------------------
 #		/FUNCTIONS
-#############################################
+################################################################################
 
-#############################################
-#		CASE
-#--------------------------------------------
 
-case $ACTION in
+
+
+################################################################################
+#		MAIN
+#-------------------------------------------------------------------------------
+case "$1" in
   start|restart)
-    daemonStart
+    start
   ;;
   stop)
-    daemonStop
-  ;;
-  run)
-    run
+    stop
   ;;
   update)
-    updateMenu
+    update
+  ;;
+  show)
+    show
+  ;;
+  disable-triggers)
+    disable_triggers
+  ;;
+  enable-triggers)
+    enable_triggers
+  ;;
+  help)
+    usage
   ;;
   *)
-    echo "Usage: $APP_DAEMON [start|stop|update|run] [menu-name]"
+    synopsis
   ;;
 esac
-#		/CASE
-#############################################
-
+#-------------------------------------------------------------------------------
+#		/MAIN
+################################################################################

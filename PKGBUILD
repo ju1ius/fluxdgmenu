@@ -7,7 +7,7 @@ pkgdesc="A Fluxbox automated XDG Menu"
 arch=('any')
 url="http://github.com/ju1ius/fluxdgmenu"
 license=('GPL')
-depends=('openbox' 'bash' 'inotify-tools' 'python-xdg>=0.19')
+depends=('openbox' 'bash' 'libinotifytools0' 'python-xdg')
 makedepends=('git')
 provides=('fluxdgmenu')
 conflicts=('fluxdgmenu')
@@ -30,13 +30,7 @@ build() {
   msg "Starting make..."
 
   cd "$srcdir/$_gitname"
-
-  install -d -m755 "$pkgdir/usr/lib" || return 1
-  cp -Rp "usr/lib/fluxdgmenu" "$pkgdir/usr/lib" || return 1
-  install -d -m755 "$pkgdir/etc/xdg/menus" || return 1
-  cp -p "etc/xdg/menus/fxm-applications.menu" "$pkgdir/etc/xdg/menus" || return 1
-  install -d -m755 "$pkgdir/usr/share" || return 1
-  cp -Rp "usr/share/desktop-directories" "$pkgdir/usr/share" || return 1
-  install -D -m644 "README.md" "$pkgdir/usr/share/doc/fluxdgmenu/README" || return 1
+  make || return 1
+  sudo make install
 }
 

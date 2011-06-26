@@ -22,11 +22,11 @@ case "$1" in
     # This is triggered by any installation of a desktop entry
     triggered)
       #echo DEBUG: processing trigger "'$2'"
-      /usr/lib/fluxdgmenu/fxm-daemon update
+      fxm-daemon update
     ;;
 
     configure|abort-upgrade|abort-remove|abort-deconfigure)
-      /usr/lib/fluxdgmenu/fxm-daemon update
+      fxm-daemon update
     ;;
 
     *)

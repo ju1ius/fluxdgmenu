@@ -1,3 +1,9 @@
+fluxdgmenu (1.1-1) stable; urgency=medium
+
+  * Ported daemon to C
+
+ -- Jules Bernable <julius@laforcemolle.org>  Sun, 26 Jun 2011 19:56:00 +0200
+
 fluxdgmenu (1.0-1) stable; urgency=medium
 
   * First Stable release

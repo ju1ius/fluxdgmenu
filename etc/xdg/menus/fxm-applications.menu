@@ -4,16 +4,14 @@
 <Menu>
 
 	<Name>Applications</Name>
-	<Directory>ob-menu-applications.directory</Directory>
+	<Directory>fxm-menu-applications.directory</Directory>
 
-	<!--
   Read standard .directory and .desktop file locations
   <DefaultAppDirs/>
   <DefaultDirectoryDirs/>
-  -->
   <!-- Read only provided .directory and .desktop file locations -->
-  <AppDir>/usr/share/applications</AppDir>
-  <DirectoryDir>/usr/share/desktop-directories</DirectoryDir>
+  <!--<AppDir>/usr/share/applications</AppDir>-->
+  <!--<DirectoryDir>/usr/share/desktop-directories</DirectoryDir>-->
 
 	<!-- Read in overrides and child menus from applications-merged/ -->
 	<DefaultMergeDirs/>
@@ -21,7 +19,7 @@
 	<!-- Accessories submenu -->
 	<Menu>
 		<Name>Accessories</Name>
-		<Directory>ob-utility.directory</Directory>
+		<Directory>fxm-utility.directory</Directory>
 		<Include>
 			<And>
 				<Category>Utility</Category>
@@ -42,7 +40,7 @@
 	<!-- Accessibility submenu -->
 	<Menu>
 		<Name>Universal Access</Name>
-		<Directory>ob-utility-accessibility.directory</Directory>
+		<Directory>fxm-utility-accessibility.directory</Directory>
 		<Include>
 			<And>
 				<Category>Accessibility</Category>
@@ -54,7 +52,7 @@
 	<!-- Education -->
 	<Menu>
 		<Name>Education</Name>
-		<Directory>ob-education.directory</Directory>
+		<Directory>fxm-education.directory</Directory>
 		<Include>
 			<And>
 				<Category>Education</Category>
@@ -65,7 +63,7 @@
 		<!-- Office -->
 	<Menu>
 		<Name>Office</Name>
-		<Directory>ob-office.directory</Directory>
+		<Directory>fxm-office.directory</Directory>
 		<Include>
 			<And>
 				<Category>Office</Category>
@@ -76,7 +74,7 @@
 	<!-- Games -->
 	<Menu>
 		<Name>Games</Name>
-		<Directory>ob-game.directory</Directory>
+		<Directory>fxm-game.directory</Directory>
 		<Include>
 			<And>
 				<Category>Game</Category>
@@ -87,7 +85,7 @@
 	<!-- Graphics -->
 	<Menu>
 		<Name>Graphics</Name>
-		<Directory>ob-graphics.directory</Directory>
+		<Directory>fxm-graphics.directory</Directory>
 		<Include>
 			<And>
 				<Category>Graphics</Category>
@@ -99,7 +97,7 @@
 	<!-- Internet -->
 	<Menu>
 		<Name>Internet</Name>
-		<Directory>ob-network.directory</Directory>
+		<Directory>fxm-network.directory</Directory>
 		<Include>
 			<And>
 				<Category>Network</Category>
@@ -110,7 +108,7 @@
 	<!-- Multimedia -->
 	<Menu>
 		<Name>Multimedia</Name>
-		<Directory>ob-audio-video.directory</Directory>
+		<Directory>fxm-audio-video.directory</Directory>
 		<Include>
 			<And>
 				<Category>AudioVideo</Category>
@@ -121,7 +119,7 @@
 	<!-- Development Tools -->
 	<Menu>
 		<Name>Development</Name>
-		<Directory>ob-development.directory</Directory>
+		<Directory>fxm-development.directory</Directory>
 		<Include>
 			<And>
 				<Category>Development</Category>
@@ -134,7 +132,7 @@
 	<!-- System Tools-->
 	<Menu>
 		<Name>System</Name>
-		<Directory>ob-system-tools.directory</Directory>
+		<Directory>fxm-system-tools.directory</Directory>
 		<Include>
 			<And>
 				<Category>System</Category>
@@ -144,7 +142,7 @@
 
 	<Menu>
 		<Name>DesktopSettings</Name>
-		<Directory>ob-settings.directory</Directory>
+		<Directory>fxm-settings.directory</Directory>
 		<OnlyUnallocated/>
 		<Include>
 			<Or>
@@ -164,7 +162,7 @@
 	<!-- Other -->
 	<Menu>
 		<Name>Other</Name>
-		<Directory>ob-other.directory</Directory>
+		<Directory>fxm-other.directory</Directory>
 		<OnlyUnallocated/>
 		<Include>
 			<And>
