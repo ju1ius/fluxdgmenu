@@ -9,6 +9,8 @@ import xdg.Config, xdg.BaseDirectory, xdg.DesktopEntry, xdg.Menu, xdg.IconTheme
 class FluXDGMenu(object):
 
     def __init__(self):
+        xdg.Config.setWindowManager('fluxbox')
+        self.filter_debian = os.path.isfile('/usr/bin/update-menus')
         self.parse_config()
         self.tree = xdg.Menu.parse('fxm-applications.menu')
         self.print_all()
@@ -19,6 +21,7 @@ class FluXDGMenu(object):
 [Icons]
 show: True
 themes: Mint-X,Minty,gnome-wise,gnome-colors-common,gnome,hicolor
+default: application-x-executable
 size: 24
 """))
         self.config.read([
@@ -27,17 +30,17 @@ size: 24
         ])
 
         self.show_icons = self.config.getboolean('Icons', 'show')
-        self.themes = [t.strip() for t in self.config.get('Icons','themes').split(',')]
-        self.themes.reverse()
-        self.themes_key = '-'.join(self.themes)
-        self.icon_size = self.config.getint('Icons', 'size')
+        if self.show_icons:
+            self.default_icon = self.config.get('Icons', 'default')
+            self.themes = [t.strip() for t in self.config.get('Icons','themes').split(',')]
+            self.themes.reverse()
+            self.themes_key = ':'.join(self.themes)
+            self.icon_size = self.config.getint('Icons', 'size')
 
-        xdg.Config.setWindowManager('fluxbox')
-        for theme in self.themes:
-            xdg.Config.setIconTheme(theme)
-        xdg.Config.setIconSize(self.icon_size)
+            for theme in self.themes:
+                xdg.Config.setIconTheme(theme)
+            xdg.Config.setIconSize(self.icon_size)
 
-        self.filter_debian = os.path.isfile('/usr/bin/update-menus')
 
     def print_all(self):
         """Prints the menu to output"""
@@ -89,29 +92,26 @@ size: 24
         # Skip Debian specific menu entries
         if self.filter_debian and de.get('Categories', list=False).startswith('X-Debian'):
             return
+        # Escape entry name
+        name = de.getName().replace('(', '- ').replace(')',' -').encode('utf-8')
         # Strip command arguments
         cmd = re.sub(' [^ ]*%[fFuUdDnNickvm]', '', de.getExec())
         if de.getTerminal():
-            cmd = 'x-terminal-emulator -T "%s" -e "%s"' % (
-                de.getName().encode('utf-8'),
-                cmd
-            )
+            cmd = 'x-terminal-emulator -T "%s" -e "%s"' % (name, cmd)
         if self.show_icons:
             print '  [exec] (%s) {%s} <%s>' % (
-                de.getName().encode('utf-8'),
-                cmd,
+                name, cmd,
                 self.find_icon(de.getIcon().encode('utf-8'))
             )
         else:
-            print '  [exec] (%s) {%s}' % (
-                de.getName().encode('utf-8'),
-                cmd
-            )
+            print '  [exec] (%s) {%s}' % (name, cmd)
 
   
     def find_icon(self, name):
         """Finds and cache icons"""
-        key = self.themes_key + ':' + name
+        if not name:
+            name = self.default_icon
+        key = name + '::' + self.themes_key
         self.cache_cursor.execute(
             'SELECT cache.key, cache.path FROM cache WHERE cache.key = ?',
             [key]
@@ -120,12 +120,14 @@ size: 24
         if found:
             return found['path'].encode('utf-8')
         else:
-            # Dirty trick because xdg.IconTheme does not allow
-            # to set a prefered icon format
-            path = xdg.IconTheme.getIconPath(name,None,None,['png'])
-            if not path:
-                path = xdg.IconTheme.getIconPath(name,None,None,['xpm','svg'])
-
+            # Fluxbox doesn't support svg in menu
+            path = xdg.IconTheme.getIconPath(
+                name, self.icon_size, None, ['png','xpm']
+            )
+            if not path or path.endswith('.svg'):
+                path = xdg.IconTheme.getIconPath(
+                    self.default_icon, self.icon_size, None, ['png', 'xpm']
+                )
         if path:
             self.cache_cursor.execute(
                 'INSERT INTO cache(key, path) VALUES(?,?)',
