@@ -152,6 +152,7 @@ enable_triggers()
 synopsis()
 {
 cat << _USAGE
+
 $APP_DAEMON - monitors installed applications to generate a Fluxbox Applications Menu
 
 Synopsis
@@ -163,6 +164,7 @@ $APP_DAEMON update           - Regenerates the menu
 $APP_DAEMON update-icons     - Regenerates the menu and the icon cache
 $APP_DAEMON enable-triggers  - Add dpkg-triggers (see $APP_DAEMON help for more infos)
 $APP_DAEMON disable-triggers - Remove dpkg-triggers (see $APP_DAEMON help for more infos)
+
 _USAGE
 }
 
