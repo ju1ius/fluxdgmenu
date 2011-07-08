@@ -26,7 +26,8 @@ LOGFILE="$WDIR/$APP_DAEMON.log"
 PIDFILE="$WDIR/$APP_DAEMON.pid"
 
 BUILD_CMD="$APP_DIR/fxm.py"
-CACHE_FILE="$WDIR/menu.cache"
+MENU_CACHE="$WDIR/menu"
+ICONS_CACHE="$WDIR/icons.db"
 
 PKG_NAME='fluxdgmenu'
 TRIGGERS_DB="/var/lib/dpkg/triggers/File"
@@ -95,7 +96,7 @@ start()
   done)
   #
   $APP_WATCH -d \
-    -c "$BUILD_CMD > $CACHE_FILE" \
+    -c "$BUILD_CMD > $MENU_CACHE" \
     $EXCLUDES \
     $WATCHED > $LOGFILE
 }
@@ -107,12 +108,18 @@ stop()
 
 update()
 {
-  $BUILD_CMD > $CACHE_FILE
+  $BUILD_CMD > $MENU_CACHE
+}
+
+update_icons()
+{
+  rm -f $ICONS_CACHE
+  update
 }
 
 show()
 {
-  cat $CACHE_FILE
+  cat $MENU_CACHE
 }
 
 disable_triggers()
@@ -153,6 +160,7 @@ $APP_DAEMON help             - Prints the help message and exits
 $APP_DAEMON start            - Starts the menu daemon
 $APP_DAEMON stop             - Stops the menu daemon
 $APP_DAEMON update           - Regenerates the menu
+$APP_DAEMON update-icons     - Regenerates the menu and the icon cache
 $APP_DAEMON enable-triggers  - Add dpkg-triggers (see $APP_DAEMON help for more infos)
 $APP_DAEMON disable-triggers - Remove dpkg-triggers (see $APP_DAEMON help for more infos)
 _USAGE
@@ -166,7 +174,7 @@ About dpkg-triggers:
 --------------------
   dpkg-triggers are a Debian/Apt specific way to trigger actions
   when a new package is installed/removed.
-  They allow MarchOBMenu to update the menu without the overhead
+  They allow FluXDGMenu to update the menu without the overhead
   of running a daemon.
 
   However, they only work with packages installed by apt or dpkg.
@@ -206,6 +214,9 @@ case "$1" in
   ;;
   update)
     update
+  ;;
+  update-icons)
+    update_icons
   ;;
   show)
     show
