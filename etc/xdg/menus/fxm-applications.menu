@@ -6,7 +6,11 @@
 	<Name>Applications</Name>
 	<Directory>fxm-menu-applications.directory</Directory>
 
-  Read standard .directory and .desktop file locations
+  <!-- Scan legacy dirs first, as later items take priority -->
+  <LegacyDir>/etc/X11/applnk</LegacyDir>
+  <LegacyDir>/usr/share/gnome/apps</LegacyDir>
+
+  <!-- Read standard .directory and .desktop file locations -->
   <DefaultAppDirs/>
   <DefaultDirectoryDirs/>
   <!-- Read only provided .directory and .desktop file locations -->
@@ -132,31 +136,34 @@
 	<!-- System Tools-->
 	<Menu>
 		<Name>System</Name>
-		<Directory>fxm-system-tools.directory</Directory>
-		<Include>
-			<And>
-				<Category>System</Category>
-			</And>
-		</Include>
+    <Directory>fxm-system-tools.directory</Directory>
+    <Include>
+			<Category>PackageManager</Category>
+      <Category>System</Category>
+      <And>
+        <Category>Settings</Category>
+        <Category>System</Category>
+      </And>
+    </Include>
 	</Menu>	 <!-- End System Tools -->
 
 	<Menu>
 		<Name>DesktopSettings</Name>
 		<Directory>fxm-settings.directory</Directory>
-		<OnlyUnallocated/>
-		<Include>
-			<Or>
-				<Category>Settings</Category>
-				<Category>DesktopSettings</Category>
-				<Category>PackageManager</Category>
-				<Category>System</Category>
-			</Or>
-		</Include>
-		<Layout>
-			<Merge type="menus"/>
-			<Merge type="files"/>
-		</Layout>
-
+    <Include>
+      <And>
+        <Or>
+          <Category>Settings</Category>
+				  <Category>DesktopSettings</Category>
+        </Or>
+        <Not>
+          <Or>
+            <Category>System</Category>
+            <Filename>gnomecc.desktop</Filename>
+          </Or>
+        </Not>
+      </And>
+    </Include>
 	</Menu> <!-- End Settings -->
 
 	<!-- Other -->
@@ -164,23 +171,16 @@
 		<Name>Other</Name>
 		<Directory>fxm-other.directory</Directory>
 		<OnlyUnallocated/>
-		<Include>
-			<And>
-				<Not><Category>Core</Category></Not>
-				<Not><Category>Settings</Category></Not>
-				<Not><Category>DesktopSettings</Category></Not>
-				<Not><Category>Screensaver</Category></Not>
-			</And>
-		</Include>
-		<Exclude>
-			<And>
-				<Category>Core</Category>
-				<Category>Settings</Category>
-				<Category>DesktopSettings</Category>
-				<Category>Screensaver</Category>
-			</And>
-		</Exclude>
-		</Menu> <!-- End Other -->
+    <Include>
+      <Not>
+        <Or>
+          <Category>Core</Category>
+          <Category>Settings</Category>
+          <Category>DesktopSettings</Category>
+        </Or>
+      </Not>
+    </Include>
+	</Menu> <!-- End Other -->
 
 
 	<Layout>
@@ -192,4 +192,3 @@
 	</Layout>
 
 </Menu> <!-- End Applications -->
-

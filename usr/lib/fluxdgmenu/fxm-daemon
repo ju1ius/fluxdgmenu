@@ -192,7 +192,7 @@ About dpkg-triggers:
   you'll need to explicitly update the menu by executing:
   $ $APP_DAEMON update
 
-  You can deactivate this feature later it by executing:
+  You can deactivate this feature later by executing:
   $ $APP_DAEMON disable-triggers
 _USAGE
 
