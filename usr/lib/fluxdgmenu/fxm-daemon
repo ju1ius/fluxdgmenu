@@ -8,6 +8,7 @@ set -u
 APP_PATH=$(readlink -f $0)
 APP_DIR=$(dirname $APP_PATH)
 APP_DAEMON=$(basename $APP_PATH)
+APP_WATCH="fxm-watch"
 
 PID=$$
 
@@ -32,19 +33,19 @@ TRIGGERS_DB="/var/lib/dpkg/triggers/File"
 
 MONITORED=(
   # .directory files
-  [0]="/usr/share/desktop-directories"
-  [1]="/usr/local/share/desktop-directories"
-  [2]="/home/*/.local/share/desktop-directories"
+  "/usr/share/desktop-directories"
+  "/usr/local/share/desktop-directories"
+  "/home/*/.local/share/desktop-directories"
   # .desktop files
-  [3]="/usr/share/applications"
-  [4]="/usr/local/share/applications"
-  [5]="/home/*/.local/share/applications"
+  "/usr/share/applications"
+  "/usr/local/share/applications"
+  "/home/*/.local/share/applications"
   # LXDE Stuff
-  [6]="/etc/xdg/menus/lxde-applications-merged"
-  [7]="/home/*/.config/menus/lxde-applications-merged"
+  "/etc/xdg/menus/lxde-applications-merged"
+  "/home/*/.config/menus/lxde-applications-merged"
 )
 EXCLUDED=(
-  [0]="/.local/share/applications/menu-xdg/"
+  "/.local/share/applications/menu-xdg/"
 )
 
 #-------------------------------------------------------------------------------

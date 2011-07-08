@@ -28,7 +28,8 @@ install:
 	install -d ${sysconfdir}/fluxdgmenu
 	install -m 0755 etc/fluxdgmenu/* ${sysconfdir}/fluxdgmenu
 	install -d ${prefix}/bin
-	ln -s -T ${prefix}/lib/fluxdgmenu/fxm-daemon ${prefix}/bin/fxm-daemon
+	ln -sf -T ${prefix}/lib/fluxdgmenu/fxm-daemon ${prefix}/bin/fxm-daemon
+	ln -sf -T ${prefix}/lib/fluxdgmenu/fxm-watch ${prefix}/bin/fxm-watch
 
 uninstall:
 	-rm -rf ${prefix}/lib/fluxdgmenu
@@ -36,3 +37,4 @@ uninstall:
 	-rm -rf ${sysconfdir}/fluxdgmenu
 	-rm -f ${sysconfdir}/xdg/menus/fxm-applications.menu
 	-rm -f ${prefix}/bin/fxm-daemon
+	-rm -f ${prefix}/bin/fxm-watch
