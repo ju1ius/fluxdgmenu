@@ -7,8 +7,8 @@ pkgdesc="A Fluxbox automated XDG Menu"
 arch=('any')
 url="http://github.com/ju1ius/fluxdgmenu"
 license=('GPL')
-depends=('openbox' 'bash' 'libinotifytools0' 'python-xdg')
-makedepends=('git')
+depends=('fluxbox' 'bash' 'libinotifytools0' 'python-xdg')
+makedepends=('git' 'libinotifytools0-dev')
 provides=('fluxdgmenu')
 conflicts=('fluxdgmenu')
 

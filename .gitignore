@@ -1,0 +1,9 @@
+# Compiled source #
+###################
+*.pyc
+usr/lib/marchobmenu/fxm-watch
+
+# OS generated files #
+######################
+*~
+*.swp
