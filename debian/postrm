@@ -20,15 +20,15 @@ set -e
 
 case "$1" in
     purge)
+      fxm-daemon stop
       rm -r $HOME/.fluxbox/fluxdgmenu
     ;;
-
     remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
+      fxm-daemon stop
     ;;
-
     *)
-        echo "postrm called with unknown argument \`$1'" >&2
-        exit 1
+      echo "postrm called with unknown argument \`$1'" >&2
+      exit 1
     ;;
 esac
 

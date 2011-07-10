@@ -1,18 +1,14 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-
 import os, sys, re, StringIO, sqlite3, ConfigParser
-
 import xdg.Config, xdg.BaseDirectory, xdg.DesktopEntry, xdg.Menu, xdg.IconTheme
 #from xdg.Exceptions import *
 
 class FluXDGMenu(object):
 
-    def __init__(self):
+    def __init__(self, menu_file):
         xdg.Config.setWindowManager('fluxbox')
         self.filter_debian = os.path.isfile('/usr/bin/update-menus')
         self.parse_config()
-        self.tree = xdg.Menu.parse('fxm-applications.menu')
+        self.tree = xdg.Menu.parse(menu_file)
         self.print_all()
 
     def parse_config(self):
@@ -44,9 +40,16 @@ size: 24
 
     def print_all(self):
         """Prints the menu to output"""
+        self.before_print()
         self.open_cache()
         self.print_menu(self.tree)
         self.close_cache()
+        self.after_print()
+
+    def before_print(self):
+        pass
+    def after_print(self):
+        pass
 
     def open_cache(self):
         if self.show_icons:
@@ -77,13 +80,14 @@ size: 24
         print '[separator] (-------------------------------)'
 
     def print_submenu(self, entry):
+        name = entry.getName().encode('utf-8')
         if self.show_icons:
             print '[submenu] (%s) <%s>' % (
-                entry.getName().encode('utf-8'),
+                name,
                 self.find_icon(entry.getIcon().encode('utf-8'))
             )
         else:
-            print '[submenu] (%s)' % entry.getName().encode('utf-8')
+            print '[submenu] (%s)' % name
         self.print_menu(entry)
         print '[end]'
 
@@ -136,15 +140,3 @@ size: 24
             return path.encode('utf-8')
         else:
             return ''
-
-
-
-###########################################################################
-# MAIN
-#--------------------------------------------------------------------------
-if __name__ == "__main__": 
-    fluxdgmenu = FluXDGMenu()
-#--------------------------------------------------------------------------
-# / MAIN
-###########################################################################
-

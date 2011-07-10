@@ -21,17 +21,17 @@ set -e
 case "$1" in
     # This is triggered by any installation of a desktop entry
     triggered)
-      #echo DEBUG: processing trigger "'$2'"
       fxm-daemon update
     ;;
-
-    configure|abort-upgrade|abort-remove|abort-deconfigure)
+    configure)
+      fxm-daemon generate-rootmenu
+    ;;
+    abort-upgrade|abort-remove|abort-deconfigure)
       fxm-daemon update
     ;;
-
     *)
-        echo "postinst called with unknown argument \`$1'" >&2
-        exit 1
+      echo "postinst called with unknown argument \`$1'" >&2
+      exit 1
     ;;
 esac
 

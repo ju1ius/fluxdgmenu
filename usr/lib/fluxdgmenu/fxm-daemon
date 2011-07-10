@@ -14,18 +14,23 @@ PID=$$
 
 # Needed if script was called with sudo
 USER=$(whoami | sed 's/ .*//')
-HOME=/home/$USER
+HOME="/home/$USER"
 
-WDIR="$HOME/.fluxbox/fluxdgmenu"
+FLUXBOX_WDIR="$HOME/.fluxbox"
+if [[ ! -d $FLUXBOX_WDIR ]]
+then
+  mkdir -p $FLUXBOX_WDIR
+fi
+ROOTMENU="$FLUXBOX_WDIR/menu"
+GENERATE_ROOTMENU_CMD="$APP_DIR/fxm-rootmenu.py"
+
+WDIR="$FLUXBOX_WDIR/fluxdgmenu"
 if [[ ! -d $WDIR ]]
 then
   mkdir -p $WDIR
 fi
 
-LOGFILE="$WDIR/$APP_DAEMON.log"
-PIDFILE="$WDIR/$APP_DAEMON.pid"
-
-BUILD_CMD="$APP_DIR/fxm.py"
+BUILD_CMD="$APP_DIR/fxm-applications.py"
 MENU_CACHE="$WDIR/menu"
 ICONS_CACHE="$WDIR/icons.db"
 
@@ -87,7 +92,10 @@ start()
   WATCHED=$(for d in "${MONITORED[@]}"
   do
     tmp=$(echo "$d" | sed "s/*/$USER/" )
-    if [[ -d $tmp ]]; then echo "$tmp"; fi;
+    if [[ -d $tmp ]]
+    then
+      echo "$tmp";
+    fi;
   done)
   #
   EXCLUDES=$(for pattern in "${EXCLUDED[@]}"
@@ -96,14 +104,14 @@ start()
   done)
   #
   $APP_WATCH -d \
-    -c "$BUILD_CMD > $MENU_CACHE" \
+    -c "$APP_DAEMON update" \
     $EXCLUDES \
-    $WATCHED > $LOGFILE
+    $WATCHED
 }
 
 stop()
 {
-  pkill -u "$USER" fxm-watch
+  pkill -u "$USER" $APP_WATCH
 }
 
 update()
@@ -115,6 +123,13 @@ update_icons()
 {
   rm -f $ICONS_CACHE
   update
+}
+
+generate_rootmenu()
+{
+  update
+  mv "$ROOTMENU" "$ROOTMENU.bak"
+  $GENERATE_ROOTMENU_CMD > $ROOTMENU
 }
 
 show()
@@ -157,13 +172,14 @@ $APP_DAEMON - monitors installed applications to generate a Fluxbox Applications
 
 Synopsis
 --------
-$APP_DAEMON help             - Prints the help message and exits
-$APP_DAEMON start            - Starts the menu daemon
-$APP_DAEMON stop             - Stops the menu daemon
-$APP_DAEMON update           - Regenerates the menu
-$APP_DAEMON update-icons     - Regenerates the menu and the icon cache
-$APP_DAEMON enable-triggers  - Add dpkg-triggers (see $APP_DAEMON help for more infos)
-$APP_DAEMON disable-triggers - Remove dpkg-triggers (see $APP_DAEMON help for more infos)
+$APP_DAEMON help              - Prints the help message and exits
+$APP_DAEMON start             - Starts the menu daemon
+$APP_DAEMON stop              - Stops the menu daemon
+$APP_DAEMON update            - Regenerates the menu
+$APP_DAEMON update-icons      - Regenerates the menu and the icon cache
+$APP_DAEMON generate-rootmenu - Generates a rootmenu
+$APP_DAEMON enable-triggers   - Add dpkg-triggers (see $APP_DAEMON help for more infos)
+$APP_DAEMON disable-triggers  - Remove dpkg-triggers (see $APP_DAEMON help for more infos)
 
 _USAGE
 }
@@ -194,6 +210,9 @@ About dpkg-triggers:
 
   You can deactivate this feature later by executing:
   $ $APP_DAEMON disable-triggers
+
+  NOTE: For this feature to work you must install fluxdgmenu
+        via the debian package.
 _USAGE
 
 }
@@ -213,6 +232,9 @@ case "$1" in
   ;;
   stop)
     stop
+  ;;
+  generate-rootmenu)
+    generate_rootmenu
   ;;
   update)
     update

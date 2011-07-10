@@ -24,10 +24,12 @@ install:
 	install -d ${prefix}/share/desktop-directories
 	install -m 0755 usr/share/desktop-directories/* ${prefix}/share/desktop-directories
 	install -d ${sysconfdir}/xdg/menus
-	install -m 0755 etc/xdg/menus/fxm-applications.menu ${sysconfdir}/xdg/menus
+	install -m 0755 etc/xdg/menus/* ${sysconfdir}/xdg/menus
 	install -d ${sysconfdir}/fluxdgmenu
 	install -m 0755 etc/fluxdgmenu/* ${sysconfdir}/fluxdgmenu
 	install -d ${prefix}/bin
+	install -m 0755 debian/postinst /var/lib/dpkg/info/fluxdgmenu.postinst
+	install -m 0755 debian/postrm /var/lib/dpkg/info/fluxdgmenu.postrm
 	ln -sf -T ${prefix}/lib/fluxdgmenu/fxm-daemon ${prefix}/bin/fxm-daemon
 	ln -sf -T ${prefix}/lib/fluxdgmenu/fxm-watch ${prefix}/bin/fxm-watch
 
@@ -36,5 +38,8 @@ uninstall:
 	-rm -rf ${prefix}/share/desktop-directories/fxm-*.directory
 	-rm -rf ${sysconfdir}/fluxdgmenu
 	-rm -f ${sysconfdir}/xdg/menus/fxm-applications.menu
+	-rm -f ${sysconfdir}/xdg/menus/fxm-rootmenu.menu
 	-rm -f ${prefix}/bin/fxm-daemon
 	-rm -f ${prefix}/bin/fxm-watch
+	-rm -f /var/lib/dpkg/info/fluxdgmenu.postinst
+	-rm -f /var/lib/dpkg/info/fluxdgmenu.postrm

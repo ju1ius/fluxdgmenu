@@ -18,7 +18,11 @@
   <!--<DirectoryDir>/usr/share/desktop-directories</DirectoryDir>-->
 
 	<!-- Read in overrides and child menus from applications-merged/ -->
-	<DefaultMergeDirs/>
+  <DefaultMergeDirs/>
+
+  <Menu>
+    <custom>~/.fluxbox/fluxdgmenu/menu</custom>
+  </Menu>
 
 	<!-- Accessories submenu -->
 	<Menu>

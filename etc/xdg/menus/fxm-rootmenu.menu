@@ -1,0 +1,42 @@
+<!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
+ "http://www.freedesktop.org/standards/menu-spec/1.0/menu.dtd">
+
+<Menu>
+
+  <DefaultAppDirs/>
+  <DefaultDirectoryDirs/>
+  <DefaultMergeDirs/>
+
+  <Include>
+    <Filename>nautilus.desktop</Filename>
+    <Filename>chromium-browser.desktop</Filename>
+    <Filename>gnome-terminal.desktop</Filename>
+    <Filename>synaptic.desktop</Filename>
+  </Include>
+
+  <Menu>
+    <Name>fxm-applications</Name>
+    <DefaultLayout show_empty="true">
+      <Merge type="all"/>
+    </DefaultLayout>
+  </Menu>
+
+  <Menu>
+    <Name>fluxbox</Name>
+    <DefaultLayout show_empty="true">
+      <Merge type="all"/>
+    </DefaultLayout>
+  </Menu>
+
+	<Layout>
+    <Filename>nautilus.desktop</Filename>
+    <Filename>chromium-browser.desktop</Filename>
+    <Filename>gnome-terminal.desktop</Filename>
+    <Filename>synaptic.desktop</Filename>
+		<Separator/>
+    <Menuname>fxm-applications</Menuname>
+		<Separator/>
+    <Menuname>fluxbox</Menuname>
+	</Layout>
+
+</Menu> <!-- End Applications -->

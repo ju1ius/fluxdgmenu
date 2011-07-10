@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <syslog.h>
 #include <unistd.h>
 #include <signal.h>
 #include <string.h>
@@ -8,30 +9,48 @@
 #include <inotifytools/inotify.h>
 
 /*
- * Compile with: gcc -linotifytools mom-watch.c -o mom-watch
+ * Compile with: gcc -linotifytools mom-watch.c -o mom-watch -W -Wall -pedantic
  */
 
 void signal_handler(int signum);
 void cleanup(void);
-void it_error(void);
 
 
 int main(int argc, char **argv)
 {
-  /* Our process ID and Session ID */
-  pid_t pid, sid;
-
-  struct inotify_event * event;
   int option, i, res;
+  /*
+   * daemonize the process ?
+   **/
   int daemonize = 0;
-  char* exclude_pattern;
-  char* command;
+  /*
+   * list of exclude patterns for inotify events
+   **/
+  int nb_excludes = 0;
+  char **excludes;
+  /*
+   * command to execute on notification
+   **/
+  char *command;
+  /*
+   * log message
+   **/
+  char message[1024];
+  /*
+   * the notified event
+   **/
+  struct inotify_event *event;
+
+
+  openlog("fxm-daemon", LOG_PID, LOG_USER);
 
   /*****************************************
    * Process Command line args
    ****************************************/
 
-  while((option = getopt(argc, argv, "c:de:")) != -1)
+  excludes = malloc(argc * sizeof(char*));
+
+  while((option = getopt(argc, argv, "c:e:d")) != -1)
   {
     switch(option)
     {
@@ -42,7 +61,7 @@ int main(int argc, char **argv)
         daemonize = 1;
         break;
       case 'e':
-        exclude_pattern = optarg;
+        excludes[nb_excludes++] = optarg;
       case '?':
         if (optopt == 'c' || optopt == 'e')
         {
@@ -62,38 +81,20 @@ int main(int argc, char **argv)
   /******************************************
    * Daemonification steps
    *****************************************/
-  if(daemonize)
-  {
-    /* Fork off the parent process */
-    pid = fork();
-    if (pid < 0) exit(EXIT_FAILURE);
+  if(daemonize) daemon(0,0);
 
-    /* If we got a good PID, then we can exit the parent process. */
-    if (pid > 0) exit(EXIT_SUCCESS);
+  syslog(LOG_INFO, "Starting...");
 
-    /* 
-     * Change the file mode mask
-     * Not needed here as we don't write to any file
-     */
-    /*umask(0);*/
+  /* Setup signal handling */
+  signal(SIGCHLD, SIG_IGN); /* ignore child */
+	signal(SIGTSTP, SIG_IGN); /* ignore tty signals */
+	signal(SIGTTOU, SIG_IGN);
+	signal(SIGTTIN, SIG_IGN);
+  signal(SIGHUP, signal_handler);
+  signal(SIGINT, signal_handler);
+  signal(SIGQUIT, signal_handler);
+  signal(SIGTERM, signal_handler);
 
-    /* Create a new SID for the child process */
-    sid = setsid();
-    if (sid < 0) exit(EXIT_FAILURE);
-
-    /* Change the current working directory */
-    if ((chdir("/")) < 0) exit(EXIT_FAILURE);
-
-    /*
-     * Close out the standard file descriptors
-     * We can't use this, as it will prevent the
-     * fxm.py script to write to file descriptors
-     * TODO: check why ?
-     */
-    /*close(STDIN_FILENO);*/
-    /*close(STDOUT_FILENO);*/
-    /*close(STDERR_FILENO);*/
-  }
 
   /*****************************************
    *  Core Functionnalities
@@ -103,14 +104,19 @@ int main(int argc, char **argv)
    * initialize and watch the entire directory tree from the current working
    * directory downwards for all events
    */
-  if(!inotifytools_initialize()) it_error();
+  if(!inotifytools_initialize())
+  {
+    syslog( LOG_ERR, "%s", strerror(inotifytools_error()) );
+  }
  
   /* set time format to 24 hour time, HH:MM:SS */
   inotifytools_set_printf_timefmt( "%T" );
-
-  if (exclude_pattern)
+  
+  for (i = 0; i < nb_excludes; i++)
   {
-    inotifytools_ignore_events_by_regex(exclude_pattern, 0);  
+    syslog(LOG_INFO, "Ignoring pattern %s", excludes[i]);
+
+    inotifytools_ignore_events_by_regex(excludes[i], 0);  
   }
   /*
    * Loop on the remaining command-line args
@@ -118,20 +124,23 @@ int main(int argc, char **argv)
    */
   for (i = optind; i < argc; i++)
   {
-    res = inotifytools_watch_recursively(argv[i], IN_CREATE | IN_DELETE | IN_MODIFY); 
-    if(!res) it_error();
+    syslog(LOG_INFO, "Watching %s", argv[i]);
+
+    res = inotifytools_watch_recursively(argv[i], IN_CREATE | IN_DELETE | IN_MODIFY);
+    if(!res)
+    {
+      syslog( LOG_ERR, "%s", strerror(inotifytools_error()) );
+      exit(EXIT_FAILURE);
+    }
   }
-  /* Setup signal handling */
-  signal(SIGHUP, signal_handler);
-  signal(SIGINT, signal_handler);
-  signal(SIGQUIT, signal_handler);
-  signal(SIGTERM, signal_handler);
 
   /* Output all events as "<timestamp> <events> <path>" */
   event = inotifytools_next_event(-1);
   while (event)
   {
-    inotifytools_fprintf(stdout, event, "%T %e %w%f\n");
+    inotifytools_snprintf(message, 1024, event, "%T %e %w%f\n");
+    syslog(LOG_INFO, "%s", message);
+
     system(command);
     event = inotifytools_next_event(-1);
   }
@@ -142,6 +151,8 @@ int main(int argc, char **argv)
 void cleanup(void)
 {
   inotifytools_cleanup();
+  syslog(LOG_INFO, "Exiting...");
+  closelog();
 }
 
 void signal_handler(int signum)
@@ -149,10 +160,4 @@ void signal_handler(int signum)
   (void) signum;
   cleanup();
   exit(0);
-}
-
-void it_error(void)
-{
-  fprintf(stderr, "%s\n", strerror(inotifytools_error()));
-  exit(EXIT_FAILURE);
 }
