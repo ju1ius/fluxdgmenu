@@ -8,9 +8,18 @@
   <DefaultMergeDirs/>
 
   <Include>
+    <!-- filemanager -->
     <Filename>nautilus.desktop</Filename>
+    <Filename>thunar.desktop</Filename>
+    <Filename>pcmanfm.desktop</Filename>
+    <!-- Web Browser -->
+    <Filename>firefox.desktop</Filename>
     <Filename>chromium-browser.desktop</Filename>
+    <!-- Terminal Emulator -->
     <Filename>gnome-terminal.desktop</Filename>
+    <Filename>terminator.desktop</Filename>
+    <Filename>lxterminal.desktop</Filename>
+    <!-- Package Manager -->
     <Filename>synaptic.desktop</Filename>
   </Include>
 
@@ -29,9 +38,18 @@
   </Menu>
 
 	<Layout>
+    <!-- filemanager -->
     <Filename>nautilus.desktop</Filename>
+    <Filename>thunar.desktop</Filename>
+    <Filename>pcmanfm.desktop</Filename>
+    <!-- Web Browser -->
+    <Filename>firefox.desktop</Filename>
     <Filename>chromium-browser.desktop</Filename>
+    <!-- Terminal Emulator -->
     <Filename>gnome-terminal.desktop</Filename>
+    <Filename>terminator.desktop</Filename>
+    <Filename>lxterminal.desktop</Filename>
+    <!-- Package Manager -->
     <Filename>synaptic.desktop</Filename>
 		<Separator/>
     <Menuname>fxm-applications</Menuname>
