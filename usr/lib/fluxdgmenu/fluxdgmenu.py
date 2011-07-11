@@ -4,8 +4,19 @@ import xdg.Config, xdg.BaseDirectory, xdg.DesktopEntry, xdg.Menu, xdg.IconTheme
 
 class FluXDGMenu(object):
 
+    default_config = """
+[Icons]
+show: yes
+use_gtk_theme: yes
+theme: Mint-X
+default: application-x-executable
+size: 24
+"""
+
+    window_manager = "Fluxbox"
+
     def __init__(self, menu_file):
-        xdg.Config.setWindowManager('fluxbox')
+        xdg.Config.setWindowManager(self.window_manager)
         self.filter_debian = os.path.isfile('/usr/bin/update-menus')
         self.parse_config()
         self.tree = xdg.Menu.parse(menu_file)
@@ -13,30 +24,26 @@ class FluXDGMenu(object):
 
     def parse_config(self):
         self.config = ConfigParser.RawConfigParser()
-        self.config.readfp(StringIO.StringIO("""
-[Icons]
-show: True
-themes: Mint-X,Minty,gnome-wise,gnome-colors-common,gnome,hicolor
-default: application-x-executable
-size: 24
-"""))
+        self.config.readfp(StringIO.StringIO(self.default_config))
         self.config.read([
             '/etc/fluxdgmenu/menu.conf',
             os.path.expanduser('~/.fluxbox/fluxdgmenu/menu.conf')
         ])
 
         self.show_icons = self.config.getboolean('Icons', 'show')
+
         if self.show_icons:
             self.default_icon = self.config.get('Icons', 'default')
-            self.themes = [t.strip() for t in self.config.get('Icons','themes').split(',')]
-            self.themes.reverse()
-            self.themes_key = ':'.join(self.themes)
             self.icon_size = self.config.getint('Icons', 'size')
-
-            for theme in self.themes:
-                xdg.Config.setIconTheme(theme)
-            xdg.Config.setIconSize(self.icon_size)
-
+            self.use_gtk_theme = self.config.getboolean('Icons', 'use_gtk_theme')
+            if self.use_gtk_theme:
+                import pygtk
+                pygtk.require('2.0')
+                import gtk
+                gtk_settings = gtk.settings_get_default()
+                self.theme = gtk_settings.get_property('gtk-icon-theme-name')
+            else:
+                self.theme = self.config.get('Icons','theme')
 
     def print_all(self):
         """Prints the menu to output"""
@@ -115,22 +122,25 @@ size: 24
         """Finds and cache icons"""
         if not name:
             name = self.default_icon
-        key = name + '::' + self.themes_key
+        if os.path.isabs(name):
+            key = name
+        else:
+            key = name + '::' + self.theme
         self.cache_cursor.execute(
             'SELECT cache.key, cache.path FROM cache WHERE cache.key = ?',
             [key]
         )
-        found = self.cache_cursor.fetchone()
-        if found:
-            return found['path'].encode('utf-8')
+        cached = self.cache_cursor.fetchone()
+        if cached:
+            return cached['path'].encode('utf-8')
         else:
             # Fluxbox doesn't support svg in menu
             path = xdg.IconTheme.getIconPath(
-                name, self.icon_size, None, ['png','xpm']
+                name, self.icon_size, self.theme, ['png','xpm']
             )
             if not path or path.endswith('.svg'):
                 path = xdg.IconTheme.getIconPath(
-                    self.default_icon, self.icon_size, None, ['png', 'xpm']
+                    self.default_icon, self.icon_size, self.theme, ['png', 'xpm']
                 )
         if path:
             self.cache_cursor.execute(
