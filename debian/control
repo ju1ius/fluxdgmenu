@@ -11,6 +11,7 @@ Vcs-Browser: http://github.com/ju1ius/fluxdgmenu
 Package: fluxdgmenu
 Architecture: all
 Depends: fluxbox, bash, libinotifytools0, python-xdg
+Recommends: python-gtk2
 Description: An automated XDG Menu system for Fluxbox.
   FluXDGMenu monitors for newly installed/removed applications, and maintains a submenu, listing and categorizing them like the Gnome/Xfce/Lxde menu.
   The package installs a menu file "/etc/xdg/menus/fxm-applications.menu",
@@ -18,7 +19,8 @@ Description: An automated XDG Menu system for Fluxbox.
   For infos about editing the menu file, see:
   http://standards.freedesktop.org/menu-spec/latest/ar01s04.html
   Features:
-    * Auto generates and auto updates a Fluxbox "Applications" submenu in compliance with www.freedesktop.org standards thereby giving a familiar menu.
+    * Auto generates and auto updates a Fluxbox "Applications" menu in compliance with www.freedesktop.org standards thereby giving a familiar menu.
     * Support for localizations: the menu generated will be in the system default language where available.
     * Support for icons: the icons are chosen in the current icon theme
+    * Can also maintain a GTK Bookmarks menu
 
