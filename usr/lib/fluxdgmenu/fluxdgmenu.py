@@ -39,11 +39,15 @@ size: 24
             self.icon_size = self.config.getint('Icons', 'size')
             self.use_gtk_theme = self.config.getboolean('Icons', 'use_gtk_theme')
             if self.use_gtk_theme:
-                import pygtk
-                pygtk.require('2.0')
-                import gtk
-                gtk_settings = gtk.settings_get_default()
-                self.theme = gtk_settings.get_property('gtk-icon-theme-name')
+                try:
+                    import pygtk
+                    pygtk.require('2.0')
+                    import gtk
+                    gtk_settings = gtk.settings_get_default()
+                    self.theme = gtk_settings.get_property('gtk-icon-theme-name')
+                except:
+                    self.use_gtk_theme = False
+                    self.theme = self.config.get('Icons','theme')
             else:
                 self.theme = self.config.get('Icons','theme')
 

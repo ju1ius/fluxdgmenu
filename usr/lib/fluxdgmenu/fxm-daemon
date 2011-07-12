@@ -134,6 +134,7 @@ update_icons()
 {
   rm -f $ICONS_CACHE
   update
+  update_bookmarks
 }
 
 update_bookmarks()
@@ -143,14 +144,9 @@ update_bookmarks()
 
 generate_rootmenu()
 {
-  update
+  update_icons
   mv "$ROOTMENU" "$ROOTMENU.bak"
   $GENERATE_ROOTMENU_CMD > $ROOTMENU
-}
-
-show()
-{
-  cat $MENU_CACHE
 }
 
 disable_triggers()
@@ -192,7 +188,7 @@ Synopsis
 Options:
 --------
 -b, --with-bookmarks          - If present and used in conjunction with the start command,
-                                $APP_DAEMON will also monitor gtk-bookmarks.               
+                                $APP_DAEMON will also monitor GTK Bookmarks.               
 
 Commands:
 ---------
@@ -200,8 +196,9 @@ $APP_DAEMON help              - Prints the help message and exits
 $APP_DAEMON start             - Starts the menu daemon
 $APP_DAEMON stop              - Stops the menu daemon
 $APP_DAEMON update            - Regenerates the applications menu
-$APP_DAEMON update-icons      - Regenerates the applications menu and the icon cache
 $APP_DAEMON update-bookmarks  - Regenerates the bookmarks menu
+$APP_DAEMON update-icons      - Regenerates the icon cache,
+                                then updates the applications and bookmarks menus
 $APP_DAEMON generate-rootmenu - Generates a rootmenu
 $APP_DAEMON enable-triggers   - Add dpkg-triggers (see $APP_DAEMON help for more infos)
 $APP_DAEMON disable-triggers  - Remove dpkg-triggers (see $APP_DAEMON help for more infos)
@@ -298,9 +295,6 @@ do
     ;;
     update-bookmarks)
       update_bookmarks
-    ;;
-    show)
-      show
     ;;
     disable-triggers)
       disable_triggers

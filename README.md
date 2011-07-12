@@ -19,6 +19,10 @@ Install dependencies (assuming you already have fluxbox bash and python...):
 
     sudo aptitude install libinotifytools0 libinotifytools0-dev python-xdg
 
+Optionally, If you want Fluxdgmenu to use your current GTK theme:
+
+    sudo aptitude install python-gtk2
+
 Clone the git repository if you haven't already
 
     git clone git://github.com/ju1ius/marchobmenu.git
