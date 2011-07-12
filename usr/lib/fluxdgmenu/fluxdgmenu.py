@@ -10,7 +10,7 @@ filemanager: nautilus --no-desktop
 terminal: x-terminal-emulator -T '%(title)s' -e '%(command)s'
 [Icons]
 show: yes
-use_gtk_theme: no
+use_gtk_theme: yes
 theme: Mint-X
 default: application-x-executable
 size: 24
