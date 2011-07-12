@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <getopt.h>
 #include <syslog.h>
 #include <unistd.h>
 #include <signal.h>
@@ -18,44 +19,77 @@ void cleanup(void);
 
 int main(int argc, char **argv)
 {
-  int option, i, res;
-  /*
-   * daemonize the process ?
-   **/
+  int i;
+
+  int next_option;
+  /* list of short options */
+  const char *short_options = "a:b:e:d";
+	/* An array listing valid long options */
+	static const struct option long_options[] =
+	{
+		{"apps-command", required_argument, NULL, 'a'},
+		{"bookmarks-command", required_argument, NULL, 'b'},
+		{"exclude", required_argument, NULL, 'e'},
+		{"daemon", no_argument, NULL, 'd'},
+		{NULL, 0, NULL, 0} /* End of array need by getopt_long do not delete it*/
+	};
+
+  /* ---------- FLAGS ---------- */
+
+  /* daemonize the process ? */
   int daemonize = 0;
+  /* watch gtk bookmarks ? */
+  int watch_bookmarks = 0;
+
   /*
    * list of exclude patterns for inotify events
    **/
   int nb_excludes = 0;
   char **excludes;
+
   /*
-   * command to execute on notification
+   * commands to execute on notification
    **/
-  char *command;
-  /*
-   * log message
-   **/
+  char *apps_command;
+  char *bookmarks_command;
+  const char *bookmarks_file = ".gtk-bookmarks";
+
+  /* log message */
   char message[1024];
+
   /*
    * the notified event
    **/
   struct inotify_event *event;
 
-
+  const char *home = getenv("HOME");
+  
   openlog("fxm-daemon", LOG_PID, LOG_USER);
+
+  excludes = malloc(argc * sizeof(char*));
+  if(excludes == NULL)
+  {
+    syslog(LOG_ERR, "Unable to allocate memory fo exclude patterns");
+    exit(EXIT_FAILURE);
+  }
+
+  
 
   /*****************************************
    * Process Command line args
    ****************************************/
 
-  excludes = malloc(argc * sizeof(char*));
-
-  while((option = getopt(argc, argv, "c:e:d")) != -1)
+  do
   {
-    switch(option)
-    {
-      case 'c':
-        command = optarg;
+		next_option = getopt_long(argc, argv, short_options, long_options, NULL);
+		switch(next_option)
+		{
+      case 'a':
+        apps_command = optarg;
+        break;
+      case 'b':
+        watch_bookmarks = 1;
+        bookmarks_command = optarg;
         break;
       case 'd':
         daemonize = 1;
@@ -63,27 +97,20 @@ int main(int argc, char **argv)
       case 'e':
         excludes[nb_excludes++] = optarg;
       case '?':
-        if (optopt == 'c' || optopt == 'e')
-        {
-          fprintf (stderr, "Option -%c requires an argument.\n", optopt);
-          exit(EXIT_FAILURE);
-        }
-        else if (isprint(optopt))
-        {
-          fprintf (stderr, "Unknown option 0\\x%x'.\n", optopt);
-          exit(EXIT_FAILURE);
-        }
-      default:
-
         break;
-    }
-  }
+      default:
+        break;
+		}
+	}
+	while(next_option != -1);
+
+
   /******************************************
    * Daemonification steps
    *****************************************/
   if(daemonize) daemon(0,0);
 
-  syslog(LOG_INFO, "Starting...");
+  syslog(LOG_INFO, "Starting in %s", home);
 
   /* Setup signal handling */
   signal(SIGCHLD, SIG_IGN); /* ignore child */
@@ -112,39 +139,66 @@ int main(int argc, char **argv)
   /* set time format to 24 hour time, HH:MM:SS */
   inotifytools_set_printf_timefmt( "%T" );
   
-  for (i = 0; i < nb_excludes; i++)
+  for(i = 0; i < nb_excludes; i++)
   {
-    syslog(LOG_INFO, "Ignoring pattern %s", excludes[i]);
-
     inotifytools_ignore_events_by_regex(excludes[i], 0);  
+    syslog(LOG_INFO, "Ignoring pattern %s", excludes[i]);
   }
+  free(excludes);
+
   /*
    * Loop on the remaining command-line args
    * Exit if a non-existent dir is given
    */
   for (i = optind; i < argc; i++)
   {
-    syslog(LOG_INFO, "Watching %s", argv[i]);
-
-    res = inotifytools_watch_recursively(argv[i], IN_CREATE | IN_DELETE | IN_MODIFY);
-    if(!res)
+    if(!inotifytools_watch_recursively(argv[i], IN_CREATE|IN_DELETE|IN_MODIFY))
     {
-      syslog( LOG_ERR, "%s", strerror(inotifytools_error()) );
+      syslog( LOG_ERR, "%s: %s", argv[i], strerror(inotifytools_error()) );
       exit(EXIT_FAILURE);
     }
+    syslog(LOG_INFO, "Watching %s", argv[i]);
+  }
+  /*
+   * Add a watch on ~/.gtk-bookmarks
+   */
+  if(watch_bookmarks)
+  {
+    if(!inotifytools_watch_file(home, IN_CLOSE_WRITE))
+    {
+      syslog( LOG_ERR, "%s: %s", home, strerror(inotifytools_error()) );
+      exit(EXIT_FAILURE);
+    }
+    syslog(LOG_INFO, "Watching ~/.gtk-bookmarks");
   }
 
-  /* Output all events as "<timestamp> <events> <path>" */
+  /*
+   * Main event loop
+   * Output events as "<timestamp> <events> <path>"
+   */
   event = inotifytools_next_event(-1);
   while (event)
   {
-    inotifytools_snprintf(message, 1024, event, "%T %e %w%f\n");
-    syslog(LOG_INFO, "%s", message);
-
-    system(command);
+    if(watch_bookmarks && !strcmp(event->name, bookmarks_file))
+    {
+      system(bookmarks_command);
+      inotifytools_snprintf(message, 1024, event, "%T %e %w%f\n");
+      syslog(LOG_INFO, "%s", message);
+    }
+    else
+    {
+      system(apps_command);
+      inotifytools_snprintf(message, 1024, event, "%T %e %w%f\n");
+      syslog(LOG_INFO, "%s", message);
+    }
     event = inotifytools_next_event(-1);
   }
+
+  /*
+   * Cleanup
+   */
   cleanup();
+
   return 0;
 }
 

@@ -25,6 +25,15 @@
 
   <Menu>
     <Name>fxm-applications</Name>
+	  <Directory>fxm-menu-applications.directory</Directory>
+    <DefaultLayout show_empty="true">
+      <Merge type="all"/>
+    </DefaultLayout>
+  </Menu>
+
+  <Menu>
+    <Name>fxm-bookmarks</Name>
+	  <Directory>fxm-menu-bookmarks.directory</Directory>
     <DefaultLayout show_empty="true">
       <Merge type="all"/>
     </DefaultLayout>
@@ -32,6 +41,7 @@
 
   <Menu>
     <Name>fluxbox</Name>
+	  <Directory>fxm-menu-fluxbox.directory</Directory>
     <DefaultLayout show_empty="true">
       <Merge type="all"/>
     </DefaultLayout>
@@ -51,6 +61,8 @@
     <Filename>lxterminal.desktop</Filename>
     <!-- Package Manager -->
     <Filename>synaptic.desktop</Filename>
+		<Separator/>
+    <Menuname>fxm-bookmarks</Menuname>
 		<Separator/>
     <Menuname>fxm-applications</Menuname>
 		<Separator/>

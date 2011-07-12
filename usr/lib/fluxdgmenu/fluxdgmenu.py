@@ -5,9 +5,12 @@ import xdg.Config, xdg.BaseDirectory, xdg.DesktopEntry, xdg.Menu, xdg.IconTheme
 class FluXDGMenu(object):
 
     default_config = """
+[Menu]
+filemanager: nautilus --no-desktop
+terminal: x-terminal-emulator -T '%(title)s' -e '%(command)s'
 [Icons]
 show: yes
-use_gtk_theme: yes
+use_gtk_theme: no
 theme: Mint-X
 default: application-x-executable
 size: 24
@@ -15,12 +18,10 @@ size: 24
 
     window_manager = "Fluxbox"
 
-    def __init__(self, menu_file):
+    def __init__(self):
         xdg.Config.setWindowManager(self.window_manager)
         self.filter_debian = os.path.isfile('/usr/bin/update-menus')
         self.parse_config()
-        self.tree = xdg.Menu.parse(menu_file)
-        self.print_all()
 
     def parse_config(self):
         self.config = ConfigParser.RawConfigParser()
@@ -30,6 +31,7 @@ size: 24
             os.path.expanduser('~/.fluxbox/fluxdgmenu/menu.conf')
         ])
 
+        self.terminal_emulator = self.config.get('Menu', 'terminal')
         self.show_icons = self.config.getboolean('Icons', 'show')
 
         if self.show_icons:
@@ -45,36 +47,29 @@ size: 24
             else:
                 self.theme = self.config.get('Icons','theme')
 
-    def print_all(self):
-        """Prints the menu to output"""
-        self.before_print()
-        self.open_cache()
-        self.print_menu(self.tree)
-        self.close_cache()
-        self.after_print()
-
-    def before_print(self):
-        pass
-    def after_print(self):
-        pass
+    def print_menu(self, menu_file):
+        if self.show_icons:
+            self.open_cache()
+        menu = xdg.Menu.parse(menu_file)
+        self.print_menu_entry(menu)
+        if self.show_icons:
+            self.close_cache()
 
     def open_cache(self):
-        if self.show_icons:
-            self.cache_conn = sqlite3.connect(
-                os.path.expanduser('~/.fluxbox/fluxdgmenu/icons.db')
-            )
-            self.cache_conn.execute(
-                "CREATE TABLE IF NOT EXISTS cache(key TEXT, path TEXT)"
-            )
-            self.cache_conn.row_factory = sqlite3.Row
-            self.cache_cursor = self.cache_conn.cursor()
+        self.cache_conn = sqlite3.connect(
+            os.path.expanduser('~/.fluxbox/fluxdgmenu/icons.db')
+        )
+        self.cache_conn.execute(
+            "CREATE TABLE IF NOT EXISTS cache(key TEXT, path TEXT)"
+        )
+        self.cache_conn.row_factory = sqlite3.Row
+        self.cache_cursor = self.cache_conn.cursor()
 
     def close_cache(self):
-        if self.show_icons:
-            self.cache_conn.commit()
-            self.cache_cursor.close()
-
-    def print_menu(self, menu):
+        self.cache_conn.commit()
+        self.cache_cursor.close()
+    
+    def print_menu_entry(self, menu):
         for entry in menu.getEntries():
             if isinstance(entry, xdg.Menu.Separator):
                 self.print_separator(entry)
@@ -88,14 +83,9 @@ size: 24
 
     def print_submenu(self, entry):
         name = entry.getName().encode('utf-8')
-        if self.show_icons:
-            print '[submenu] (%s) <%s>' % (
-                name,
-                self.find_icon(entry.getIcon().encode('utf-8'))
-            )
-        else:
-            print '[submenu] (%s)' % name
-        self.print_menu(entry)
+        icon = self.find_icon(entry.getIcon().encode('utf-8')) if self.show_icons else ''
+        print '[submenu] (%s) <%s>' % (name, icon)
+        self.print_menu_entry(entry)
         print '[end]'
 
     def print_exec(self, entry):
@@ -108,14 +98,11 @@ size: 24
         # Strip command arguments
         cmd = re.sub(' [^ ]*%[fFuUdDnNickvm]', '', de.getExec())
         if de.getTerminal():
-            cmd = 'x-terminal-emulator -T "%s" -e "%s"' % (name, cmd)
-        if self.show_icons:
-            print '  [exec] (%s) {%s} <%s>' % (
-                name, cmd,
-                self.find_icon(de.getIcon().encode('utf-8'))
-            )
-        else:
-            print '  [exec] (%s) {%s}' % (name, cmd)
+            cmd = self.terminal_emulator % {"title": name, "command": cmd}
+        # Get icon
+        icon = self.find_icon(de.getIcon().encode('utf-8')) if self.show_icons else ''
+        print '  [exec] (%s) {%s} <%s>' % (name, cmd, icon)
+
 
   
     def find_icon(self, name):

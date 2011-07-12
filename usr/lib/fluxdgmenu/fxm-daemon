@@ -10,8 +10,6 @@ APP_DIR=$(dirname $APP_PATH)
 APP_DAEMON=$(basename $APP_PATH)
 APP_WATCH="fxm-watch"
 
-PID=$$
-
 # Needed if script was called with sudo
 USER=$(whoami | sed 's/ .*//')
 HOME="/home/$USER"
@@ -31,8 +29,12 @@ then
 fi
 
 BUILD_CMD="$APP_DIR/fxm-applications.py"
-MENU_CACHE="$WDIR/menu"
+MENU_CACHE="$WDIR/applications"
 ICONS_CACHE="$WDIR/icons.db"
+
+WITH_BOOKMARKS="false"
+BOOKMARKS_CMD="$APP_DIR/fxm-bookmarks.py"
+BOOKMARKS_CACHE="$WDIR/bookmarks"
 
 PKG_NAME='fluxdgmenu'
 TRIGGERS_DB="/var/lib/dpkg/triggers/File"
@@ -95,18 +97,27 @@ start()
     if [[ -d $tmp ]]
     then
       echo "$tmp";
-    fi;
+    fi
   done)
   #
   EXCLUDES=$(for pattern in "${EXCLUDED[@]}"
   do
-    echo "-e $pattern"
+    echo "--exclude $pattern"
   done)
   #
-  $APP_WATCH -d \
-    -c "$APP_DAEMON update" \
-    $EXCLUDES \
-    $WATCHED
+  if [[ "$WITH_BOOKMARKS" == "true" ]]
+  then
+    $APP_WATCH -d \
+      -a "$APP_DAEMON update" \
+      -b "$APP_DAEMON update-bookmarks" \
+      $EXCLUDES \
+      $WATCHED
+  else
+    $APP_WATCH -d \
+      -a "$APP_DAEMON update" \
+      $EXCLUDES \
+      $WATCHED
+  fi
 }
 
 stop()
@@ -123,6 +134,11 @@ update_icons()
 {
   rm -f $ICONS_CACHE
   update
+}
+
+update_bookmarks()
+{
+  $BOOKMARKS_CMD > $BOOKMARKS_CACHE 
 }
 
 generate_rootmenu()
@@ -171,12 +187,21 @@ cat << _USAGE
 $APP_DAEMON - monitors installed applications to generate a Fluxbox Applications Menu
 
 Synopsis
+========
+
+Options:
 --------
+-b, --with-bookmarks          - If present and used in conjunction with the start command,
+                                $APP_DAEMON will also monitor gtk-bookmarks.               
+
+Commands:
+---------
 $APP_DAEMON help              - Prints the help message and exits
 $APP_DAEMON start             - Starts the menu daemon
 $APP_DAEMON stop              - Stops the menu daemon
-$APP_DAEMON update            - Regenerates the menu
-$APP_DAEMON update-icons      - Regenerates the menu and the icon cache
+$APP_DAEMON update            - Regenerates the applications menu
+$APP_DAEMON update-icons      - Regenerates the applications menu and the icon cache
+$APP_DAEMON update-bookmarks  - Regenerates the bookmarks menu
 $APP_DAEMON generate-rootmenu - Generates a rootmenu
 $APP_DAEMON enable-triggers   - Add dpkg-triggers (see $APP_DAEMON help for more infos)
 $APP_DAEMON disable-triggers  - Remove dpkg-triggers (see $APP_DAEMON help for more infos)
@@ -226,38 +251,71 @@ _USAGE
 ################################################################################
 #		MAIN
 #-------------------------------------------------------------------------------
-case "$1" in
-  start|restart)
-    start
-  ;;
-  stop)
-    stop
-  ;;
-  generate-rootmenu)
-    generate_rootmenu
-  ;;
-  update)
-    update
-  ;;
-  update-icons)
-    update_icons
-  ;;
-  show)
-    show
-  ;;
-  disable-triggers)
-    disable_triggers
-  ;;
-  enable-triggers)
-    enable_triggers
-  ;;
-  help)
-    usage
-  ;;
-  *)
-    synopsis
-  ;;
-esac
+#
+# OPTIONS
+#
+OPTS=$(getopt -o b -l with-bookmarks -- "$@")
+eval set -- "$OPTS"
+
+while true
+do
+  case "$1" in
+    -b|--with-bookmarks)
+      WITH_BOOKMARKS="true"
+      shift 1
+    ;;
+		--)
+      shift
+      break
+    ;;
+		*)
+      echo "Internal error!"
+      exit 1
+    ;;
+  esac
+done
+
+#
+# COMMANDS
+#
+for arg
+do
+  case "$arg" in
+    start|restart)
+      start
+    ;;
+    stop)
+      stop
+    ;;
+    generate-rootmenu)
+      generate_rootmenu
+    ;;
+    update)
+      update
+    ;;
+    update-icons)
+      update_icons
+    ;;
+    update-bookmarks)
+      update_bookmarks
+    ;;
+    show)
+      show
+    ;;
+    disable-triggers)
+      disable_triggers
+    ;;
+    enable-triggers)
+      enable_triggers
+    ;;
+    help)
+      usage
+    ;;
+    *)
+      synopsis
+    ;;
+  esac
+done
 #-------------------------------------------------------------------------------
 #		/MAIN
 ################################################################################
