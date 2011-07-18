@@ -1,5 +1,3 @@
-# Contributor: David Spicer <azleifel at googlemail dot diddly dot dot com>
-
 pkgname=fluxdgmenu-git
 pkgver=20100313
 pkgrel=1

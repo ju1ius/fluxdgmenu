@@ -24,15 +24,15 @@ int main(int argc, char **argv)
   int next_option;
   /* list of short options */
   const char *short_options = "a:b:e:d";
-	/* An array listing valid long options */
-	static const struct option long_options[] =
-	{
-		{"apps-command", required_argument, NULL, 'a'},
-		{"bookmarks-command", required_argument, NULL, 'b'},
-		{"exclude", required_argument, NULL, 'e'},
-		{"daemon", no_argument, NULL, 'd'},
-		{NULL, 0, NULL, 0} /* End of array need by getopt_long do not delete it*/
-	};
+  /* An array listing valid long options */
+  static const struct option long_options[] =
+  {
+    {"apps-command", required_argument, NULL, 'a'},
+    {"bookmarks-command", required_argument, NULL, 'b'},
+    {"exclude", required_argument, NULL, 'e'},
+    {"daemon", no_argument, NULL, 'd'},
+    {NULL, 0, NULL, 0} /* End of array need by getopt_long do not delete it*/
+  };
 
   /* ---------- FLAGS ---------- */
 
@@ -63,7 +63,7 @@ int main(int argc, char **argv)
   struct inotify_event *event;
 
   const char *home = getenv("HOME");
-  
+
   openlog("fxm-daemon", LOG_PID, LOG_USER);
 
   excludes = malloc(argc * sizeof(char*));
@@ -73,7 +73,7 @@ int main(int argc, char **argv)
     exit(EXIT_FAILURE);
   }
 
-  
+
 
   /*****************************************
    * Process Command line args
@@ -81,9 +81,9 @@ int main(int argc, char **argv)
 
   do
   {
-		next_option = getopt_long(argc, argv, short_options, long_options, NULL);
-		switch(next_option)
-		{
+    next_option = getopt_long(argc, argv, short_options, long_options, NULL);
+    switch(next_option)
+    {
       case 'a':
         apps_command = optarg;
         break;
@@ -100,9 +100,9 @@ int main(int argc, char **argv)
         break;
       default:
         break;
-		}
-	}
-	while(next_option != -1);
+    }
+  }
+  while(next_option != -1);
 
 
   /******************************************
@@ -114,9 +114,9 @@ int main(int argc, char **argv)
 
   /* Setup signal handling */
   signal(SIGCHLD, SIG_IGN); /* ignore child */
-	signal(SIGTSTP, SIG_IGN); /* ignore tty signals */
-	signal(SIGTTOU, SIG_IGN);
-	signal(SIGTTIN, SIG_IGN);
+  signal(SIGTSTP, SIG_IGN); /* ignore tty signals */
+  signal(SIGTTOU, SIG_IGN);
+  signal(SIGTTIN, SIG_IGN);
   signal(SIGHUP, signal_handler);
   signal(SIGINT, signal_handler);
   signal(SIGQUIT, signal_handler);
@@ -135,10 +135,10 @@ int main(int argc, char **argv)
   {
     syslog( LOG_ERR, "%s", strerror(inotifytools_error()) );
   }
- 
+
   /* set time format to 24 hour time, HH:MM:SS */
   inotifytools_set_printf_timefmt( "%T" );
-  
+
   for(i = 0; i < nb_excludes; i++)
   {
     inotifytools_ignore_events_by_regex(excludes[i], 0);  
