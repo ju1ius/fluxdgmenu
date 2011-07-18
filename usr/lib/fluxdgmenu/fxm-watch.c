@@ -159,6 +159,7 @@ int main(int argc, char **argv)
     }
     syslog(LOG_INFO, "Watching %s", argv[i]);
   }
+
   /*
    * Add a watch on ~/.gtk-bookmarks
    */
