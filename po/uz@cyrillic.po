@@ -1,0 +1,6 @@
+msgid "Menu"
+msgstr "Меню"
+
+msgid "Places"
+msgstr "Жойлар"
+

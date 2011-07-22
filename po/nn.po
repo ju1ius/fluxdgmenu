@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "Opprett"
+
+msgid "Update"
+msgstr "Oppdater"
+
+msgid "Configuration"
+msgstr "Oppsett"
+
+msgid "Menu"
+msgstr "Meny"
+
+msgid "Places"
+msgstr "Stader"
+
+msgid "Themes"
+msgstr "Drakt"
+

@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "Skapa"
+
+msgid "Update"
+msgstr "Uppdatera"
+
+msgid "Configuration"
+msgstr "Konfiguration"
+
+msgid "Menu"
+msgstr "Meny"
+
+msgid "Places"
+msgstr "Platser"
+
+msgid "Themes"
+msgstr "Teman"
+

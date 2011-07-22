@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "Vygenerovať"
+
+msgid "Update"
+msgstr "Aktualizovať"
+
+msgid "Configuration"
+msgstr "Nastavenie pošty"
+
+msgid "Menu"
+msgstr "Ponuka"
+
+msgid "Places"
+msgstr "Miesta"
+
+msgid "Themes"
+msgstr "Témy"
+

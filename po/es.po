@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "Generar"
+
+msgid "Update"
+msgstr "Actualizar"
+
+msgid "Configuration"
+msgstr "Configuración"
+
+msgid "Menu"
+msgstr "Menú"
+
+msgid "Places"
+msgstr "Lugares"
+
+msgid "Themes"
+msgstr "Temas"
+

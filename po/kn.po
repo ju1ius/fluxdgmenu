@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "ಉತ್ಪಾದಿಸು(G)"
+
+msgid "Update"
+msgstr "ಅಪ್ಡೇಟ್(U)"
+
+msgid "Configuration"
+msgstr "ಸಂರಚನೆ"
+
+msgid "Menu"
+msgstr "ಅಂಶ ಪಟ್ಟಿ"
+
+msgid "Places"
+msgstr "ಸ್ಥಳಗಳು"
+
+msgid "Themes"
+msgstr "ಪರಿಸರವಿನ್ಯಾಸಗಳು"
+

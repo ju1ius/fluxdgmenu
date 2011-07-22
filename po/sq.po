@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "Gjenero"
+
+msgid "Update"
+msgstr "Përditëso"
+
+msgid "Configuration"
+msgstr "Konfigurimi i Mail"
+
+msgid "Menu"
+msgstr "Menu"
+
+msgid "Places"
+msgstr "Rezerva"
+
+msgid "Themes"
+msgstr "Temat"
+

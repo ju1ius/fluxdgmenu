@@ -1,0 +1,12 @@
+msgid "Generate"
+msgstr "Hamorona"
+
+msgid "Update"
+msgstr "Fanavaozana"
+
+msgid "Places"
+msgstr "Toerana"
+
+msgid "Themes"
+msgstr "Endrika"
+

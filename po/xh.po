@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "Yenza"
+
+msgid "Update"
+msgstr "Hlaziya"
+
+msgid "Configuration"
+msgstr "Ukumisela iinkqubo ze-imeyile"
+
+msgid "Menu"
+msgstr "Imenyu"
+
+msgid "Places"
+msgstr "Iindawo"
+
+msgid "Themes"
+msgstr "Umxholo"
+

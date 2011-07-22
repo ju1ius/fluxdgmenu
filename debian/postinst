@@ -25,6 +25,7 @@ case "$1" in
     ;;
     configure)
       fxm-daemon generate-rootmenu
+      fxm-daemon start --with-bookmarks
     ;;
     abort-upgrade|abort-remove|abort-deconfigure)
       fxm-daemon update

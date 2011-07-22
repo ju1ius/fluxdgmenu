@@ -1,0 +1,12 @@
+msgid "Update"
+msgstr "Yañart"
+
+msgid "Menu"
+msgstr "Menü"
+
+msgid "Places"
+msgstr "Yerler"
+
+msgid "Themes"
+msgstr "Temalar"
+

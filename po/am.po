@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "አጠቃላይ"
+
+msgid "Update"
+msgstr "አሻሽል"
+
+msgid "Configuration"
+msgstr "ምርጫዎች"
+
+msgid "Menu"
+msgstr "ሜኑ"
+
+msgid "Places"
+msgstr "ንድፎች (P)"
+
+msgid "Themes"
+msgstr ""
+

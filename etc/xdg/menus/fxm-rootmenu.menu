@@ -9,7 +9,7 @@
 
   <Include>
     <!-- filemanager -->
-    <Filename>nautilus.desktop</Filename>
+    <Filename>nautilus-browser.desktop</Filename>
     <Filename>thunar.desktop</Filename>
     <Filename>pcmanfm.desktop</Filename>
     <!-- Web Browser -->
@@ -49,7 +49,7 @@
 
 	<Layout>
     <!-- filemanager -->
-    <Filename>nautilus.desktop</Filename>
+    <Filename>nautilus-browser.desktop</Filename>
     <Filename>thunar.desktop</Filename>
     <Filename>pcmanfm.desktop</Filename>
     <!-- Web Browser -->

@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr ""
+
+msgid "Update"
+msgstr "Kuvugurura"
+
+msgid "Configuration"
+msgstr "Verisiyo"
+
+msgid "Menu"
+msgstr "ibikubiyemo"
+
+msgid "Places"
+msgstr "Imyanya"
+
+msgid "Themes"
+msgstr "Insanganyamatsiko"
+

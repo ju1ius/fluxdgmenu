@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "Ümumi"
+
+msgid "Update"
+msgstr "Güncəllə"
+
+msgid "Configuration"
+msgstr "Poçt Qurğuları"
+
+msgid "Menu"
+msgstr "Menü"
+
+msgid "Places"
+msgstr "Mövqelər"
+
+msgid "Themes"
+msgstr "Örtüklər"
+

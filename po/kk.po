@@ -1,0 +1,12 @@
+msgid "Update"
+msgstr "Жаңарту"
+
+msgid "Menu"
+msgstr "Орташа"
+
+msgid "Places"
+msgstr "Орындар"
+
+msgid "Themes"
+msgstr "Темалар"
+

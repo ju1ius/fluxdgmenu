@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "قۇر(G)"
+
+msgid "Update"
+msgstr "يېڭىلا(U)"
+
+msgid "Configuration"
+msgstr "سەپلىمە"
+
+msgid "Menu"
+msgstr "تىزىملىك"
+
+msgid "Places"
+msgstr "ئورۇن"
+
+msgid "Themes"
+msgstr "ئۇسلۇب"
+

@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "ජනනය (G)"
+
+msgid "Update"
+msgstr "යාවත්කාලීන (U)"
+
+msgid "Configuration"
+msgstr "තැපැල් මානකරණය"
+
+msgid "Menu"
+msgstr "මෙනුව"
+
+msgid "Places"
+msgstr "ස්ථාන"
+
+msgid "Themes"
+msgstr "තේමා"
+

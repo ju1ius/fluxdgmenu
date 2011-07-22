@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "Genereer"
+
+msgid "Update"
+msgstr "Dateer op"
+
+msgid "Configuration"
+msgstr ""
+
+msgid "Menu"
+msgstr "Kieslys"
+
+msgid "Places"
+msgstr "Plekke"
+
+msgid "Themes"
+msgstr "Temas"
+

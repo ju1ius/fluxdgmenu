@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "Δημιουργία"
+
+msgid "Update"
+msgstr "Ενημέρωση"
+
+msgid "Configuration"
+msgstr "Ρύθμιση"
+
+msgid "Menu"
+msgstr "Μενού"
+
+msgid "Places"
+msgstr "Τοποθεσίες"
+
+msgid "Themes"
+msgstr "Θέματα"
+

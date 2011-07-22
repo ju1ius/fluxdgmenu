@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "Gin"
+
+msgid "Update"
+msgstr "Nuashonraigh"
+
+msgid "Configuration"
+msgstr "Cumraíocht"
+
+msgid "Menu"
+msgstr "Roghchlár"
+
+msgid "Places"
+msgstr "̈́Áiteanna"
+
+msgid "Themes"
+msgstr "Téamaí"
+

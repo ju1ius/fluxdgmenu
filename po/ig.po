@@ -1,0 +1,3 @@
+msgid "Places"
+msgstr "Ebe gasị"
+

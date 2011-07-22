@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "გენერაცია"
+
+msgid "Update"
+msgstr "განახლება"
+
+msgid "Configuration"
+msgstr "ფოსტა კონფიგურაცია"
+
+msgid "Menu"
+msgstr "მენიუ"
+
+msgid "Places"
+msgstr "მდებარეობა"
+
+msgid "Themes"
+msgstr "თემები"
+

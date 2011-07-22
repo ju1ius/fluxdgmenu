@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "Generuoti"
+
+msgid "Update"
+msgstr "Atnaujinti"
+
+msgid "Configuration"
+msgstr "Konfigūracija"
+
+msgid "Menu"
+msgstr "Meniu"
+
+msgid "Places"
+msgstr "Vietos"
+
+msgid "Themes"
+msgstr "Temos"
+

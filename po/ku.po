@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "Hilberîne"
+
+msgid "Update"
+msgstr "Rojane bike"
+
+msgid "Configuration"
+msgstr ""
+
+msgid "Menu"
+msgstr "Menu"
+
+msgid "Places"
+msgstr "Cih"
+
+msgid "Themes"
+msgstr "Dirb"
+

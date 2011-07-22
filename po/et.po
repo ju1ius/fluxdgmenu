@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "Genereeri"
+
+msgid "Update"
+msgstr "Värskenda"
+
+msgid "Configuration"
+msgstr "Seadistused"
+
+msgid "Menu"
+msgstr "Menüü"
+
+msgid "Places"
+msgstr "Asukohad"
+
+msgid "Themes"
+msgstr "Teemad"
+

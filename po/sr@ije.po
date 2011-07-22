@@ -1,0 +1,6 @@
+msgid "Menu"
+msgstr "Мени"
+
+msgid "Places"
+msgstr "Мјеста"
+

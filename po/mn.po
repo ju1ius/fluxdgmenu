@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "Ерөнхий"
+
+msgid "Update"
+msgstr "Шинэчлэх"
+
+msgid "Configuration"
+msgstr "Мэдээлэл алга"
+
+msgid "Menu"
+msgstr "Цэс"
+
+msgid "Places"
+msgstr "Байрлалууд"
+
+msgid "Themes"
+msgstr "Гадаргуун Арьс"
+

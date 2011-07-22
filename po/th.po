@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "สุ่ม"
+
+msgid "Update"
+msgstr "ปรับข้อมูล"
+
+msgid "Configuration"
+msgstr "ค่าตั้ง"
+
+msgid "Menu"
+msgstr ""
+
+msgid "Places"
+msgstr "ที่หลักๆ"
+
+msgid "Themes"
+msgstr "ชุดตกแต่ง"
+

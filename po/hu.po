@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "Létrehozás"
+
+msgid "Update"
+msgstr "Frissítés"
+
+msgid "Configuration"
+msgstr "Beállítás"
+
+msgid "Menu"
+msgstr "Menü"
+
+msgid "Places"
+msgstr "Helyek"
+
+msgid "Themes"
+msgstr "Témák"
+

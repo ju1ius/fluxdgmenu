@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "बनवा (G)"
+
+msgid "Update"
+msgstr "अद्ययावत(U)"
+
+msgid "Configuration"
+msgstr "संरचना"
+
+msgid "Menu"
+msgstr "मेनू"
+
+msgid "Places"
+msgstr "स्थान"
+
+msgid "Themes"
+msgstr "थीम्स"
+

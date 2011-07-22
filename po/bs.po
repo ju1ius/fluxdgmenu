@@ -1,0 +1,15 @@
+msgid "Update"
+msgstr "Ažuriraj"
+
+msgid "Configuration"
+msgstr "Nema informacija"
+
+msgid "Menu"
+msgstr "Meni"
+
+msgid "Places"
+msgstr "Mjesta"
+
+msgid "Themes"
+msgstr "Teme"
+

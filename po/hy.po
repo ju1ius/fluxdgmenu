@@ -1,0 +1,12 @@
+msgid "Update"
+msgstr "Նորացնել"
+
+msgid "Menu"
+msgstr "Մենյու"
+
+msgid "Places"
+msgstr "Տեղեր"
+
+msgid "Themes"
+msgstr "Թեմաներ "
+

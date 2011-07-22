@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "ഉണ്ടാക്കുക (G)"
+
+msgid "Update"
+msgstr "പരിഷ്ക്കരിക്കുക"
+
+msgid "Configuration"
+msgstr "ക്രമീകരണങ്ങള്‍"
+
+msgid "Menu"
+msgstr "മെനു"
+
+msgid "Places"
+msgstr "സ്ഥലങ്ങള്‍"
+
+msgid "Themes"
+msgstr "പ്രമേയങ്ങള്‍"
+

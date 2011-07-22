@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "만들기(G)"
+
+msgid "Update"
+msgstr "업데이트(U)"
+
+msgid "Configuration"
+msgstr "설정"
+
+msgid "Menu"
+msgstr "메뉴"
+
+msgid "Places"
+msgstr "위치"
+
+msgid "Themes"
+msgstr "테마"
+

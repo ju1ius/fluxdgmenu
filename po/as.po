@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "উত্‌পন্ন কৰুন (G)"
+
+msgid "Update"
+msgstr "আপডেট(U)"
+
+msgid "Configuration"
+msgstr "মেইলেৰ বিন্যাসেশন"
+
+msgid "Menu"
+msgstr "মেনু"
+
+msgid "Places"
+msgstr "স্থান"
+
+msgid "Themes"
+msgstr "থিম"
+

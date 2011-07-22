@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "Umum"
+
+msgid "Update"
+msgstr "Kemaskini"
+
+msgid "Configuration"
+msgstr "Konfigurasi Mel"
+
+msgid "Menu"
+msgstr "Menu"
+
+msgid "Places"
+msgstr "Tempat-tempat"
+
+msgid "Themes"
+msgstr "Tema"
+

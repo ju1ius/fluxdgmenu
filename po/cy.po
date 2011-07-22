@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "Creu"
+
+msgid "Update"
+msgstr "Diweddaru"
+
+msgid "Configuration"
+msgstr "Cyfluniad"
+
+msgid "Menu"
+msgstr "Dewislen"
+
+msgid "Places"
+msgstr "Llefydd"
+
+msgid "Themes"
+msgstr "Themâu"
+

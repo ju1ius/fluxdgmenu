@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "তৈরি করুন (G)"
+
+msgid "Update"
+msgstr "আপডেট(U)"
+
+msgid "Configuration"
+msgstr "কনফিগারেশন"
+
+msgid "Menu"
+msgstr "মেনু"
+
+msgid "Places"
+msgstr "অবস্থান"
+
+msgid "Themes"
+msgstr "থিম"
+

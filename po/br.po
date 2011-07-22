@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "Genel"
+
+msgid "Update"
+msgstr "Hizivaat"
+
+msgid "Configuration"
+msgstr "Kefluniad"
+
+msgid "Menu"
+msgstr "Meuziad"
+
+msgid "Places"
+msgstr "Berradennoù"
+
+msgid "Themes"
+msgstr "Neuzioù"
+

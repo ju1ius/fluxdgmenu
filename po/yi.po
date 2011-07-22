@@ -1,0 +1,6 @@
+msgid "Menu"
+msgstr "מעניו"
+
+msgid "Places"
+msgstr "בילד"
+

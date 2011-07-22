@@ -1,0 +1,6 @@
+msgid "Menu"
+msgstr "Menu"
+
+msgid "Places"
+msgstr "Patroene"
+

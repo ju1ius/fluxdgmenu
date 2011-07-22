@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "Generiraj"
+
+msgid "Update"
+msgstr "Ažuriraj"
+
+msgid "Configuration"
+msgstr ""
+
+msgid "Menu"
+msgstr "Izbornik"
+
+msgid "Places"
+msgstr "Mjesta"
+
+msgid "Themes"
+msgstr "Teme"
+

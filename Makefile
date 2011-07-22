@@ -21,6 +21,7 @@ clean:
 install:
 	install -d ${prefix}/lib/fluxdgmenu
 	install -m 0755 usr/lib/fluxdgmenu/* ${prefix}/lib/fluxdgmenu
+	./install-locale.sh ${prefix}/lib/fluxdgmenu/locale
 	install -d ${prefix}/share/desktop-directories
 	install -m 0755 usr/share/desktop-directories/* ${prefix}/share/desktop-directories
 	install -d ${sysconfdir}/xdg/menus

@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "ولِّد"
+
+msgid "Update"
+msgstr "حدّث"
+
+msgid "Configuration"
+msgstr "إعدادات "
+
+msgid "Menu"
+msgstr "القائمة"
+
+msgid "Places"
+msgstr "أماكن"
+
+msgid "Themes"
+msgstr "السِمات"
+

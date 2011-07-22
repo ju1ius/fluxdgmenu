@@ -1,0 +1,12 @@
+msgid "Generate"
+msgstr ""
+
+msgid "Configuration"
+msgstr "Instellens"
+
+msgid "Menu"
+msgstr "Menü"
+
+msgid "Places"
+msgstr "Orte"
+

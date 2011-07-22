@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "產生(G)"
+
+msgid "Update"
+msgstr "更新(U)"
+
+msgid "Configuration"
+msgstr "組態"
+
+msgid "Menu"
+msgstr "選單"
+
+msgid "Places"
+msgstr "位置"
+
+msgid "Themes"
+msgstr "主題"
+

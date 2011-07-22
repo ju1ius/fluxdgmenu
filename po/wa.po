@@ -1,0 +1,18 @@
+msgid "Generate"
+msgstr "Djenerå"
+
+msgid "Update"
+msgstr "Mete a djoû"
+
+msgid "Configuration"
+msgstr "Apontiaedje di l' emilaedje"
+
+msgid "Menu"
+msgstr "Menu"
+
+msgid "Places"
+msgstr "Motifs"
+
+msgid "Themes"
+msgstr ""
+

@@ -1,0 +1,3 @@
+msgid "Configuration"
+msgstr "Cannot initialise Evolution's mail component."
+
