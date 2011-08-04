@@ -9,8 +9,9 @@ Vcs-Git: git://github.com/ju1ius/fluxdgmenu.git
 Vcs-Browser: http://github.com/ju1ius/fluxdgmenu
 
 Package: fluxdgmenu
-Architecture: all
+Architecture: any
 Depends: fluxbox, bash, libinotifytools0, python-xdg
+Build-Depends: libinotifytools0-dev
 Recommends: python-gtk2
 Description: An automated XDG Menu system for Fluxbox.
   FluXDGMenu monitors for newly installed/removed applications, and maintains a submenu, listing and categorizing them like the Gnome/Xfce/Lxde menu.

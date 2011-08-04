@@ -2,6 +2,8 @@
 ###################
 *.pyc
 usr/lib/marchobmenu/fxm-watch
+usr/share/locale/*
+*.mo
 
 # OS generated files #
 ######################

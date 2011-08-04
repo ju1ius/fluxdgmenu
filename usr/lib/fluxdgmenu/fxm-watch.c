@@ -40,6 +40,7 @@ int main(int argc, char **argv)
   int daemonize = 0;
   /* watch gtk bookmarks ? */
   int watch_bookmarks = 0;
+  int bookmarks_wd = -1;
 
   /*
    * list of exclude patterns for inotify events
@@ -141,8 +142,14 @@ int main(int argc, char **argv)
 
   for(i = 0; i < nb_excludes; i++)
   {
-    inotifytools_ignore_events_by_regex(excludes[i], 0);  
-    syslog(LOG_INFO, "Ignoring pattern %s", excludes[i]);
+    if(!inotifytools_ignore_events_by_regex(excludes[i], 0))
+    {
+      syslog(LOG_ERR, "Invalid exclude pattern: %s", excludes[i]);
+    }
+    else
+    {
+      syslog(LOG_INFO, "Ignoring pattern: %s", excludes[i]);
+    }
   }
   free(excludes);
 
@@ -154,10 +161,12 @@ int main(int argc, char **argv)
   {
     if(!inotifytools_watch_recursively(argv[i], IN_CREATE|IN_DELETE|IN_MODIFY))
     {
-      syslog( LOG_ERR, "%s: %s", argv[i], strerror(inotifytools_error()) );
-      exit(EXIT_FAILURE);
+      syslog( LOG_ERR, "Cannot watch %s: %s", argv[i], strerror(inotifytools_error()) );
     }
-    syslog(LOG_INFO, "Watching %s", argv[i]);
+    else
+    {
+      syslog(LOG_INFO, "Watching %s", argv[i]);
+    }
   }
 
   /*
@@ -168,9 +177,12 @@ int main(int argc, char **argv)
     if(!inotifytools_watch_file(home, IN_CLOSE_WRITE))
     {
       syslog( LOG_ERR, "%s: %s", home, strerror(inotifytools_error()) );
-      exit(EXIT_FAILURE);
     }
-    syslog(LOG_INFO, "Watching ~/.gtk-bookmarks");
+    else
+    {
+      bookmarks_wd = inotifytools_wd_from_filename(home);
+      syslog(LOG_INFO, "Watching %s/%s", home, bookmarks_file);
+    }
   }
 
   /*
@@ -180,8 +192,10 @@ int main(int argc, char **argv)
   event = inotifytools_next_event(-1);
   while (event)
   {
-    if(watch_bookmarks && !strcmp(event->name, bookmarks_file))
-    {
+    if(watch_bookmarks
+        && event->wd == bookmarks_wd
+        && !strcmp(event->name, bookmarks_file)
+    ){
       system(bookmarks_command);
       inotifytools_snprintf(message, 1024, event, "%T %e %w%f\n");
       syslog(LOG_INFO, "%s", message);

@@ -6,14 +6,16 @@ class FluXDGMenu(object):
 
     default_config = """
 [Menu]
-filemanager: nautilus --no-desktop
+submenu: no
+filemanager: thunar
 terminal: x-terminal-emulator -T '%(title)s' -e '%(command)s'
 [Icons]
 show: yes
 use_gtk_theme: yes
 theme: Mint-X
-default: application-x-executable
 size: 24
+default: application-x-executable
+bookmark: user-bookmark
 """
 
     window_manager = "Fluxbox"

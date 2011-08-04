@@ -17,26 +17,34 @@ fxm-watch:
 
 clean:
 	rm ${EXEC}
+	rm -rf usr/share/locale/*
 
 install:
 	install -d ${prefix}/lib/fluxdgmenu
 	install -m 0755 usr/lib/fluxdgmenu/* ${prefix}/lib/fluxdgmenu
-	./install-locale.sh ${prefix}/lib/fluxdgmenu/locale
+	install -d ${prefix}/share/applications
+	install -m 0755 usr/share/applications/* ${prefix}/share/applications
+	./make-locale.sh
+	install -d ${prefix}/share/locale
+	cp -R usr/share/locale/* ${prefix}/share/locale
 	install -d ${prefix}/share/desktop-directories
 	install -m 0755 usr/share/desktop-directories/* ${prefix}/share/desktop-directories
+	install -d ${prefix}/share/pixmaps
+	install -m 0755 usr/share/pixmaps/* ${prefix}/share/pixmaps
 	install -d ${sysconfdir}/xdg/menus
 	install -m 0755 etc/xdg/menus/* ${sysconfdir}/xdg/menus
 	install -d ${sysconfdir}/fluxdgmenu
 	install -m 0755 etc/fluxdgmenu/* ${sysconfdir}/fluxdgmenu
 	install -d ${prefix}/bin
-	install -m 0755 debian/postinst /var/lib/dpkg/info/fluxdgmenu.postinst
-	install -m 0755 debian/postrm /var/lib/dpkg/info/fluxdgmenu.postrm
 	ln -sf -T ${prefix}/lib/fluxdgmenu/fxm-daemon ${prefix}/bin/fxm-daemon
 	ln -sf -T ${prefix}/lib/fluxdgmenu/fxm-watch ${prefix}/bin/fxm-watch
+	install -m 0755 debian/postinst /var/lib/dpkg/info/fluxdgmenu.postinst
+	install -m 0755 debian/postrm /var/lib/dpkg/info/fluxdgmenu.postrm
 
 uninstall:
 	-rm -rf ${prefix}/lib/fluxdgmenu
-	-rm -rf ${prefix}/share/desktop-directories/fxm-*.directory
+	-rm -rf ${prefix}/share/locale/*/LC_MESSAGES/fluxdgmenu.mo
+	-rm -f ${prefix}/share/desktop-directories/fxm-*.directory
 	-rm -rf ${sysconfdir}/fluxdgmenu
 	-rm -f ${sysconfdir}/xdg/menus/fxm-applications.menu
 	-rm -f ${sysconfdir}/xdg/menus/fxm-rootmenu.menu

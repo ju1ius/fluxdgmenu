@@ -1,14 +1,20 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import os, gettext
+import os, gettext, subprocess
 import fluxdgmenu
 
-class FxmGlobalMenu(fluxdgmenu.FluXDGMenu):
+class FxmRootMenu(fluxdgmenu.FluXDGMenu):
+
+    def parse_config(self):
+        super(FxmRootMenu, self).parse_config()
+        self.as_submenu = self.config.get_boolean("Menu", "submenu")
+        ret = subprocess.call(['which', 'zenity'])
+        self.has_zenity = True if ret == 0 else False
 
     def print_menu(self, menu_file):
         print "[begin]\n"
-        super(FxmGlobalMenu, self).print_menu(menu_file)
+        super(FxmRootMenu, self).print_menu(menu_file)
         print "\n[end]"
 
     def print_submenu(self, entry):
@@ -21,24 +27,41 @@ class FxmGlobalMenu(fluxdgmenu.FluXDGMenu):
         elif entry.Name == 'fluxbox':
             self.print_fluxbox_menu(entry)
             return
-        super(FxmGlobalMenu, self).print_submenu(entry)
+        super(FxmRootMenu, self).print_submenu(entry)
 
     def print_app_menu(self, entry):
+        if self.as_submenu:
+            name = entry.getName().encode('utf-8')
+            icon = self.find_icon(entry.getIcon().encode('utf-8')) if self.show_icons else ''
+            print '[submenu] (%s) <%s>' % (name, icon)
         print '[include] (~/.fluxbox/fluxdgmenu/applications)'
+        if self.as_submenu:
+            print '[end]'
 
     def print_bookmarks_menu(self, entry):
+        name = entry.getName().encode('utf-8')
         icon = self.find_icon(entry.getIcon().encode('utf-8')) if self.show_icons else ''
-        print '[submenu] (%s) <%s>' % (entry.getName().encode('utf-8'), icon)
-        print '[include] (~/.fluxbox/fluxdgmenu/bookmarks)'
-        print '[end]'
+        print """
+[submenu] (%s) <%s>
+  [include] (~/.fluxbox/fluxdgmenu/bookmarks)
+[end]
+""" % (name, icon)
 
     def print_fluxbox_menu(self, entry):
+        name = entry.getName().encode('utf-8')
         icon = self.find_icon(entry.getIcon().encode('utf-8')) if self.show_icons else ''
-        print  """[submenu] (%s)
-  [exec] (%s) {fxm-daemon update}
-  [exec] (%s) {fxm daemon generate-rootmenu}
-[end]
+        update_cmd = 'fxm-daemon update && fluxbox-remote reconfigure'
+        generate_cmd = 'fxm-daemon generate-rootmenu && fluxbox-remote reconfigure'
+        if self.has_zenity:
+            tpl = '(%s) | zenity --progress --pulsate --auto-close'
+            update_cmd = tpl % update_cmd
+            generate_cmd = tpl % generate_cmd
+        print  """
 [submenu] (%s) <%s>
+  [submenu] (%s)
+    [exec] (%s) {%s}
+    [exec] (%s) {%s}
+  [end]
   [config] (%s)
   [submenu] (%s)
     [stylesdir] (/usr/share/fluxbox/styles)
@@ -47,10 +70,14 @@ class FxmGlobalMenu(fluxdgmenu.FluXDGMenu):
   [reconfig]
   [restart]
   [exit]
-[end]""" % (
-    _('Menu'), _('Update'), _('Generate'),
-    entry.getName().encode('utf-8'), icon,
-    _('Configuration'), _('Themes')
+[end]
+""" % (
+    name, icon,
+    _('Menu'),
+    _('Update'), update_cmd,
+    _('Generate'), generate_cmd,
+    _('Configuration'),
+    _('Themes')
 )
 
 ###########################################################################
@@ -63,9 +90,8 @@ if __name__ == "__main__":
         os.path.join(os.path.dirname(os.path.realpath(__file__)), "locale"),
         unicode=1
     )
-    fluxdgmenu = FxmGlobalMenu()
-    fluxdgmenu.print_menu('fxm-rootmenu.menu')
+    root_menu = FxmRootMenu()
+    root_menu.print_menu('fxm-rootmenu.menu')
 #--------------------------------------------------------------------------
 # / MAIN
 ###########################################################################
-
