@@ -1,4 +1,4 @@
-Source: fluxdgmenu
+Source: mint-fluxdgmenu
 Section: admin
 Priority: extra
 Maintainer: Jules Bernable <jules.bernable@laposte.net>
@@ -8,11 +8,11 @@ Homepage: http://github.com/ju1ius/fluxdgmenu
 Vcs-Git: git://github.com/ju1ius/fluxdgmenu.git
 Vcs-Browser: http://github.com/ju1ius/fluxdgmenu
 
-Package: fluxdgmenu
+Package: mint-fluxdgmenu
 Architecture: any
 Depends: fluxbox, bash, libinotifytools0, python-xdg
 Build-Depends: libinotifytools0-dev
-Recommends: python-gtk2
+Recommends: python-gtk2, zenity
 Description: An automated XDG Menu system for Fluxbox.
   FluXDGMenu monitors for newly installed/removed applications, and maintains a submenu, listing and categorizing them like the Gnome/Xfce/Lxde menu.
   The package installs a menu file "/etc/xdg/menus/fxm-applications.menu",
@@ -24,4 +24,5 @@ Description: An automated XDG Menu system for Fluxbox.
     * Support for localizations: the menu generated will be in the system default language where available.
     * Support for icons: the icons are chosen in the current icon theme
     * Can also maintain a GTK Bookmarks menu
-
+  
+  This is the fluxdgmenu package rebranded for Linux Mint Fluxbox CE

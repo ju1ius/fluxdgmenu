@@ -15,6 +15,7 @@
     <!-- Terminal Emulator -->
     <Filename>x-terminal-emulator.desktop</Filename>
     <!-- Package Manager -->
+    <Filename>mintInstall.desktop</Filename>
     <Filename>synaptic.desktop</Filename>
   </Include>
 
@@ -50,6 +51,7 @@
     <!-- Terminal Emulator -->
     <Filename>x-terminal-emulator.desktop</Filename>
     <!-- Package Manager -->
+    <Filename>mintInstall.desktop</Filename>
     <Filename>synaptic.desktop</Filename>
 		<Separator/>
     <Menuname>fxm-bookmarks</Menuname>
