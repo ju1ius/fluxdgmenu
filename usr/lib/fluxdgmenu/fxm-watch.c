@@ -10,11 +10,13 @@
 #include <inotifytools/inotify.h>
 
 /*
- * Compile with: gcc -linotifytools mom-watch.c -o mom-watch -W -Wall -pedantic
+ * Compile with: gcc -linotifytools fxm-watch.c -o fxm-watch -W -Wall -pedantic
  */
 
 void signal_handler(int signum);
 void cleanup(void);
+
+int str_has_suffix(const char *str, const char *suffix);
 
 
 int main(int argc, char **argv)
@@ -56,14 +58,24 @@ int main(int argc, char **argv)
   const char *bookmarks_file = ".gtk-bookmarks";
 
   /* log message */
-  char message[1024];
+  char message_buf[1024];
 
   /*
    * the notified event
    **/
   struct inotify_event *event;
 
-  const char *home = getenv("HOME");
+  const char *_home = getenv("HOME");
+  size_t length = strlen(_home) + 1;
+  char *home = (char*) malloc(length);
+  strncat(home, _home, length);
+
+  if(!str_has_suffix(_home, "/"))
+  {
+    length += 2;
+    home = (char*) realloc(home, length);
+    strncat(home, "/", length);
+  }
 
   openlog("fxm-daemon", LOG_PID, LOG_USER);
 
@@ -111,7 +123,7 @@ int main(int argc, char **argv)
    *****************************************/
   if(daemonize) daemon(0,0);
 
-  syslog(LOG_INFO, "Starting in %s", home);
+  syslog(LOG_INFO, "Starting in %s", _home);
 
   /* Setup signal handling */
   signal(SIGCHLD, SIG_IGN); /* ignore child */
@@ -181,7 +193,7 @@ int main(int argc, char **argv)
     else
     {
       bookmarks_wd = inotifytools_wd_from_filename(home);
-      syslog(LOG_INFO, "Watching %s/%s", home, bookmarks_file);
+      syslog(LOG_INFO, "Watching %s%s", home, bookmarks_file);
     }
   }
 
@@ -197,14 +209,14 @@ int main(int argc, char **argv)
         && !strcmp(event->name, bookmarks_file)
     ){
       system(bookmarks_command);
-      inotifytools_snprintf(message, 1024, event, "%T %e %w%f\n");
-      syslog(LOG_INFO, "%s", message);
+      inotifytools_snprintf(message_buf, 1024, event, "%T %e %w%f\n");
+      syslog(LOG_INFO, "%s", message_buf);
     }
-    else
+    else if(event->wd != bookmarks_wd)
     {
       system(apps_command);
-      inotifytools_snprintf(message, 1024, event, "%T %e %w%f\n");
-      syslog(LOG_INFO, "%s", message);
+      inotifytools_snprintf(message_buf, 1024, event, "%T %e %w%f\n");
+      syslog(LOG_INFO, "%s", message_buf);
     }
     event = inotifytools_next_event(-1);
   }
@@ -212,6 +224,7 @@ int main(int argc, char **argv)
   /*
    * Cleanup
    */
+  free(home);
   cleanup();
 
   return 0;
@@ -229,4 +242,26 @@ void signal_handler(int signum)
   (void) signum;
   cleanup();
   exit(0);
+}
+
+
+/*
+ * String utilities
+ **/
+
+int str_has_suffix(const char *str, const char *suffix)
+{
+  size_t str_len;
+  size_t suffix_len;
+
+  if(str == NULL || suffix == NULL)
+    return 1;
+
+  str_len = strlen(str);
+  suffix_len = strlen(suffix);
+
+  if (str_len < suffix_len)
+    return 1;
+
+  return strcmp(str + str_len - suffix_len, suffix) == 0;
 }

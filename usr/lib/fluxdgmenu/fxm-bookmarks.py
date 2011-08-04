@@ -9,11 +9,11 @@ class FxmBookmarksMenu(fluxdgmenu.FluXDGMenu):
     def parse_config(self):
         super(FxmBookmarksMenu, self).parse_config()
         self.filemanager = self.config.get("Menu", "filemanager")
-        self.bookmark_icon = self.config.get("Icons", "bookmark")
+        self.bookmark_icon = self.config.get("Icons", "bookmarks")
 
     def print_bookmarks(self):
         bookmarks = [ ('~', 'Home') ]
-        with open(os.path.expanduser('~/.gtk-bookmarks')) as f
+        with open(os.path.expanduser('~/.gtk-bookmarks')) as f:
             for line in f:
                 path, label = line.strip().partition(' ')[::2]
                 if not label:

@@ -105,7 +105,7 @@ start()
     echo "--exclude $pattern"
   done)
   #
-  if [[ "$WITH_BOOKMARKS" == "true" && -f "~/.gtk-bookmarks" ]]
+  if [[ "$WITH_BOOKMARKS" == "true" ]]
   then
     $APP_WATCH -d \
       -a "$APP_DAEMON update" \
@@ -258,7 +258,10 @@ while true
 do
   case "$1" in
     -b|--with-bookmarks)
-      WITH_BOOKMARKS="true"
+      if [[ -f $HOME/.gtk-bookmarks ]]
+      then
+        WITH_BOOKMARKS="true"
+      fi
       shift 1
     ;;
 		--)

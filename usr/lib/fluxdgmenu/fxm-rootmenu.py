@@ -8,7 +8,7 @@ class FxmRootMenu(fluxdgmenu.FluXDGMenu):
 
     def parse_config(self):
         super(FxmRootMenu, self).parse_config()
-        self.as_submenu = self.config.get_boolean("Menu", "submenu")
+        self.as_submenu = self.config.getboolean("Menu", "submenu")
         ret = subprocess.call(['which', 'zenity'])
         self.has_zenity = True if ret == 0 else False
 

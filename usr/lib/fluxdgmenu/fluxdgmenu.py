@@ -15,7 +15,7 @@ use_gtk_theme: yes
 theme: Mint-X
 size: 24
 default: application-x-executable
-bookmark: user-bookmark
+bookmark: user-bookmarks
 """
 
     window_manager = "Fluxbox"
