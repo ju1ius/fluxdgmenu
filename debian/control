@@ -14,6 +14,7 @@ Depends: fluxbox, bash, libinotifytools0, python-xdg
 Build-Depends: libinotifytools0-dev
 Recommends: python-gtk2, zenity
 Description: An automated XDG Menu system for Fluxbox.
+  This is the fluxdgmenu package rebranded for Linux Mint Fluxbox CE.
   FluXDGMenu monitors for newly installed/removed applications, and maintains a submenu, listing and categorizing them like the Gnome/Xfce/Lxde menu.
   The package installs a menu file "/etc/xdg/menus/fxm-applications.menu",
   which allows you to configure the menu as you see fit.
@@ -24,6 +25,4 @@ Description: An automated XDG Menu system for Fluxbox.
     * Support for localizations: the menu generated will be in the system default language where available.
     * Support for icons: the icons are chosen in the current icon theme
     * Can also maintain a GTK Bookmarks menu
-  
-  This is the fluxdgmenu package rebranded for Linux Mint Fluxbox CE
 
