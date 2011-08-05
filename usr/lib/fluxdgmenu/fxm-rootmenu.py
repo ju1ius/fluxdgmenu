@@ -50,12 +50,11 @@ class FxmRootMenu(fluxdgmenu.FluXDGMenu):
     def print_fluxbox_menu(self, entry):
         name = entry.getName().encode('utf-8')
         icon = self.find_icon(entry.getIcon().encode('utf-8')) if self.show_icons else ''
-        update_cmd = 'fxm-daemon update && fluxbox-remote reconfigure'
-        generate_cmd = 'fxm-daemon generate-rootmenu && fluxbox-remote reconfigure'
-        if self.has_zenity:
-            tpl = '(%s) | zenity --progress --pulsate --auto-close'
-            update_cmd = tpl % update_cmd
-            generate_cmd = tpl % generate_cmd
+        zenity_progress = '| zenity --progress --pulsate --auto-close'
+        update_cmd = 'fxm-daemon update %s && fluxbox-remote reconfigure' % (
+            zenity_progress if self.has_zenity else '')
+        generate_cmd = 'fxm-daemon generate-rootmenu %s && fluxbox-remote reconfigure' % (
+            zenity_progress if self.has_zenity else '')
         print  """
 [submenu] (%s) <%s>
   [submenu] (%s)

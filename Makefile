@@ -27,10 +27,9 @@ install:
 	./make-locale.sh
 	install -d ${prefix}/share/locale
 	cp -R usr/share/locale/* ${prefix}/share/locale
+	rm -rf usr/share/locale
 	install -d ${prefix}/share/desktop-directories
 	install -m 0755 usr/share/desktop-directories/* ${prefix}/share/desktop-directories
-	install -d ${prefix}/share/pixmaps
-	install -m 0755 usr/share/pixmaps/* ${prefix}/share/pixmaps
 	install -d ${sysconfdir}/xdg/menus
 	install -m 0755 etc/xdg/menus/* ${sysconfdir}/xdg/menus
 	install -d ${sysconfdir}/fluxdgmenu

@@ -135,7 +135,7 @@
 
 	<!-- System Tools-->
 	<Menu>
-		<Name>System</Name>
+		<Name>SystemTools</Name>
     <Directory>fxm-system-tools.directory</Directory>
     <Include>
       <And>
@@ -167,7 +167,7 @@
 
   <!-- System Settings -->
   <Menu>
-    <Name>Administration</Name>
+    <Name>SystemSettings</Name>
     <Directory>fxm-settings-system.directory</Directory>
     <Include>
       <And>
@@ -196,8 +196,8 @@
 		<Merge type="files"/>
 		<Merge type="menus"/>
 		<Separator/>
-		<Menuname>System</Menuname>
 		<Menuname>DesktopSettings</Menuname>
+		<Menuname>SystemSettings</Menuname>
 	</Layout>
 
 </Menu> <!-- End Applications -->
