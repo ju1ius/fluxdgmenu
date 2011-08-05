@@ -2,6 +2,28 @@ import os, sys, re, StringIO, sqlite3, ConfigParser
 import xdg.Config, xdg.BaseDirectory, xdg.DesktopEntry, xdg.Menu, xdg.IconTheme
 #from xdg.Exceptions import *
 
+
+###########################################################
+# Check for external modules or programs
+#
+def which(program):
+    def is_exe(fpath):
+        return os.path.exists(fpath) and os.access(fpath, os.X_OK)
+    fpath, fname = os.path.split(program)
+    if fpath:
+        if is_exe(program):
+            return program
+    else:
+        for path in os.environ["PATH"].split(os.pathsep):
+            exe_file = os.path.join(path, program)
+            if is_exe(exe_file):
+                return exe_file
+    return None
+
+
+###########################################################
+# The base menu class
+#
 class FluXDGMenu(object):
 
     default_config = """
@@ -15,14 +37,14 @@ use_gtk_theme: yes
 theme: Mint-X
 size: 24
 default: application-x-executable
-bookmark: user-bookmarks
+bookmarks: user-bookmarks
 """
 
     window_manager = "Fluxbox"
 
     def __init__(self):
         xdg.Config.setWindowManager(self.window_manager)
-        self.filter_debian = os.path.isfile('/usr/bin/update-menus')
+        self.filter_debian = os.path.exists('/usr/bin/update-menus')
         self.parse_config()
 
     def parse_config(self):

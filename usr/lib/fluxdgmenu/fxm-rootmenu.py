@@ -3,19 +3,19 @@
 
 import os, gettext, subprocess
 import fluxdgmenu
+from fluxdgmenu import which
 
 class FxmRootMenu(fluxdgmenu.FluXDGMenu):
 
     def parse_config(self):
         super(FxmRootMenu, self).parse_config()
         self.as_submenu = self.config.getboolean("Menu", "submenu")
-        ret = subprocess.call(['which', 'zenity'])
-        self.has_zenity = True if ret == 0 else False
+        self.has_zenity = True if which('zenity') else False
 
     def print_menu(self, menu_file):
         print "[begin]\n"
         super(FxmRootMenu, self).print_menu(menu_file)
-        print "\n[end]"
+        print "[end]"
 
     def print_submenu(self, entry):
         if entry.Name == 'fxm-applications':
@@ -85,11 +85,7 @@ class FxmRootMenu(fluxdgmenu.FluXDGMenu):
 #--------------------------------------------------------------------------
 if __name__ == "__main__":
     # Initialize i18n
-    gettext.install(
-        "fluxdgmenu",
-        os.path.join(os.path.dirname(os.path.realpath(__file__)), "locale"),
-        unicode=1
-    )
+    gettext.install("fluxdgmenu", "/usr/share/locale", unicode=1)
     root_menu = FxmRootMenu()
     root_menu.print_menu('fxm-rootmenu.menu')
 #--------------------------------------------------------------------------

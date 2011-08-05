@@ -17,6 +17,8 @@
     <!-- Package Manager -->
     <Filename>mintInstall.desktop</Filename>
     <Filename>synaptic.desktop</Filename>
+    <!-- Exit -->
+    <Filename>gtk-logout.desktop</Filename>
   </Include>
 
   <Menu>
@@ -59,6 +61,8 @@
     <Menuname>fxm-applications</Menuname>
 		<Separator/>
     <Menuname>fluxbox</Menuname>
+    <!-- Exit -->
+    <Filename>gtk-logout.desktop</Filename>
 	</Layout>
 
 </Menu>

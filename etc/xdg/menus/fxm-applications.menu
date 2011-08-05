@@ -20,10 +20,6 @@
 	<!-- Read in overrides and child menus from applications-merged/ -->
   <DefaultMergeDirs/>
 
-  <Menu>
-    <custom>~/.fluxbox/fluxdgmenu/menu</custom>
-  </Menu>
-
 	<!-- Accessories submenu -->
 	<Menu>
 		<Name>Accessories</Name>
@@ -142,11 +138,9 @@
 		<Name>System</Name>
     <Directory>fxm-system-tools.directory</Directory>
     <Include>
-			<Category>PackageManager</Category>
-      <Category>System</Category>
       <And>
-        <Category>Settings</Category>
         <Category>System</Category>
+        <Not><Category>Settings</Category></Not>
       </And>
     </Include>
 	</Menu>	 <!-- End System Tools -->
@@ -170,19 +164,30 @@
     </Include>
 	</Menu> <!-- End Settings -->
 
+
+  <!-- System Settings -->
+  <Menu>
+    <Name>Administration</Name>
+    <Directory>fxm-settings-system.directory</Directory>
+    <Include>
+      <And>
+        <Category>Settings</Category>
+        <Category>System</Category>
+      </And>
+    </Include>
+  </Menu>     <!-- End System Settings -->
+
 	<!-- Other -->
 	<Menu>
 		<Name>Other</Name>
 		<Directory>fxm-other.directory</Directory>
 		<OnlyUnallocated/>
     <Include>
-      <Not>
-        <Or>
-          <Category>Core</Category>
-          <Category>Settings</Category>
-          <Category>DesktopSettings</Category>
-        </Or>
-      </Not>
+      <And>
+        <Not><Category>Core</Category></Not>
+        <Not><Category>Settings</Category></Not>
+        <Not><Category>Screensaver</Category></Not>
+      </And>
     </Include>
 	</Menu> <!-- End Other -->
 
