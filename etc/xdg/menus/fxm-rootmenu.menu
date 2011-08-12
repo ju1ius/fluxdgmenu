@@ -37,6 +37,14 @@
     </DefaultLayout>
   </Menu>
 
+	<Menu>
+    <Name>fxm-recently-used</Name>
+	  <Directory>fxm-menu-recently-used.directory</Directory>
+    <DefaultLayout show_empty="true">
+      <Merge type="all"/>
+    </DefaultLayout>
+  </Menu>
+
   <Menu>
     <Name>fluxbox</Name>
 	  <Directory>fxm-menu-fluxbox.directory</Directory>
@@ -57,6 +65,7 @@
     <Filename>synaptic.desktop</Filename>
 		<Separator/>
     <Menuname>fxm-bookmarks</Menuname>
+    <Menuname>fxm-recently-used</Menuname>
 		<Separator/>
     <Menuname>fxm-applications</Menuname>
 		<Separator/>

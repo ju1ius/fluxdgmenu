@@ -67,7 +67,7 @@ EXCLUDED=(
 #-------------------------------------------------------------------------------
 check_triggers()
 {
-  if grep $PKG_NAME $TRIGGERS_DB
+  if grep $PKG_NAME $TRIGGERS_DB > /dev/null
   then
     cat << _ERROR
   Uh oh...

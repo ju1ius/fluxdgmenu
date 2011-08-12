@@ -1,0 +1,135 @@
+import os, sys, stat, re, StringIO, sqlite3, ConfigParser
+import xdg.IconTheme
+
+class Menu(object):
+
+    default_config = """
+[Menu]
+filemanager: thunar
+terminal: x-terminal-emulator -T '%(title)s' -e '%(command)s'
+[Recently Used]
+max_items: 20
+[Icons]
+show: yes
+use_gtk_theme: yes
+theme: Mint-X
+size: 24
+default: application-x-executable
+bookmarks: user-bookmarks
+folders: folder
+files: gtk-file
+"""
+
+    def __init__(self):
+        self.parse_config()
+        self.exe_regex = re.compile(r' [^ ]*%[fFuUdDnNickvm]')
+        if self.show_icons:
+            self.open_cache()
+
+    def __del__(self):
+        if self.show_icons:
+            self.close_cache()
+
+    def parse_config(self):
+        self.config = ConfigParser.RawConfigParser()
+        self.config.readfp(StringIO.StringIO(self.default_config))
+        self.config.read([
+            '/etc/marchobmenu/menu.conf',
+            os.path.expanduser('~/.config/marchobmenu/menu.conf')
+        ])
+
+        self.show_icons = self.config.getboolean('Icons', 'show')
+        if self.show_icons:
+            self.default_icon = self.config.get('Icons', 'default')
+            self.icon_size = self.config.getint('Icons', 'size')
+            self.use_gtk_theme = self.config.getboolean('Icons', 'use_gtk_theme')
+            if self.use_gtk_theme:
+                try:
+                    import pygtk
+                    pygtk.require('2.0')
+                    import gtk
+                    gtk_settings = gtk.settings_get_default()
+                    self.theme = gtk_settings.get_property('gtk-icon-theme-name')
+                except:
+                    self.use_gtk_theme = False
+                    self.theme = self.config.get('Icons','theme')
+            else:
+                self.theme = self.config.get('Icons','theme')
+
+    def open_cache(self):
+        db_file = os.path.expanduser('~/.fluxbox/fluxdgmenu/icons.db')
+        self.cache_conn = sqlite3.connect(db_file)
+        self.cache_conn.execute(
+            "CREATE TABLE IF NOT EXISTS cache(key TEXT, path TEXT)"
+        )
+        self.cache_conn.row_factory = sqlite3.Row
+        self.cache_cursor = self.cache_conn.cursor()
+
+    def close_cache(self):
+        self.cache_conn.commit()
+        self.cache_cursor.close()
+    
+    def format_menu(self, content):
+      return content
+
+    def format_text_item(self, txt):
+        return "[nop] (%s)\n" % self.escape_label(txt)
+
+    def format_separator(self, indent=''):
+        return "%s[separator] (---------------------)\n" % indent
+
+    def format_application(self, name, cmd, icon, indent=''):
+        return "%s[exec] (%s) {%s} <%s>\n" % (
+            indent, self.escape_label(name), cmd, icon
+        )
+
+    def format_submenu(self, id, name, icon, submenu, indent=''):
+        return """%(i)s[submenu] (%(n)s) <%(icn)s>\n%(sub)s%(i)s[end]\n""" % {
+            "i": indent, "n": self.escape_label(name),
+            "icn": icon, "sub": submenu
+        }
+
+    def escape_label(self, label):
+        return label.replace('(', ':: ').replace(')', ' ::')
+
+    def find_icon(self, name):
+        """Finds and cache icons"""
+        if not name:
+            name = self.default_icon
+        if os.path.isabs(name):
+            key = name
+        else:
+            key = name + '::' + self.theme      
+        cached = self.fetch_cache_key(key)
+        if cached:
+            return cached['path'].encode('utf-8')
+        else:
+            path = self.get_icon_path(name)
+            if path:
+                self.add_cache_key(key, path)
+                return path.encode('utf-8')
+        return ''
+
+    def get_icon_path(self, name):
+        # No svg in menu
+        path = xdg.IconTheme.getIconPath(
+            name, self.icon_size, self.theme, ['png','xpm']
+        )
+        if not path or path.endswith('.svg'):
+            path = xdg.IconTheme.getIconPath(
+                self.default_icon, self.icon_size, self.theme, ['png', 'xpm']
+            )
+        return path
+
+    def fetch_cache_key(self, key):
+        self.cache_cursor.execute(
+            'SELECT cache.key, cache.path FROM cache WHERE cache.key = ?',
+            [key]
+        )
+        return self.cache_cursor.fetchone()
+
+    def add_cache_key(self, key, path):
+        self.cache_cursor.execute(
+            'INSERT INTO cache(key, path) VALUES(?,?)',
+            [key, path]
+        )
