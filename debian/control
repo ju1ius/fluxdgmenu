@@ -16,8 +16,7 @@ Description: An automated XDG Menu system for Fluxbox.
   FluXDGMenu monitors for newly installed/removed applications, and maintains a submenu, listing and categorizing them like the Gnome/Xfce/Lxde menu.
   The package installs a menu file "/etc/xdg/menus/fxm-applications.menu",
   which allows you to configure the menu as you see fit.
-  For infos about editing the menu file, see:
-  http://standards.freedesktop.org/menu-spec/latest/ar01s04.html
+  For documentation, see: http://github.com/ju1ius/fluxdgmenu/wiki
   Features:
       * Auto generates and auto updates a Fluxbox "Applications" menu in compliance with www.freedesktop.org standards thereby giving a familiar menu.
       * Support for localizations: the menu generated will be in the system default language where available.
