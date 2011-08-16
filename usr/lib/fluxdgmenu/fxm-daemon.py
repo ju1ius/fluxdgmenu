@@ -134,6 +134,8 @@ def clear_recently_used():
 
 def generate_rootmenu():
     update_icons()
+    update_bookmarks()
+    update_recently_used()
     rootmenu = os.path.expanduser('~/.fluxbox/menu')
     if os.path.isfile(rootmenu):
         try:
@@ -297,7 +299,7 @@ About dpkg-triggers:
 
     if options.verbose:
         import time
-        start = time.clock()
+        start_t = time.clock()
     if len(args) == 0:
         parser.print_usage()
         sys.exit(1)
@@ -350,7 +352,7 @@ About dpkg-triggers:
         sys.exit(1)
 
     if options.verbose:
-        end = time.clock()
-        print "Executed in %s seconds" % str(end - start)
+        end_t = time.clock()
+        print "Executed in %s seconds" % str(end_t - start_t)
 
     sys.exit(0)
