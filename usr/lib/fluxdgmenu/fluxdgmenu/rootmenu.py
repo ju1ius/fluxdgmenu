@@ -1,5 +1,6 @@
 import os
 import applications
+import adapters
         
 import gettext
 gettext.install("fluxdgmenu", "/usr/share/locale", unicode=1)      

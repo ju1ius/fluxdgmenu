@@ -3,6 +3,8 @@
 
 <Menu>
 
+  <Name>fxm-rootmenu</Name>
+
   <DefaultAppDirs/>
   <DefaultDirectoryDirs/>
   <DefaultMergeDirs/>

@@ -88,7 +88,7 @@ files: gtk-file
         )
 
     def format_separator(self, level=0):
-        return "%s[separator] (---------------------)\n" % "  " * level
+        return "%s[separator] (---------------------)\n" % ("  " * level)
 
     def format_application(self, name, cmd, icon, level=0):
         return "%s[exec] (%s) {%s} <%s>\n" % (
