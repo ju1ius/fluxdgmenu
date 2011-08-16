@@ -23,7 +23,7 @@ BOOKMARKS_CACHE = os.path.join(CACHE_DIR, 'bookmarks')
 RECENTLY_USED_CACHE = os.path.join(CACHE_DIR, 'recently-used')
 
 # List of directories to monitor
-# fxm-watch will only respond to events on files"
+# fxm-watch will only respond to events on files
 # having one of these extensions: .desktop|.directory|.menu
 MONITORED = [
     # .directory files
@@ -135,10 +135,11 @@ def clear_recently_used():
 def generate_rootmenu():
     update_icons()
     rootmenu = os.path.expanduser('~/.fluxbox/menu')
-    try:
-        os.rename(rootmenu, "%s.bak" % rootmenu)
-    except OSError, why:
-        sys.exit("Could not backup previous rootmenu: %s" % why)
+    if os.path.isfile(rootmenu):
+        try:
+            os.rename(rootmenu, "%s.bak" % rootmenu)
+        except OSError, why:
+            sys.exit("Could not backup previous rootmenu: %s" % why)
     import fluxdgmenu.rootmenu
     menu = fluxdgmenu.rootmenu.RootMenu()
     with open(rootmenu, 'w+') as fp:
@@ -296,7 +297,7 @@ About dpkg-triggers:
 
     if options.verbose:
         import time
-        start = time.time()
+        start = time.clock()
     if len(args) == 0:
         parser.print_usage()
         sys.exit(1)
@@ -349,7 +350,7 @@ About dpkg-triggers:
         sys.exit(1)
 
     if options.verbose:
-        end = time.time()
+        end = time.clock()
         print "Executed in %s seconds" % str(end - start)
 
     sys.exit(0)

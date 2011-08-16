@@ -25,6 +25,6 @@ class BookmarksMenu(base.Menu):
         for path, label in bookmarks:
             label = urllib.unquote(label)
             cmd = '%s "%s"' % (fm, path)
-            item = self.format_application(label, cmd, icon, '')
+            item = self.format_application(label, cmd, icon)
             append(item)
         return "".join(output)

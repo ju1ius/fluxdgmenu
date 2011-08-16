@@ -1,12 +1,14 @@
-import os, re
-import xdg.Config, xdg.DesktopEntry, xdg.Menu
-#from xdg.Exceptions import *
+import os, sys, re
+import xdg.Config
 import base
+import adapters
 
 class ApplicationsMenu(base.Menu):
 
     def __init__(self):
         super(ApplicationsMenu, self).__init__()
+        self.adapter = self.get_default_adapter()
+        #self.set_adapter('xdg')
         xdg.Config.setWindowManager('fluxbox')
         self.filter_debian = os.path.isfile('/usr/bin/update-menus')
 
@@ -15,49 +17,55 @@ class ApplicationsMenu(base.Menu):
         self.terminal_emulator = self.config.get('Menu', 'terminal')
 
     def parse_menu_file(self, menu_file):
-        menu = xdg.Menu.parse(menu_file)
-        output = self.menu_entry(menu)
+        root = self.adapter.get_root_directory(menu_file)
+        output = self.directory(root)
         output = self.format_menu(output)
         return output
-    
-    def menu_entry(self, menu, level=0):
-        output = []
-        append = output.append
-        for entry in menu.getEntries():
-            if isinstance(entry, xdg.Menu.Separator):
-                append( self.separator(entry, level) )
-            elif isinstance(entry, xdg.Menu.Menu):
-                append( self.submenu(entry, level) )
-            elif isinstance(entry, xdg.Menu.MenuEntry):
-                append( self.application(entry, level) )
-        return "".join(output)
 
     def separator(self, entry, level):
-        indent = "  " * level
-        return self.format_separator(indent)
+        return self.format_separator(level)
+
+    def directory(self, entry, level=0):
+        output = []
+        append = output.append
+        for child in entry.get_contents():
+            t = child.get_type()
+            if t == adapters.TYPE_SEPARATOR:
+                append( self.separator(child, level) )
+            elif t == adapters.TYPE_DIRECTORY:
+                append( self.submenu(child, level) )
+            elif t == adapters.TYPE_ENTRY:
+                append( self.application(child, level) )
+        return "".join(output)
 
     def submenu(self, entry, level):
-        id = entry.Name.encode('utf-8')
-        name = entry.getName().encode('utf-8')
-        icon = self.find_icon(entry.getIcon().encode('utf-8')) if self.show_icons else ''
-        submenu = self.menu_entry(entry, level+1)
-        indent = "  " * level
-        return self.format_submenu(id, name, icon, submenu, indent)
+        id = entry.get_menu_id()
+        name = entry.get_name()
+        icon = self.find_icon(entry.get_icon()) if self.show_icons else ''
+        submenu = self.directory(entry, level+1)
+        return self.format_submenu(id, name, icon, submenu, level)
 
     def application(self, entry, level):
-        de = entry.DesktopEntry
         # Skip Debian specific menu entries
-        if self.filter_debian and de.get('Categories', list=False).startswith('X-Debian'):
-            return
+        filepath = entry.get_desktop_file_path()
+        if self.filter_debian and "/.local/share/applications/menu-xdg/" in filepath:
+            return ''
         # Escape entry name
-        name = de.getName().encode('utf-8')
+        name = entry.get_display_name()
         # Strip command arguments
-        cmd = self.exe_regex.sub('', de.getExec())
-        if de.getTerminal():
+        cmd = self.exe_regex.sub('', entry.get_exec())
+        if entry.get_launch_in_terminal():
             cmd = self.terminal_emulator % {"title": name, "command": cmd}
         # Get icon
-        icon = self.find_icon(de.getIcon().encode('utf-8')) if self.show_icons else ''
+        icon = self.find_icon(entry.get_icon()) if self.show_icons else ''
 
-        indent = "  " * level
-        return self.format_application(name, cmd, icon, indent)
+        return self.format_application(name, cmd, icon, level)
 
+    def get_default_adapter(self):
+       return adapters.get_default()
+
+    def set_adapter(self, name):
+        try:
+            self.adapter = adapters.get_adapter(name)
+        except:
+            self.adapter = self.get_default_adapter()

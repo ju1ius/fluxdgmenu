@@ -7,6 +7,7 @@ class Menu(object):
 [Menu]
 filemanager: thunar
 terminal: x-terminal-emulator -T '%(title)s' -e '%(command)s'
+as_submenu: no
 [Recently Used]
 max_items: 20
 [Icons]
@@ -14,7 +15,7 @@ show: yes
 use_gtk_theme: yes
 theme: Mint-X
 size: 24
-default: application-x-executable
+default: application-default-icon
 bookmarks: user-bookmarks
 folders: folder
 files: gtk-file
@@ -74,21 +75,34 @@ files: gtk-file
     def format_menu(self, content):
       return content
 
-    def format_text_item(self, txt):
-        return "[nop] (%s)\n" % self.escape_label(txt)
-
-    def format_separator(self, indent=''):
-        return "%s[separator] (---------------------)\n" % indent
-
-    def format_application(self, name, cmd, icon, indent=''):
-        return "%s[exec] (%s) {%s} <%s>\n" % (
-            indent, self.escape_label(name), cmd, icon
+    def format_text_item(self, txt, level=0):
+        return "%s[nop] (%s)\n" % (
+            "  " * level,
+            self.escape_label(txt.encode('utf-8'))
         )
 
-    def format_submenu(self, id, name, icon, submenu, indent=''):
+    def format_include(self, filepath, level=0):
+        return "%s[include] (%s)\n" % (
+            "  " * level,
+            self.escape_label(filepath.encode('utf-8'))
+        )
+
+    def format_separator(self, level=0):
+        return "%s[separator] (---------------------)\n" % "  " * level
+
+    def format_application(self, name, cmd, icon, level=0):
+        return "%s[exec] (%s) {%s} <%s>\n" % (
+            "  " * level, self.escape_label(name.encode('utf-8')),
+            cmd.encode('utf-8'),
+            icon.encode('utf-8')
+        )
+
+    def format_submenu(self, id, name, icon, submenu, level=0):
         return """%(i)s[submenu] (%(n)s) <%(icn)s>\n%(sub)s%(i)s[end]\n""" % {
-            "i": indent, "n": self.escape_label(name),
-            "icn": icon, "sub": submenu
+            "i": "  " * level,
+            "n": self.escape_label(name.encode('utf-8')),
+            "icn": icon.encode('utf-8'),
+            "sub": submenu
         }
 
     def escape_label(self, label):

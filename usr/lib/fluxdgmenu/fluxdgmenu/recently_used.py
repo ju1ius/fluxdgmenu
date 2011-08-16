@@ -1,6 +1,9 @@
 import os, sys, re, urllib
-from xml.etree import cElementTree as ElementTree
 import base
+try:
+    from xml.etree import cElementTree as ElementTree
+except:
+    from xml.etree import ElementTree
 
 
 class RecentlyUsedMenu(base.Menu):
@@ -11,7 +14,9 @@ class RecentlyUsedMenu(base.Menu):
         mime_ns = 'http://www.freedesktop.org/standards/shared-mime-info'
         bookmark_ns = 'http://www.freedesktop.org/standards/desktop-bookmarks' 
         self.find_mime = 'info/metadata/{%s}mime-type' % mime_ns
-        self.find_bookmark = 'info/metadata/{%(ns)s}applications/{%(ns)s}application' % { "ns": bookmark_ns }
+        self.find_bookmark = 'info/metadata/{%(ns)s}applications/{%(ns)s}application' % {
+            "ns": bookmark_ns
+        }
 
     def parse_config(self):
         super(RecentlyUsedMenu, self).parse_config()
@@ -30,8 +35,11 @@ class RecentlyUsedMenu(base.Menu):
         bookmarks.reverse()
         output = map(self.parse_item, bookmarks)
         output.extend([
-            self.format_separator(''),
-            self.format_application('Clear', 'fxm-daemon clear-recently-used', '', '')
+            self.format_separator(0),
+            self.format_application(
+                'Clear', 'fxm-daemon clear-recently-used',
+                '', 0
+            )
         ])
         return self.format_menu( "".join(output) )
 
@@ -46,5 +54,5 @@ class RecentlyUsedMenu(base.Menu):
             icon = self.folder_icon if mime_type == "inode/directory" else self.file_icon
         else:
             icon = ''
-        return self.format_application(label, cmd, icon, '')
+        return self.format_application(label, cmd, icon)
 
