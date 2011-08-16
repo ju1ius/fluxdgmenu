@@ -18,12 +18,25 @@ set -e
 # for details, see http://www.debian.org/doc/debian-policy/ or
 # the debian-policy package
 
+removepyc()
+{
+  find /usr/lib/fluxdgmenu -name *.pyc -name *.pyo | while read f
+  do
+    rm "$f"
+  done
+}
+
 case "$1" in
-    purge)
-      fxm-daemon stop
+    upgrade|remove|purge)
+      if pgrep fluxdgmenud > /dev/null
+      then
+        pkill fluxdgmenud
+      fi
+      removepyc
+      exit 0
     ;;
-    remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
-      fxm-daemon stop
+    failed-upgrade|abort-install|abort-upgrade|disappear)
+      
     ;;
     *)
       echo "postrm called with unknown argument \`$1'" >&2
