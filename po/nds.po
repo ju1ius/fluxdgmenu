@@ -10,3 +10,6 @@ msgstr "Menü"
 msgid "Places"
 msgstr "Orte"
 
+msgid "Recently Used"
+msgstr "Tolest brukt"
+

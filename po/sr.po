@@ -5,13 +5,16 @@ msgid "Update"
 msgstr "Освежи"
 
 msgid "Configuration"
-msgstr "Подешавање"
+msgstr "Подешавања"
 
 msgid "Menu"
 msgstr "Мени"
 
 msgid "Places"
 msgstr "Места"
+
+msgid "Recently Used"
+msgstr "Скоро коришћено"
 
 msgid "Themes"
 msgstr "Теме"

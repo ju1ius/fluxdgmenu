@@ -5,13 +5,16 @@ msgid "Update"
 msgstr "Oppdater"
 
 msgid "Configuration"
-msgstr "Oppsett"
+msgstr "Innstillingar"
 
 msgid "Menu"
 msgstr "Meny"
 
 msgid "Places"
 msgstr "Stader"
+
+msgid "Recently Used"
+msgstr "Sist brukt"
 
 msgid "Themes"
 msgstr "Drakt"

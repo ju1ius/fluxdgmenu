@@ -5,13 +5,16 @@ msgid "Update"
 msgstr "Nuashonraigh"
 
 msgid "Configuration"
-msgstr "Cumraíocht"
+msgstr "Socrú"
 
 msgid "Menu"
 msgstr "Roghchlár"
 
 msgid "Places"
 msgstr "̈́Áiteanna"
+
+msgid "Recently Used"
+msgstr "Úsáidte le Déanaí"
 
 msgid "Themes"
 msgstr "Téamaí"

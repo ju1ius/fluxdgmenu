@@ -4,3 +4,6 @@ msgstr "Меню"
 msgid "Places"
 msgstr "Жойлар"
 
+msgid "Recently Used"
+msgstr "Яқинда ишлатилганлар"
+

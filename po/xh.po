@@ -5,13 +5,16 @@ msgid "Update"
 msgstr "Hlaziya"
 
 msgid "Configuration"
-msgstr "Ukumisela iinkqubo ze-imeyile"
+msgstr "Misela inkqubo"
 
 msgid "Menu"
 msgstr "Imenyu"
 
 msgid "Places"
 msgstr "Iindawo"
+
+msgid "Recently Used"
+msgstr ""
 
 msgid "Themes"
 msgstr "Umxholo"

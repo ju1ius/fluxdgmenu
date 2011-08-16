@@ -13,6 +13,9 @@ msgstr "メニュー"
 msgid "Places"
 msgstr "場所"
 
+msgid "Recently Used"
+msgstr "最近開いたファイル"
+
 msgid "Themes"
 msgstr "テーマ"
 

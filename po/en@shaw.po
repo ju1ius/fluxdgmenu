@@ -13,6 +13,9 @@ msgstr "𐑥𐑧𐑯𐑿"
 msgid "Places"
 msgstr "𐑐𐑤𐑱𐑕𐑩𐑟"
 
+msgid "Recently Used"
+msgstr "𐑮𐑰𐑕𐑩𐑯𐑑𐑤𐑦 𐑿𐑕𐑑"
+
 msgid "Themes"
 msgstr "𐑔𐑰𐑥𐑟"
 

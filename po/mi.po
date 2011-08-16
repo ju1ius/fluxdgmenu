@@ -4,3 +4,6 @@ msgstr ""
 msgid "Places"
 msgstr "Ngā Wāhi"
 
+msgid "Recently Used"
+msgstr ""
+

@@ -1,3 +1,6 @@
 msgid "Menu"
 msgstr ""
 
+msgid "Recently Used"
+msgstr ""
+

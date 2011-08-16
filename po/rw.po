@@ -5,13 +5,16 @@ msgid "Update"
 msgstr "Kuvugurura"
 
 msgid "Configuration"
-msgstr "Verisiyo"
+msgstr "Kugena Imiterere"
 
 msgid "Menu"
 msgstr "ibikubiyemo"
 
 msgid "Places"
 msgstr "Imyanya"
+
+msgid "Recently Used"
+msgstr ""
 
 msgid "Themes"
 msgstr "Insanganyamatsiko"

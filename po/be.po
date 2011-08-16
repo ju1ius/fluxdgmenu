@@ -5,13 +5,16 @@ msgid "Update"
 msgstr "Абнавіць"
 
 msgid "Configuration"
-msgstr "Наладка пошты"
+msgstr "Наладка"
 
 msgid "Menu"
 msgstr "Мэню"
 
 msgid "Places"
 msgstr "Месцы"
+
+msgid "Recently Used"
+msgstr "Нядаўнія файлы"
 
 msgid "Themes"
 msgstr "Тэмы"

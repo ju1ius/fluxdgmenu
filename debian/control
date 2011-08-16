@@ -20,8 +20,8 @@ Description: An automated XDG Menu system for Fluxbox.
   For infos about editing the menu file, see:
   http://standards.freedesktop.org/menu-spec/latest/ar01s04.html
   Features:
-    * Auto generates and auto updates a Fluxbox "Applications" menu in compliance with www.freedesktop.org standards thereby giving a familiar menu.
-    * Support for localizations: the menu generated will be in the system default language where available.
-    * Support for icons: the icons are chosen in the current icon theme
-    * Can also maintain a GTK Bookmarks menu
+      * Auto generates and auto updates a Fluxbox "Applications" menu in compliance with www.freedesktop.org standards thereby giving a familiar menu.
+      * Support for localizations: the menu generated will be in the system default language where available.
+      * Support for icons: the icons are chosen in the current icon theme
+      * Can also maintain a "GTK Bookmarks" and a "Recently used Files" menu
 

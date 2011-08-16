@@ -13,6 +13,9 @@ msgstr "Izvēlne"
 msgid "Places"
 msgstr "Vietas"
 
+msgid "Recently Used"
+msgstr "Nesen izmantots"
+
 msgid "Themes"
 msgstr "Tēmas"
 

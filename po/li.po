@@ -1,6 +1,12 @@
+msgid "Configuration"
+msgstr "Kóngfiggerere"
+
 msgid "Menu"
 msgstr "Menu"
 
 msgid "Places"
 msgstr "Patroene"
+
+msgid "Recently Used"
+msgstr ""
 

@@ -5,13 +5,16 @@ msgid "Update"
 msgstr "બદલો (U)"
 
 msgid "Configuration"
-msgstr "રુપરેખાંકન"
+msgstr "રૂપરેખાંકન"
 
 msgid "Menu"
 msgstr "મેનુ"
 
 msgid "Places"
 msgstr "જગ્યાઓ"
+
+msgid "Recently Used"
+msgstr "છેલ્લે વપરાયેલ"
 
 msgid "Themes"
 msgstr "થીમો"

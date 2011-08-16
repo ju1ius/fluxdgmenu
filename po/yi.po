@@ -4,3 +4,6 @@ msgstr "מעניו"
 msgid "Places"
 msgstr "בילד"
 
+msgid "Recently Used"
+msgstr ""
+

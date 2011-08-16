@@ -5,13 +5,16 @@ msgid "Update"
 msgstr "Оновити"
 
 msgid "Configuration"
-msgstr "Налаштовування"
+msgstr "Конфігурація"
 
 msgid "Menu"
 msgstr "Меню"
 
 msgid "Places"
 msgstr "Місця"
+
+msgid "Recently Used"
+msgstr "Недавні документи"
 
 msgid "Themes"
 msgstr "Теми"

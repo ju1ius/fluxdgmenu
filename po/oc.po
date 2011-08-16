@@ -13,6 +13,9 @@ msgstr "Menut"
 msgid "Places"
 msgstr "Acorchis"
 
+msgid "Recently Used"
+msgstr ""
+
 msgid "Themes"
 msgstr "Tèmas"
 

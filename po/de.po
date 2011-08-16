@@ -5,13 +5,16 @@ msgid "Update"
 msgstr "Aktualisieren"
 
 msgid "Configuration"
-msgstr "Konfiguration"
+msgstr "Konfigurieren"
 
 msgid "Menu"
 msgstr "Menü"
 
 msgid "Places"
 msgstr "Orte"
+
+msgid "Recently Used"
+msgstr "Zuletzt verwendet"
 
 msgid "Themes"
 msgstr "Themen"

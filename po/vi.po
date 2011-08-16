@@ -13,6 +13,9 @@ msgstr "Trình đơn"
 msgid "Places"
 msgstr "Mở nhanh"
 
+msgid "Recently Used"
+msgstr "Vừa dùng"
+
 msgid "Themes"
 msgstr "Sắc thái"
 

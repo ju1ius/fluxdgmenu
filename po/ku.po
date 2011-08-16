@@ -4,14 +4,14 @@ msgstr "Hilberîne"
 msgid "Update"
 msgstr "Rojane bike"
 
-msgid "Configuration"
-msgstr ""
-
 msgid "Menu"
 msgstr "Menu"
 
 msgid "Places"
 msgstr "Cih"
+
+msgid "Recently Used"
+msgstr "Teze Bikaranî"
 
 msgid "Themes"
 msgstr "Dirb"

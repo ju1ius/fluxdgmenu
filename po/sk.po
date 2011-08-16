@@ -5,13 +5,16 @@ msgid "Update"
 msgstr "Aktualizovať"
 
 msgid "Configuration"
-msgstr "Nastavenie pošty"
+msgstr "Konfigurácia"
 
 msgid "Menu"
 msgstr "Ponuka"
 
 msgid "Places"
 msgstr "Miesta"
+
+msgid "Recently Used"
+msgstr "Nedávno použité"
 
 msgid "Themes"
 msgstr "Témy"

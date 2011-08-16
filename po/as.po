@@ -5,13 +5,16 @@ msgid "Update"
 msgstr "আপডেট(U)"
 
 msgid "Configuration"
-msgstr "মেইলেৰ বিন্যাসেশন"
+msgstr "বিন্যাস"
 
 msgid "Menu"
 msgstr "মেনু"
 
 msgid "Places"
 msgstr "স্থান"
+
+msgid "Recently Used"
+msgstr "অলপতে ব্যৱহাৰ কৰা"
 
 msgid "Themes"
 msgstr "থিম"

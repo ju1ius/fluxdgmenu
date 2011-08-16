@@ -5,13 +5,16 @@ msgid "Update"
 msgstr "དུས་མཐུན་བཟོ། (U)"
 
 msgid "Configuration"
-msgstr "་རིམ་སྒྲིག"
+msgstr "རིམ་སྒྲིག"
 
 msgid "Menu"
 msgstr "དཀར་ཆག"
 
 msgid "Places"
 msgstr "ས་གནས་ཚུ།"
+
+msgid "Recently Used"
+msgstr ""
 
 msgid "Themes"
 msgstr "བརྗོད་དོན་ཚུ།"

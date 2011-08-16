@@ -5,13 +5,16 @@ msgid "Update"
 msgstr "പരിഷ്ക്കരിക്കുക"
 
 msgid "Configuration"
-msgstr "ക്രമീകരണങ്ങള്‍"
+msgstr "ക്രമീകരണം"
 
 msgid "Menu"
 msgstr "മെനു"
 
 msgid "Places"
 msgstr "സ്ഥലങ്ങള്‍"
+
+msgid "Recently Used"
+msgstr "ഏറ്റവും ഒടുവില്‍ ഉപയോഗിച്ച"
 
 msgid "Themes"
 msgstr "പ്രമേയങ്ങള്‍"

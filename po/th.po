@@ -5,13 +5,16 @@ msgid "Update"
 msgstr "ปรับข้อมูล"
 
 msgid "Configuration"
-msgstr "ค่าตั้ง"
+msgstr "ตั้งค่า"
 
 msgid "Menu"
 msgstr ""
 
 msgid "Places"
 msgstr "ที่หลักๆ"
+
+msgid "Recently Used"
+msgstr "เอกสารล่าสุด"
 
 msgid "Themes"
 msgstr "ชุดตกแต่ง"

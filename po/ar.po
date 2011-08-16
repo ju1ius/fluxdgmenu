@@ -5,13 +5,16 @@ msgid "Update"
 msgstr "حدّث"
 
 msgid "Configuration"
-msgstr "إعدادات "
+msgstr "إعدادات"
 
 msgid "Menu"
 msgstr "القائمة"
 
 msgid "Places"
 msgstr "أماكن"
+
+msgid "Recently Used"
+msgstr "مستخدمة مؤخرا"
 
 msgid "Themes"
 msgstr "السِمات"

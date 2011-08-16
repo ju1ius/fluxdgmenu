@@ -5,13 +5,16 @@ msgid "Update"
 msgstr "Dateer op"
 
 msgid "Configuration"
-msgstr ""
+msgstr "Konfigurasie"
 
 msgid "Menu"
 msgstr "Kieslys"
 
 msgid "Places"
 msgstr "Plekke"
+
+msgid "Recently Used"
+msgstr "Onlangs gebruik"
 
 msgid "Themes"
 msgstr "Temas"

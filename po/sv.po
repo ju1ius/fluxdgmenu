@@ -13,6 +13,9 @@ msgstr "Meny"
 msgid "Places"
 msgstr "Platser"
 
+msgid "Recently Used"
+msgstr "Tidigare använda"
+
 msgid "Themes"
 msgstr "Teman"
 

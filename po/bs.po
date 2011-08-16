@@ -2,13 +2,16 @@ msgid "Update"
 msgstr "Ažuriraj"
 
 msgid "Configuration"
-msgstr "Nema informacija"
+msgstr "Konfiguruši"
 
 msgid "Menu"
 msgstr "Meni"
 
 msgid "Places"
 msgstr "Mjesta"
+
+msgid "Recently Used"
+msgstr ""
 
 msgid "Themes"
 msgstr "Teme"

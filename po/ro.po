@@ -13,6 +13,9 @@ msgstr "Meniu"
 msgid "Places"
 msgstr "Locuri"
 
+msgid "Recently Used"
+msgstr "Utilizate recent"
+
 msgid "Themes"
 msgstr "Teme"
 

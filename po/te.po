@@ -13,6 +13,9 @@ msgstr "జాబితా"
 msgid "Places"
 msgstr "స్థలములు"
 
+msgid "Recently Used"
+msgstr "ఇటీవల వాడినవి"
+
 msgid "Themes"
 msgstr "థీమ్సు"
 

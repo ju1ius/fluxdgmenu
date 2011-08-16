@@ -13,6 +13,9 @@ msgstr "메뉴"
 msgid "Places"
 msgstr "위치"
 
+msgid "Recently Used"
+msgstr "최근 사용"
+
 msgid "Themes"
 msgstr "테마"
 

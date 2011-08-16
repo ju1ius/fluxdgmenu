@@ -13,6 +13,9 @@ msgstr "ಅಂಶ ಪಟ್ಟಿ"
 msgid "Places"
 msgstr "ಸ್ಥಳಗಳು"
 
+msgid "Recently Used"
+msgstr "ಇತ್ತೀಚೆಗೆ ಬಳಸಲ್ಪಟ್ಟ"
+
 msgid "Themes"
 msgstr "ಪರಿಸರವಿನ್ಯಾಸಗಳು"
 

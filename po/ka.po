@@ -5,13 +5,16 @@ msgid "Update"
 msgstr "განახლება"
 
 msgid "Configuration"
-msgstr "ფოსტა კონფიგურაცია"
+msgstr "კონფიგურაცია"
 
 msgid "Menu"
 msgstr "მენიუ"
 
 msgid "Places"
 msgstr "მდებარეობა"
+
+msgid "Recently Used"
+msgstr "ბოლოს გამოყენებული"
 
 msgid "Themes"
 msgstr "თემები"

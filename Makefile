@@ -21,8 +21,10 @@ clean:
 
 install:
 	# lib
-	install -d ${prefix}/lib/fluxdgmenu
-	install -m 0755 usr/lib/fluxdgmenu/* ${prefix}/lib/fluxdgmenu
+	install -d ${prefix}/lib/fluxdgmenu/fluxdgmenu/adapters
+	install -m 0755 usr/lib/fluxdgmenu/*.py ${prefix}/lib/fluxdgmenu
+	install -m 0755 usr/lib/fluxdgmenu/fluxdgmenu/*.py ${prefix}/lib/fluxdgmenu/fluxdgmenu
+	install -m 0755 usr/lib/fluxdgmenu/fluxdgmenu/adapters/*.py ${prefix}/lib/fluxdgmenu/fluxdgmenu/adapters
 	# bin
 	install -d ${prefix}/bin
 	install -m 0755 usr/bin/* ${prefix}/bin

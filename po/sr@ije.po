@@ -4,3 +4,6 @@ msgstr "Мени"
 msgid "Places"
 msgstr "Мјеста"
 
+msgid "Recently Used"
+msgstr ""
+

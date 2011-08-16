@@ -5,13 +5,16 @@ msgid "Update"
 msgstr "अद्यतन करें (U)"
 
 msgid "Configuration"
-msgstr "कॉन्फ़िगरेशन"
+msgstr "विन्यास"
 
 msgid "Menu"
 msgstr "मेनू"
 
 msgid "Places"
 msgstr "स्थान"
+
+msgid "Recently Used"
+msgstr "हाल में प्रयुक्त"
 
 msgid "Themes"
 msgstr "प्रसंग"

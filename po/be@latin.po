@@ -13,6 +13,9 @@ msgstr "Menu"
 msgid "Places"
 msgstr "Miescy"
 
+msgid "Recently Used"
+msgstr "Niadaŭna ŭžyvanyja"
+
 msgid "Themes"
 msgstr "Matyvy"
 

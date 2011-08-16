@@ -5,13 +5,16 @@ msgid "Update"
 msgstr "আপডেট(U)"
 
 msgid "Configuration"
-msgstr "কনফিগারেশন"
+msgstr "কনফিগার প্রণালী"
 
 msgid "Menu"
 msgstr "মেনু"
 
 msgid "Places"
 msgstr "অবস্থান"
+
+msgid "Recently Used"
+msgstr "সম্প্রতি ব্যবহৃত"
 
 msgid "Themes"
 msgstr "থিম"

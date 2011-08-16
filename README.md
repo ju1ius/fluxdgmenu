@@ -1,12 +1,12 @@
 About
 =====
 
-FluXDGMenu is an automated XDG Menu system for Fluxbox.
+Fluxdgmenu is an automated XDG Menu system for Fluxbox.
 
-FluXDGMenu monitors for newly installed/removed applications,
+Fluxdgmenu monitors for newly installed/removed applications,
 and maintains a submenu, listing and categorizing them like the Gnome/Xfce/Lxde menu.
 
-FluXDGMenu is written in C, bash and python and only requires the following packages:
+Fluxdgmenu is written in C and Python and only requires the following packages:
 
 * fluxbox
 * libinotifytools0
@@ -19,9 +19,10 @@ Install dependencies (assuming you already have fluxbox bash and python...):
 
     sudo aptitude install libinotifytools0 libinotifytools0-dev python-xdg
 
-Optionally, If you want Fluxdgmenu to use your current GTK theme:
+You can also optionally install the following packages:
 
-    sudo aptitude install python-gtk2
+* python-gtk2: enables fluxdgmenu to use your current GTK icon theme
+* python-gmenu: makes menu generation 2 to 10 times faster
 
 Clone the git repository if you haven't already
 
@@ -38,7 +39,7 @@ Next
 [Check the wiki](http://github.com/ju1ius/fluxdgmenu/wiki)
 
 -----------------------------------------------------------------------
-FluXDGMenu is heavily inspired by:
+Fluxdgmenu is heavily inspired by:
 
 * [xdg-menu](http://cvs.fedoraproject.org/viewvc/devel/openbox/xdg-menu)
 * [mint-fm2](http://packages.linuxmint.com/pool/main/m/mint-fm2/)

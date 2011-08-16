@@ -13,6 +13,9 @@ msgstr "Μενού"
 msgid "Places"
 msgstr "Τοποθεσίες"
 
+msgid "Recently Used"
+msgstr "Πρόσφατα"
+
 msgid "Themes"
 msgstr "Θέματα"
 

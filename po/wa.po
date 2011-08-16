@@ -5,13 +5,16 @@ msgid "Update"
 msgstr "Mete a djoû"
 
 msgid "Configuration"
-msgstr "Apontiaedje di l' emilaedje"
+msgstr "Apontyî"
 
 msgid "Menu"
 msgstr "Menu"
 
 msgid "Places"
 msgstr "Motifs"
+
+msgid "Recently Used"
+msgstr ""
 
 msgid "Themes"
 msgstr ""

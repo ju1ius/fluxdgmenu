@@ -5,13 +5,16 @@ msgid "Update"
 msgstr "Përditëso"
 
 msgid "Configuration"
-msgstr "Konfigurimi i Mail"
+msgstr "Konfigurimi"
 
 msgid "Menu"
 msgstr "Menu"
 
 msgid "Places"
 msgstr "Rezerva"
+
+msgid "Recently Used"
+msgstr "Përdorur së fundmi"
 
 msgid "Themes"
 msgstr "Temat"

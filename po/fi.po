@@ -13,6 +13,9 @@ msgstr "Valikko"
 msgid "Places"
 msgstr "Sijainnit"
 
+msgid "Recently Used"
+msgstr "Äskettäin käytetyt"
+
 msgid "Themes"
 msgstr "Teemat"
 

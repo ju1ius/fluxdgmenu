@@ -5,13 +5,16 @@ msgid "Update"
 msgstr "Güncəllə"
 
 msgid "Configuration"
-msgstr "Poçt Qurğuları"
+msgstr "Sazla"
 
 msgid "Menu"
 msgstr "Menü"
 
 msgid "Places"
 msgstr "Mövqelər"
+
+msgid "Recently Used"
+msgstr ""
 
 msgid "Themes"
 msgstr "Örtüklər"

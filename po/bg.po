@@ -13,6 +13,9 @@ msgstr "Меню"
 msgid "Places"
 msgstr "Места"
 
+msgid "Recently Used"
+msgstr "Скоро отваряни"
+
 msgid "Themes"
 msgstr "Теми"
 

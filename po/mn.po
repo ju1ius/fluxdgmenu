@@ -5,13 +5,16 @@ msgid "Update"
 msgstr "Шинэчлэх"
 
 msgid "Configuration"
-msgstr "Мэдээлэл алга"
+msgstr "Тохируулах"
 
 msgid "Menu"
 msgstr "Цэс"
 
 msgid "Places"
 msgstr "Байрлалууд"
+
+msgid "Recently Used"
+msgstr ""
 
 msgid "Themes"
 msgstr "Гадаргуун Арьс"

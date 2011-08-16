@@ -13,6 +13,9 @@ msgstr "Menu"
 msgid "Places"
 msgstr "מקומות"
 
+msgid "Recently Used"
+msgstr "בשימוש לאחרונה"
+
 msgid "Themes"
 msgstr "ערכות נושא"
 

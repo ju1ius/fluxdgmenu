@@ -13,6 +13,9 @@ msgstr "Menü"
 msgid "Places"
 msgstr "Helyek"
 
+msgid "Recently Used"
+msgstr "Nemrég használt"
+
 msgid "Themes"
 msgstr "Témák"
 

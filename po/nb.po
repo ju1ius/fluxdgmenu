@@ -13,6 +13,9 @@ msgstr "Meny"
 msgid "Places"
 msgstr "Steder"
 
+msgid "Recently Used"
+msgstr "Sist brukt"
+
 msgid "Themes"
 msgstr "Tema"
 

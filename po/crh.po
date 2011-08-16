@@ -7,6 +7,9 @@ msgstr "Menü"
 msgid "Places"
 msgstr "Yerler"
 
+msgid "Recently Used"
+msgstr "Demi Qullanılğan"
+
 msgid "Themes"
 msgstr "Temalar"
 

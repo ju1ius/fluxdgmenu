@@ -13,6 +13,9 @@ msgstr "Meniu"
 msgid "Places"
 msgstr "Vietos"
 
+msgid "Recently Used"
+msgstr "Vėliausiai naudotieji"
+
 msgid "Themes"
 msgstr "Temos"
 

@@ -13,6 +13,9 @@ msgstr "غورنۍ"
 msgid "Places"
 msgstr "ځايونه"
 
+msgid "Recently Used"
+msgstr "اوسن کارول شوي"
+
 msgid "Themes"
 msgstr "کوندې"
 

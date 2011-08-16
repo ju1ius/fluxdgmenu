@@ -5,13 +5,16 @@ msgid "Update"
 msgstr "යාවත්කාලීන (U)"
 
 msgid "Configuration"
-msgstr "තැපැල් මානකරණය"
+msgstr "සුසර කිරීම්"
 
 msgid "Menu"
 msgstr "මෙනුව"
 
 msgid "Places"
 msgstr "ස්ථාන"
+
+msgid "Recently Used"
+msgstr "මැතකදි භාවිතා කළ"
 
 msgid "Themes"
 msgstr "තේමා"

@@ -13,6 +13,9 @@ msgstr "選單"
 msgid "Places"
 msgstr "位置"
 
+msgid "Recently Used"
+msgstr "最近使用的"
+
 msgid "Themes"
 msgstr "主題"
 

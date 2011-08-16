@@ -5,13 +5,16 @@ msgid "Update"
 msgstr "Hizivaat"
 
 msgid "Configuration"
-msgstr "Kefluniad"
+msgstr "Kefluniadur"
 
 msgid "Menu"
 msgstr "Meuziad"
 
 msgid "Places"
 msgstr "Berradennoù"
+
+msgid "Recently Used"
+msgstr "Arveret nevez zo"
 
 msgid "Themes"
 msgstr "Neuzioù"

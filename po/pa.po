@@ -13,6 +13,9 @@ msgstr "ਮੇਨੂ"
 msgid "Places"
 msgstr "ਥਾਵਾਂ"
 
+msgid "Recently Used"
+msgstr "ਤਾਜ਼ਾ ਵਰਤੇ"
+
 msgid "Themes"
 msgstr "ਥੀਮ"
 

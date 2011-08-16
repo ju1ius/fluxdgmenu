@@ -5,13 +5,16 @@ msgid "Update"
 msgstr "አሻሽል"
 
 msgid "Configuration"
-msgstr "ምርጫዎች"
+msgstr "ለውጡ"
 
 msgid "Menu"
 msgstr "ሜኑ"
 
 msgid "Places"
 msgstr "ንድፎች (P)"
+
+msgid "Recently Used"
+msgstr ""
 
 msgid "Themes"
 msgstr ""

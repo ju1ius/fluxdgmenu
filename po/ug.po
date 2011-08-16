@@ -5,13 +5,16 @@ msgid "Update"
 msgstr "يېڭىلا(U)"
 
 msgid "Configuration"
-msgstr "سەپلىمە"
+msgstr "تەڭشەك"
 
 msgid "Menu"
 msgstr "تىزىملىك"
 
 msgid "Places"
 msgstr "ئورۇن"
+
+msgid "Recently Used"
+msgstr "يېقىندا ئىشلەتكەن"
 
 msgid "Themes"
 msgstr "ئۇسلۇب"

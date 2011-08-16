@@ -1,3 +1,6 @@
 msgid "Menu"
 msgstr "katikati"
 
+msgid "Recently Used"
+msgstr "biampa"
+

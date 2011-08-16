@@ -13,6 +13,9 @@ msgstr "Menú"
 msgid "Places"
 msgstr "Lugares"
 
+msgid "Recently Used"
+msgstr "Usados recientemente"
+
 msgid "Themes"
 msgstr "Temas"
 

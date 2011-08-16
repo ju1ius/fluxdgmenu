@@ -5,13 +5,16 @@ msgid "Update"
 msgstr "Värskenda"
 
 msgid "Configuration"
-msgstr "Seadistused"
+msgstr "Sätted"
 
 msgid "Menu"
 msgstr "Menüü"
 
 msgid "Places"
 msgstr "Asukohad"
+
+msgid "Recently Used"
+msgstr "Viimati kasutatud"
 
 msgid "Themes"
 msgstr "Teemad"

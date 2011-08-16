@@ -5,13 +5,16 @@ msgid "Update"
 msgstr "Uppfæra"
 
 msgid "Configuration"
-msgstr ""
+msgstr "Stilla nánar"
 
 msgid "Menu"
 msgstr ""
 
 msgid "Places"
 msgstr "Staðir"
+
+msgid "Recently Used"
+msgstr ""
 
 msgid "Themes"
 msgstr "Þemu"

@@ -1,3 +1,6 @@
+msgid "Configuration"
+msgstr "Configurazion"
+
 msgid "Places"
 msgstr "Puescj"
 

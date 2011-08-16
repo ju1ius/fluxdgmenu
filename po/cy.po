@@ -13,6 +13,9 @@ msgstr "Dewislen"
 msgid "Places"
 msgstr "Llefydd"
 
+msgid "Recently Used"
+msgstr "Defnyddiwyd yn Ddiweddar"
+
 msgid "Themes"
 msgstr "Themâu"
 
