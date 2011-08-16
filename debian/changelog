@@ -1,4 +1,4 @@
-mint-fluxdgmenu (0.2-1) stable; urgency=medium
+fluxdgmenu (0.2-1) stable; urgency=medium
 
   * New "Recently Used Files" menu
   * Adapter system in order to switch between menu parsers easily
@@ -7,7 +7,7 @@ mint-fluxdgmenu (0.2-1) stable; urgency=medium
 
  -- Jules Bernable <julius@laforcemolle.org>  Tue, 16 Aug 2011 07:26:42 +0200
 
-mint-fluxdgmenu (0.1-1) stable; urgency=medium
+fluxdgmenu (0.1-1) stable; urgency=medium
 
   * Preview release
 
