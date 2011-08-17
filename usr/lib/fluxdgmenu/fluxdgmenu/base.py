@@ -1,5 +1,7 @@
 import os, sys, stat, re, StringIO, sqlite3, ConfigParser
-import xdg.IconTheme
+import xdg.IconTheme as IconTheme
+#import cXdg.IconTheme as IconTheme
+
 
 class Menu(object):
 
@@ -138,11 +140,11 @@ files: gtk-file
                 )
             return icon.get_filename() if icon is not None else ''
         # Use xdg.IconTheme icon lookup, omitting svg icons
-        path = xdg.IconTheme.getIconPath(
+        path = IconTheme.getIconPath(
             name, self.icon_size, self.theme, ['png','xpm']
         )
         if not path or path.endswith('.svg'):
-            path = xdg.IconTheme.getIconPath(
+            path = IconTheme.getIconPath(
                 self.default_icon, self.icon_size, self.theme, ['png', 'xpm']
             )
         return path

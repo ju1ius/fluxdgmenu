@@ -1,6 +1,6 @@
 import os
-import applications
-import adapters
+from . import applications
+from .adapters import SHOW_EMPTY
         
 import gettext
 gettext.install("fluxdgmenu", "/usr/share/locale", unicode=1)      
@@ -12,7 +12,7 @@ class RootMenu(applications.ApplicationsMenu):
         self.as_submenu = self.config.getboolean("Menu", "as_submenu")
 
     def parse_menu_file(self, menu_file):
-        root = self.adapter.get_root_directory(menu_file, adapters.SHOW_EMPTY)
+        root = self.adapter.get_root_directory(menu_file, SHOW_EMPTY)
         output = self.directory(root, 1)
         output = self.format_menu(output)
         return output

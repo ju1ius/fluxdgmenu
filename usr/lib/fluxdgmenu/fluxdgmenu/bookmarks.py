@@ -1,5 +1,5 @@
 import os, urllib
-import base
+from . import base
 
 class BookmarksMenu(base.Menu):
 

@@ -1,5 +1,5 @@
 import os, sys, re, urllib
-import base
+from . import base
 try:
     from xml.etree import cElementTree as ElementTree
 except:

@@ -8,16 +8,26 @@ CC=gcc
 CFLAGS=-W -Wall -pedantic
 LDFLAGS=-linotifytools
 EXEC=usr/bin/fluxdgmenud
-SRC=src/fluxdgmenud.c
+SRC=src/fluxdgmenud/fluxdgmenud.c
 
-fxm-watch:
+all: fluxdgmenud cXdg locale
+
+fluxdgmenud:
 	${CC} ${SRC} -o ${EXEC} ${LDFLAGS} ${CFLAGS}
+
+locale:
+	./scripts/make-locale.sh
+
+cXdg:
+	./scripts/make-cXdg.sh 0.19
+
 
 .PHONY: clean install uninstall
 
 clean:
 	rm ${EXEC}
-	rm -rf usr/share/locale/*
+	rm -rf usr/share/locale/* 2> /dev/null
+	rm -rf usr/lib/fluxdgmenu/cXdg 2> /dev/null
 
 install:
 	# lib
@@ -25,6 +35,10 @@ install:
 	install -m 0755 usr/lib/fluxdgmenu/*.py ${prefix}/lib/fluxdgmenu
 	install -m 0755 usr/lib/fluxdgmenu/fluxdgmenu/*.py ${prefix}/lib/fluxdgmenu/fluxdgmenu
 	install -m 0755 usr/lib/fluxdgmenu/fluxdgmenu/adapters/*.py ${prefix}/lib/fluxdgmenu/fluxdgmenu/adapters
+	# cXdg module
+	install -d ${prefix}/lib/fluxdgmenu/cXdg
+	install -m 0755 usr/lib/fluxdgmenu/cXdg/*.py ${prefix}/lib/fluxdgmenu/cXdg
+	install -m 0755 usr/lib/fluxdgmenu/cXdg/*.so ${prefix}/lib/fluxdgmenu/cXdg
 	# bin
 	install -d ${prefix}/bin
 	install -m 0755 usr/bin/* ${prefix}/bin
@@ -34,10 +48,8 @@ install:
 	install -m 0755 usr/share/applications/* ${prefix}/share/applications
 	install -d ${prefix}/share/desktop-directories
 	install -m 0755 usr/share/desktop-directories/* ${prefix}/share/desktop-directories
-	./make-locale.sh
 	install -d ${prefix}/share/locale
 	cp -R usr/share/locale/* ${prefix}/share/locale
-	rm -rf usr/share/locale
 	# etc
 	install -d ${sysconfdir}/xdg/menus
 	install -m 0755 etc/xdg/menus/* ${sysconfdir}/xdg/menus

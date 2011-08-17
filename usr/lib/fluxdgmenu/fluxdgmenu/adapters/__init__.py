@@ -17,21 +17,21 @@ SORT_NAME = 0
 SORT_DISPLAY_NAME = 1
 
 
-def get_default():
+def get_default_adapter():
     try:
         import gmenu
-        import gmenu_adapter
+        from . import gmenu_adapter
         return gmenu_adapter.GmenuAdapter()
-    except:
-        import xdg_adapter
+    except ImportError:
+        from . import xdg_adapter
         return xdg_adapter.XdgAdapter()
 
 def get_adapter(name):
-    if not name in['gmenu', 'xdg']:
+    if not name in['gmenu', 'xdg', 'cXdg']:
         raise ValueError
     else:
         adapter_name = "fluxdgmenu.adapters.%s_adapter" % name
-        adapter_class = "%sAdapter" % name.title()
+        adapter_class = "%sAdapter" % (name[0].upper() + name[1:])
         __import__(adapter_name)
         module = sys.modules[adapter_name]
         adapter = getattr(module, adapter_class)

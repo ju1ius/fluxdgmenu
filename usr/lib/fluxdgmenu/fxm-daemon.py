@@ -242,16 +242,17 @@ class MyOptionParser(optparse.OptionParser):
 if __name__ == '__main__':
     usage = "%prog [options] command"
     description = """Commands:
-  help                prints the help message and exits
-  start               starts the menu daemon
-  stop                stops the menu daemon
-  update              regenerates the applications menu
-  update-bookmarks    regenerates the bookmarks menu
-  update-icons        regenerates the icon cache,
-                      then updates applications and bookmarks menus
-  generate-rootmenu   generates a rootmenu
-  enable-triggers     add dpkg-triggers
-  disable-triggers    remove dpkg-triggers
+  help                  prints the help message and exits
+  start                 starts the menu daemon
+  stop                  stops the menu daemon
+  update                regenerates the applications menu
+  update-bookmarks      regenerates the bookmarks menu
+  update-recently-used  regenerates the recently used files menu
+  update-icons          regenerates the icon cache,
+                        then updates applications and bookmarks menus
+  generate-rootmenu     generates a rootmenu
+  enable-triggers       add dpkg-triggers
+  disable-triggers      remove dpkg-triggers
 
 About dpkg-triggers:
   dpkg-triggers are a Debian/Apt specific way to trigger actions

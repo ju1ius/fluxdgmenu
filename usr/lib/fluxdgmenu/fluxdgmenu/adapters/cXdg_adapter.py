@@ -1,13 +1,13 @@
-import xdg.Menu
+import cXdg.Menu
 from . import NONE, TYPE_DIRECTORY, TYPE_ENTRY, TYPE_SEPARATOR
 
-class XdgAdapter(object):
+class CXdgAdapter(object):
     def get_type(self):
         return TYPE_DIRECTORY;
     def get_root_directory(self, menu_file, flags=NONE):
-        return XdgDirectoryAdapter(xdg.Menu.parse(menu_file))
+        return CXdgDirectoryAdapter(cXdg.Menu.parse(menu_file))
 
-class XdgDirectoryAdapter(object):
+class CXdgDirectoryAdapter(object):
     def __init__(self, adaptee):
         self.adaptee = adaptee
 
@@ -23,14 +23,14 @@ class XdgDirectoryAdapter(object):
 
     def get_contents(self):
         for entry in self.adaptee.getEntries():
-            if isinstance(entry, xdg.Menu.Separator):
-                yield XdgSeparatorAdapter()
-            elif isinstance(entry, xdg.Menu.Menu):
-                yield XdgDirectoryAdapter(entry)
-            elif isinstance(entry, xdg.Menu.MenuEntry):
-                yield XdgEntryAdapter(entry)
+            if isinstance(entry, cXdg.Menu.Separator):
+                yield CXdgSeparatorAdapter()
+            elif isinstance(entry, cXdg.Menu.Menu):
+                yield CXdgDirectoryAdapter(entry)
+            elif isinstance(entry, cXdg.Menu.MenuEntry):
+                yield CXdgEntryAdapter(entry)
 
-class XdgEntryAdapter(object):
+class CXdgEntryAdapter(object):
     
     def __init__(self, adaptee):
         self.adaptee = adaptee
@@ -51,7 +51,7 @@ class XdgEntryAdapter(object):
         return self.entry.getTerminal()
 
 
-class XdgSeparatorAdapter(object):
+class CXdgSeparatorAdapter(object):
     def get_type(self):
         return TYPE_SEPARATOR;
 
