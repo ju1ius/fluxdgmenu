@@ -1,9 +1,12 @@
 # Compiled source #
 ###################
 *.pyc
+*.pyo
+*.so
+*.mo
 usr/bin/fluxdgmenud
 usr/share/locale/*
-*.mo
+usr/lib/fluxdgmenu/cXdg
 
 # OS generated files #
 ######################
