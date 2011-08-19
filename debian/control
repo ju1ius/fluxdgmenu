@@ -12,6 +12,7 @@ Package: fluxdgmenu
 Architecture: any
 Depends: fluxbox, bash, libinotifytools0, python >= 2.5, python-xdg >= 0.18
 Recommends: python-gtk2, python-gmenu, zenity
+Replaces: mint-fluxdgmenu
 Description: An automated XDG Menu system for Fluxbox.
   FluXDGMenu monitors for newly installed/removed applications, and maintains a submenu, listing and categorizing them like the Gnome/Xfce/Lxde menu.
   The package installs a menu file "/etc/xdg/menus/fxm-applications.menu",
