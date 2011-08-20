@@ -10,7 +10,7 @@ LDFLAGS=-linotifytools
 EXEC=usr/bin/fluxdgmenud
 SRC=src/fluxdgmenud/fluxdgmenud.c
 
-all: fluxdgmenud cXdg locale
+all: fluxdgmenud locale
 
 fluxdgmenud:
 	${CC} ${SRC} -o ${EXEC} ${LDFLAGS} ${CFLAGS}
@@ -36,9 +36,9 @@ install:
 	install -m 0755 usr/lib/fluxdgmenu/fluxdgmenu/*.py ${prefix}/lib/fluxdgmenu/fluxdgmenu
 	install -m 0755 usr/lib/fluxdgmenu/fluxdgmenu/adapters/*.py ${prefix}/lib/fluxdgmenu/fluxdgmenu/adapters
 	# cXdg module
-	install -d ${prefix}/lib/fluxdgmenu/cXdg
-	install -m 0755 usr/lib/fluxdgmenu/cXdg/*.py ${prefix}/lib/fluxdgmenu/cXdg
-	install -m 0755 usr/lib/fluxdgmenu/cXdg/*.so ${prefix}/lib/fluxdgmenu/cXdg
+	#install -d ${prefix}/lib/fluxdgmenu/cXdg
+	#install -m 0755 usr/lib/fluxdgmenu/cXdg/*.py ${prefix}/lib/fluxdgmenu/cXdg
+	#install -m 0755 usr/lib/fluxdgmenu/cXdg/*.so ${prefix}/lib/fluxdgmenu/cXdg
 	# bin
 	install -d ${prefix}/bin
 	install -m 0755 usr/bin/* ${prefix}/bin

@@ -53,8 +53,8 @@ files: gtk-file
                     import gtk
                     gtk_settings = gtk.settings_get_default()
                     self.theme = gtk_settings.get_property('gtk-icon-theme-name')
-                    self.gtk_theme = gtk.icon_theme_get_default()
-                    self.gtk_icon_flags = gtk.ICON_LOOKUP_NO_SVG
+                    #self.gtk_theme = gtk.icon_theme_get_default()
+                    #self.gtk_icon_flags = gtk.ICON_LOOKUP_NO_SVG
                 except:
                     self.use_gtk_theme = False
                     self.theme = self.config.get('Icons','theme')
@@ -129,16 +129,17 @@ files: gtk-file
         return ''
 
     def get_icon_path(self, name):
-        # Use gtk.IconTheme icon lookup => faster !
-        if self.use_gtk_theme:
-            icon = self.gtk_theme.lookup_icon(
-                name, self.icon_size, self.gtk_icon_flags
-            )
-            if not icon:
-                icon = self.gtk_theme.lookup_icon(
-                    self.default_icon, self.icon_size, self.gtk_icon_flags
-                )
-            return icon.get_filename() if icon is not None else ''
+        # Use gtk.IconTheme icon lookup
+        # Way faster but less accurate at finding icons :(
+        #if self.use_gtk_theme:
+            #icon = self.gtk_theme.lookup_icon(
+                #name, self.icon_size, self.gtk_icon_flags
+            #)
+            #if not icon:
+                #icon = self.gtk_theme.lookup_icon(
+                    #self.default_icon, self.icon_size, self.gtk_icon_flags
+                #)
+            #return icon.get_filename() if icon is not None else ''
         # Use xdg.IconTheme icon lookup, omitting svg icons
         path = IconTheme.getIconPath(
             name, self.icon_size, self.theme, ['png','xpm']
