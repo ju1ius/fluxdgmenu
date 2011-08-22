@@ -69,14 +69,13 @@ About dpkg-triggers:
     )
     ( options, args ) = parser.parse_args()
 
-    print str(options)
+    if len(args) == 0:
+        parser.print_usage()
+        sys.exit(1)
 
     if options.verbose:
         import time
         start_t = time.clock()
-    if len(args) == 0:
-        parser.print_usage()
-        sys.exit(1)
 
     if options.progress:
         if not utils.which('zenity'):
