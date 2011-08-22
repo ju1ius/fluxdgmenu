@@ -30,7 +30,7 @@ case "$1" in
     ;;
     configure)
       compile_py
-      fxm-daemon generate-rootmenu
+      #fxm-daemon generate-rootmenu
     ;;
     abort-upgrade|abort-remove|abort-deconfigure)
       fxm-daemon update
