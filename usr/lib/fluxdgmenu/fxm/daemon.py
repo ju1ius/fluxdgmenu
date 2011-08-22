@@ -39,12 +39,16 @@ def stop():
     """stops the daemon"""
     subprocess.call(['pkill', '-u', os.environ['USER'], config.APP_WATCH])
 
-def update():
+def update(opts):
     """updates the menu"""
     import fxm.applications
     menu = fxm.applications.ApplicationsMenu()
     with open(config.MENU_CACHE, 'w+') as fp:
         fp.write(menu.parse_menu_file(config.MENU_FILE))
+    if opts.with_bookmarks:
+        update_bookmarks()
+    if opts.with_recently_used:
+        update_recently_used()
 
 def update_icons():
     """Updates the menu and flush the icon cache"""

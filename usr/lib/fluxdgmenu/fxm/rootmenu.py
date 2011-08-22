@@ -13,15 +13,15 @@ class RootMenu(applications.ApplicationsMenu):
 
     def parse_menu_file(self, menu_file):
         root = self.adapter.get_root_directory(menu_file, SHOW_EMPTY)
-        output = self.directory(root, 1)
-        output = self.format_menu(output)
-        return output
+        output = "".join(self.directory(root, 1))
+        return self.format_menu(output)
 
     def format_menu(self, content):
         return """[begin]\n%s[end]""" % content
 
     def submenu(self, entry, level=1):
         id = entry.get_menu_id()
+        print entry
         if id == 'fxm-applications':
             return self.app_menu(entry, level)
         if id == 'fxm-bookmarks':
@@ -65,7 +65,7 @@ class RootMenu(applications.ApplicationsMenu):
     def fluxbox_menu(self, entry, level):
         name = entry.get_name()
         icon = self.find_icon(entry.get_icon()) if self.show_icons else ''
-        update_cmd = "fxm-daemon update --progress"
+        update_cmd = "fxm-daemon update --all --progress"
         generate_cmd = "fxm-daemon generate-rootmenu --progress"
         indent = "  " * (level + 1)
         submenu = """%(i)s[submenu] (%(fxm)s)

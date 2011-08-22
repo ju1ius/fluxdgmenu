@@ -43,12 +43,17 @@ About dpkg-triggers:
   $ %prog disable-triggers
 """
 
+    
     parser = config.OptionParser(
         usage = usage, epilog = description      
     )
     parser.add_option(
         '-v', '--verbose', action='store_true',
         help="be verbose and log inotify events to syslog"
+    )
+    parser.add_option(
+        '-a', '--all', action='store_true',
+        help="""Equivalent of -br"""
     )
     parser.add_option(
         '-b', '--with-bookmarks', action='store_true',
@@ -64,6 +69,8 @@ About dpkg-triggers:
     )
     ( options, args ) = parser.parse_args()
 
+    print str(options)
+
     if options.verbose:
         import time
         start_t = time.clock()
@@ -74,6 +81,12 @@ About dpkg-triggers:
     if options.progress:
         if not utils.which('zenity'):
             options.progress = False
+        else:
+            progress_opts = utils.get_options_for_progress(options)
+
+    if options.all:
+        options.with_bookmarks = True
+        options.with_recently_used = True
 
     command = args[0]
     if command == 'start' or command == 'restart':
@@ -82,9 +95,9 @@ About dpkg-triggers:
         daemon.stop()
     elif command == 'update':
         if options.progress:
-            utils.zenity_progress(command)
+            utils.zenity_progress(command, progress_opts)
         else:
-            daemon.update()
+            daemon.update(options)
     elif command == 'update-bookmarks':
         if options.progress:
             utils.zenity_progress(command)

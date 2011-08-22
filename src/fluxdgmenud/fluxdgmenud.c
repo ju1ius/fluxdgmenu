@@ -13,15 +13,15 @@
  * Compile with: gcc -linotifytools fluxdgmenud.c -o fluxdgmenud -W -Wall -pedantic
  */
 
-#define DAEMON_NAME         "fluxdgmenud"
-#define DESKTOP_FILE_EXT    ".desktop"
-#define DIRECTORY_FILE_EXT  ".directory"
-#define MENU_FILE_EXT       ".menu"
-#define BOOKMARKS_FILE      ".gtk-bookmarks"
-#define RECENTLY_USED_FILE ".recently-used.xbel"
-#define APPS_EVENTS         IN_CLOSE_WRITE|IN_DELETE|IN_MOVE
-#define BOOKMARKS_EVENTS    IN_CLOSE_WRITE
-#define HOME                getenv("HOME")
+#define DAEMON_NAME           "fluxdgmenud"
+#define DESKTOP_FILE_EXT      ".desktop"
+#define DIRECTORY_FILE_EXT    ".directory"
+#define MENU_FILE_EXT         ".menu"
+#define BOOKMARKS_FILE        ".gtk-bookmarks"
+#define RECENTLY_USED_FILE    ".recently-used.xbel"
+#define APPS_EVENTS           IN_CLOSE_WRITE|IN_DELETE|IN_MOVE
+#define BOOKMARKS_EVENTS      IN_MOVED_TO
+#define HOME                  getenv("HOME")
 
 void signal_handler(int signum);
 void cleanup(void);

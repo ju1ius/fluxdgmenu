@@ -1,4 +1,4 @@
-import os, pwd
+import os, pwd, subprocess
 from . import config
 
 def list_real_users():
@@ -23,11 +23,21 @@ def which(program):
                 return exe_file
     return None
 
-def zenity_progress(cmd):
+def zenity_progress(cmd, opts_str=' '):
     """Displays a zenity progress bar for the given command"""
     subprocess.call(
-        "(%s %s) | zenity --progress --pulsate --auto-close" % (
-            config.APP_DAEMON, cmd
+        "(%s%s%s) | zenity --progress --pulsate --auto-close" % (
+            config.APP_DAEMON, opts_str, cmd
         ),
         shell=True
     )
+
+def get_options_for_progress(options):
+    if options.all:
+        return '-a'
+    opt_str = ' '
+    if options.with_bookmarks:
+        opt_str += '-b '
+    if options.with_recently_used:
+        opt_str += '-r '
+    return opt_str

@@ -19,8 +19,7 @@ class ApplicationsMenu(base.Menu):
     def parse_menu_file(self, menu_file):
         root = self.adapter.get_root_directory(menu_file, self.show_flags)
         output = "".join( self.directory(root) )
-        output = self.format_menu(output)
-        return output
+        return self.format_menu(output)
 
     def separator(self, entry, level):
         return self.format_separator(level)
