@@ -7,7 +7,7 @@ def start(opts):
     stop()
     update(opts)
     cmd = [config.APP_WATCH, '--daemon',
-        '--apps-command', '"%s update"' % config.APP_DAEMON
+        '--apps-command', '%s update' % config.APP_DAEMON
     ]
     # Add exclude patterns
     cmd.extend(['--exclude', "|".join(config.EXCLUDED)])
@@ -18,13 +18,13 @@ def start(opts):
     if opts.with_bookmarks:
         cmd.extend([
             '--bookmarks-command',
-            '"%s update-bookmarks"' % config.APP_DAEMON
+            '%s update-bookmarks' % config.APP_DAEMON
         ])
     # Recently Used items
     if opts.with_recently_used:
         cmd.extend([
             '--recently-used-command',
-            '"%s update-recently-used"' % config.APP_DAEMON
+            '%s update-recently-used' % config.APP_DAEMON
         ])
     # Add monitored dirs
     for d in config.MONITORED:
