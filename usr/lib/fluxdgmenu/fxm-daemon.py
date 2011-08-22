@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 
-import os, sys, subprocess, optparse
+import sys, subprocess
 import fxm.config as config
 import fxm.daemon as daemon
 import fxm.utils as utils

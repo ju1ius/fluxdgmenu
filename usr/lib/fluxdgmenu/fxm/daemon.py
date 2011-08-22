@@ -1,4 +1,5 @@
-from . import config, utils
+import os, sys, subprocess
+from . import config, utils, cache
 
 def start(opts):
     """starts the daemon"""
@@ -47,11 +48,10 @@ def update():
 
 def update_icons():
     """Updates the menu and flush the icon cache"""
-    if os.path.isfile(config.CACHE_DB):
-        try:
-            os.remove(config.CACHE_DB)
-        except OSError, why:
-            sys.exit("Could not remove %s: %s" % (config.CACHE_DB, why))
+    try:
+        cache.clear()
+    except OSError, why:
+        sys.exit("Could not remove %s: %s" % (config.CACHE_DB, why))
     update()
 
 def update_bookmarks():
