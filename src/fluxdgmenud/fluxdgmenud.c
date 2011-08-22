@@ -224,7 +224,7 @@ int main(int argc, char **argv)
         if (verbose)
         {
           inotifytools_snprintf(message_buf, 1024, event, "%T %e %w%f\n");
-          syslog(LOG_INFO, "%s", message_buf);
+          syslog(LOG_INFO, "%s >>> %s", message_buf, recently_used_command);
         }
         system(recently_used_command);
       }
@@ -233,7 +233,7 @@ int main(int argc, char **argv)
         if (verbose)
         {
           inotifytools_snprintf(message_buf, 1024, event, "%T %e %w%f\n");
-          syslog(LOG_INFO, "%s", message_buf);
+          syslog(LOG_INFO, "%s >>> %s", message_buf, bookmarks_command);
         }
         system(bookmarks_command);
       }
@@ -248,7 +248,7 @@ int main(int argc, char **argv)
       if (verbose)
       {
         inotifytools_snprintf(message_buf, 1024, event, "%T %e %w%f\n");
-        syslog(LOG_INFO, "%s", message_buf);
+          syslog(LOG_INFO, "%s >>> %s", message_buf, apps_command);
       }
       system(apps_command);
     }

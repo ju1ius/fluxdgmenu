@@ -33,8 +33,9 @@ def zenity_progress(cmd, opts_str=' '):
     )
 
 def get_options_for_progress(options):
+    # Remember to leave spaces around options !!!
     if options.all:
-        return '-a'
+        return ' -a '
     opt_str = ' '
     if options.with_bookmarks:
         opt_str += '-b '
