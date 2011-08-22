@@ -1,15 +1,9 @@
-msgid "Generate"
-msgstr ""
+msgid "Menu"
+msgstr "Menü"
 
 msgid "Configuration"
 msgstr "Instellens"
 
-msgid "Menu"
-msgstr "Menü"
-
-msgid "Places"
-msgstr "Orte"
-
-msgid "Recently Used"
-msgstr "Tolest brukt"
+msgid "Generate"
+msgstr ""
 

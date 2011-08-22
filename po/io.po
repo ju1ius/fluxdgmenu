@@ -1,9 +1,3 @@
 msgid "Menu"
 msgstr ""
 
-msgid "Places"
-msgstr "Placi"
-
-msgid "Recently Used"
-msgstr ""
-

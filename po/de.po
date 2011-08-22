@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "Erzeugen"
+msgid "Themes"
+msgstr "Themen"
+
+msgid "Menu"
+msgstr "Menü"
 
 msgid "Update"
 msgstr "Aktualisieren"
@@ -7,15 +10,6 @@ msgstr "Aktualisieren"
 msgid "Configuration"
 msgstr "Konfigurieren"
 
-msgid "Menu"
-msgstr "Menü"
-
-msgid "Places"
-msgstr "Orte"
-
-msgid "Recently Used"
-msgstr "Zuletzt verwendet"
-
-msgid "Themes"
-msgstr "Themen"
+msgid "Generate"
+msgstr "Erzeugen"
 

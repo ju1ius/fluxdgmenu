@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "Tạo ra"
+msgid "Themes"
+msgstr "Sắc thái"
+
+msgid "Menu"
+msgstr "Trình đơn"
 
 msgid "Update"
 msgstr "Cập nhật"
@@ -7,15 +10,6 @@ msgstr "Cập nhật"
 msgid "Configuration"
 msgstr "Cấu hình"
 
-msgid "Menu"
-msgstr "Trình đơn"
-
-msgid "Places"
-msgstr "Mở nhanh"
-
-msgid "Recently Used"
-msgstr "Vừa dùng"
-
-msgid "Themes"
-msgstr "Sắc thái"
+msgid "Generate"
+msgstr "Tạo ra"
 

@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "Згенэраваць"
+msgid "Themes"
+msgstr "Тэмы"
+
+msgid "Menu"
+msgstr "Мэню"
 
 msgid "Update"
 msgstr "Абнавіць"
@@ -7,15 +10,6 @@ msgstr "Абнавіць"
 msgid "Configuration"
 msgstr "Наладка"
 
-msgid "Menu"
-msgstr "Мэню"
-
-msgid "Places"
-msgstr "Месцы"
-
-msgid "Recently Used"
-msgstr "Нядаўнія файлы"
-
-msgid "Themes"
-msgstr "Тэмы"
+msgid "Generate"
+msgstr "Згенэраваць"
 

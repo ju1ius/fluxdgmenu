@@ -3,9 +3,8 @@ fluxdgmenu (0.2-1) stable; urgency=medium
   * New "Recently Used Files" menu
   * Adapter system in order to switch between menu parsers easily
     (only python-gmenu and python-xdg atm)
-  * Use gtk for icon lookup if use_gtk_theme is true
 
- -- Jules Bernable <julius@laforcemolle.org>  Tue, 16 Aug 2011 07:26:42 +0200
+ -- Jules Bernable <julius@laforcemolle.org>  Sat, 20 Aug 2011 04:02:57 +0200
 
 fluxdgmenu (0.1-1) stable; urgency=medium
 

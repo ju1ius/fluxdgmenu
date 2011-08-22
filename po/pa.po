@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "ਬਣਾਓ(G)"
+msgid "Themes"
+msgstr "ਥੀਮ"
+
+msgid "Menu"
+msgstr "ਮੇਨੂ"
 
 msgid "Update"
 msgstr "ਅੱਪਡੇਟ(U)"
@@ -7,15 +10,6 @@ msgstr "ਅੱਪਡੇਟ(U)"
 msgid "Configuration"
 msgstr "ਸੰਰਚਨਾ"
 
-msgid "Menu"
-msgstr "ਮੇਨੂ"
-
-msgid "Places"
-msgstr "ਥਾਵਾਂ"
-
-msgid "Recently Used"
-msgstr "ਤਾਜ਼ਾ ਵਰਤੇ"
-
-msgid "Themes"
-msgstr "ਥੀਮ"
+msgid "Generate"
+msgstr "ਬਣਾਓ(G)"
 

@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "Sortu"
+msgid "Themes"
+msgstr "Gaiak"
+
+msgid "Menu"
+msgstr "Menua"
 
 msgid "Update"
 msgstr "Eguneratu"
@@ -7,15 +10,6 @@ msgstr "Eguneratu"
 msgid "Configuration"
 msgstr "Konfigurazioa"
 
-msgid "Menu"
-msgstr "Menua"
-
-msgid "Places"
-msgstr "Lekuak"
-
-msgid "Recently Used"
-msgstr "Duela gutxi erabilita"
-
-msgid "Themes"
-msgstr "Gaiak"
+msgid "Generate"
+msgstr "Sortu"
 

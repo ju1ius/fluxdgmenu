@@ -1,9 +1,3 @@
 msgid "Menu"
 msgstr "Lelokelelo la dikagare"
 
-msgid "Places"
-msgstr "Mafelo"
-
-msgid "Recently Used"
-msgstr ""
-

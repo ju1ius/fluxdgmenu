@@ -1,21 +1,15 @@
-msgid "Generate"
-msgstr "జనియింపచేయుము (G)"
-
-msgid "Update"
-msgstr "నవీకరించు (U)"
-
-msgid "Configuration"
-msgstr "ఆకృతీకరణ"
+msgid "Themes"
+msgstr "థీమ్సు"
 
 msgid "Menu"
 msgstr "జాబితా"
 
-msgid "Places"
-msgstr "స్థలములు"
+msgid "Update"
+msgstr "నవీకరించు"
 
-msgid "Recently Used"
-msgstr "ఇటీవల వాడినవి"
+msgid "Configuration"
+msgstr "ఆకృతీకరణ"
 
-msgid "Themes"
-msgstr "థీమ్సు"
+msgid "Generate"
+msgstr "జనియింపచేయుము"
 

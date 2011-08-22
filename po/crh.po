@@ -1,15 +1,9 @@
-msgid "Update"
-msgstr "Yañart"
+msgid "Themes"
+msgstr "Temalar"
 
 msgid "Menu"
 msgstr "Menü"
 
-msgid "Places"
-msgstr "Yerler"
-
-msgid "Recently Used"
-msgstr "Demi Qullanılğan"
-
-msgid "Themes"
-msgstr "Temalar"
+msgid "Update"
+msgstr "Yañart"
 

@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "Létrehozás"
+msgid "Themes"
+msgstr "Témák"
+
+msgid "Menu"
+msgstr "Menü"
 
 msgid "Update"
 msgstr "Frissítés"
@@ -7,15 +10,6 @@ msgstr "Frissítés"
 msgid "Configuration"
 msgstr "Beállítás"
 
-msgid "Menu"
-msgstr "Menü"
-
-msgid "Places"
-msgstr "Helyek"
-
-msgid "Recently Used"
-msgstr "Nemrég használt"
-
-msgid "Themes"
-msgstr "Témák"
+msgid "Generate"
+msgstr "Létrehozás"
 

@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "Genera"
+msgid "Themes"
+msgstr "Temes"
+
+msgid "Menu"
+msgstr "Menú"
 
 msgid "Update"
 msgstr "Actualitza"
@@ -7,15 +10,6 @@ msgstr "Actualitza"
 msgid "Configuration"
 msgstr "Configuració"
 
-msgid "Menu"
-msgstr "Menú"
-
-msgid "Places"
-msgstr "Llocs"
-
-msgid "Recently Used"
-msgstr "Utilitzats recentment"
-
-msgid "Themes"
-msgstr "Temes"
+msgid "Generate"
+msgstr "Genera"
 

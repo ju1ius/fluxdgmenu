@@ -104,10 +104,11 @@ def update():
 
 def update_icons():
     """Updates the menu and flush the icon cache"""
-    try:
-        os.remove(ICONS_CACHE)
-    except OSError, why:
-        sys.exit("Could not remove %s: %s" % (ICONS_CACHE, why))
+    if os.path.isfile(ICONS_CACHE):
+        try:
+            os.remove(ICONS_CACHE)
+        except OSError, why:
+            sys.exit("Could not remove %s: %s" % (ICONS_CACHE, why))
     update()
 
 def update_bookmarks():

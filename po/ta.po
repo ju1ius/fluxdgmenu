@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "உருவாக்கு (G)"
+msgid "Themes"
+msgstr "கருத்துகள்"
+
+msgid "Menu"
+msgstr "பட்டி"
 
 msgid "Update"
 msgstr "இற்றைபடுத்து"
@@ -7,15 +10,6 @@ msgstr "இற்றைபடுத்து"
 msgid "Configuration"
 msgstr "கட்டமை"
 
-msgid "Menu"
-msgstr "பட்டி"
-
-msgid "Places"
-msgstr "இடங்கள்"
-
-msgid "Recently Used"
-msgstr "சமீபகாத்தில் பயன்படுத்தப்பட்டது"
-
-msgid "Themes"
-msgstr "கருத்துகள்"
+msgid "Generate"
+msgstr "உருவாக்கு"
 

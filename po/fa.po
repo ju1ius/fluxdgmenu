@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "تولید"
+msgid "Themes"
+msgstr "تم‌ها"
+
+msgid "Menu"
+msgstr "منو"
 
 msgid "Update"
 msgstr "به‌هنگام‌سازی"
@@ -7,15 +10,6 @@ msgstr "به‌هنگام‌سازی"
 msgid "Configuration"
 msgstr "پیکربندی"
 
-msgid "Menu"
-msgstr "منو"
-
-msgid "Places"
-msgstr "محل‌ها"
-
-msgid "Recently Used"
-msgstr "به‌تازه‌گی استفاده شده"
-
-msgid "Themes"
-msgstr "تم‌ها"
+msgid "Generate"
+msgstr "تولید"
 

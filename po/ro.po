@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "Generează"
+msgid "Themes"
+msgstr "Teme"
+
+msgid "Menu"
+msgstr "Meniu"
 
 msgid "Update"
 msgstr "Actualizează"
@@ -7,15 +10,6 @@ msgstr "Actualizează"
 msgid "Configuration"
 msgstr "Configurare"
 
-msgid "Menu"
-msgstr "Meniu"
-
-msgid "Places"
-msgstr "Locuri"
-
-msgid "Recently Used"
-msgstr "Utilizate recent"
-
-msgid "Themes"
-msgstr "Teme"
+msgid "Generate"
+msgstr "Generează"
 

@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "ولِّد"
+msgid "Themes"
+msgstr "السِمات"
+
+msgid "Menu"
+msgstr "القائمة"
 
 msgid "Update"
 msgstr "حدّث"
@@ -7,15 +10,6 @@ msgstr "حدّث"
 msgid "Configuration"
 msgstr "إعدادات"
 
-msgid "Menu"
-msgstr "القائمة"
-
-msgid "Places"
-msgstr "أماكن"
-
-msgid "Recently Used"
-msgstr "مستخدمة مؤخرا"
-
-msgid "Themes"
-msgstr "السِمات"
+msgid "Generate"
+msgstr "ولِّد"
 

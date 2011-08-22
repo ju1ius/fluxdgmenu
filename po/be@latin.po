@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "Zhieneruj"
+msgid "Themes"
+msgstr "Matyvy"
+
+msgid "Menu"
+msgstr "Menu"
 
 msgid "Update"
 msgstr "Aktualizuj"
@@ -7,15 +10,6 @@ msgstr "Aktualizuj"
 msgid "Configuration"
 msgstr "Kanfihuracyja"
 
-msgid "Menu"
-msgstr "Menu"
-
-msgid "Places"
-msgstr "Miescy"
-
-msgid "Recently Used"
-msgstr "Niadaŭna ŭžyvanyja"
-
-msgid "Themes"
-msgstr "Matyvy"
+msgid "Generate"
+msgstr "Zhieneruj"
 

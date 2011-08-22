@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "አጠቃላይ"
+msgid "Themes"
+msgstr ""
+
+msgid "Menu"
+msgstr "ሜኑ"
 
 msgid "Update"
 msgstr "አሻሽል"
@@ -7,15 +10,6 @@ msgstr "አሻሽል"
 msgid "Configuration"
 msgstr "ለውጡ"
 
-msgid "Menu"
-msgstr "ሜኑ"
-
-msgid "Places"
-msgstr "ንድፎች (P)"
-
-msgid "Recently Used"
-msgstr ""
-
-msgid "Themes"
-msgstr ""
+msgid "Generate"
+msgstr "አጠቃላይ"
 

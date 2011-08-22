@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "Gjenero"
+msgid "Themes"
+msgstr "Temat"
+
+msgid "Menu"
+msgstr "Menu"
 
 msgid "Update"
 msgstr "Përditëso"
@@ -7,15 +10,6 @@ msgstr "Përditëso"
 msgid "Configuration"
 msgstr "Konfigurimi"
 
-msgid "Menu"
-msgstr "Menu"
-
-msgid "Places"
-msgstr "Rezerva"
-
-msgid "Recently Used"
-msgstr "Përdorur së fundmi"
-
-msgid "Themes"
-msgstr "Temat"
+msgid "Generate"
+msgstr "Gjenero"
 

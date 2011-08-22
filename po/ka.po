@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "გენერაცია"
+msgid "Themes"
+msgstr "თემები"
+
+msgid "Menu"
+msgstr "მენიუ"
 
 msgid "Update"
 msgstr "განახლება"
@@ -7,15 +10,6 @@ msgstr "განახლება"
 msgid "Configuration"
 msgstr "კონფიგურაცია"
 
-msgid "Menu"
-msgstr "მენიუ"
-
-msgid "Places"
-msgstr "მდებარეობა"
-
-msgid "Recently Used"
-msgstr "ბოლოს გამოყენებული"
-
-msgid "Themes"
-msgstr "თემები"
+msgid "Generate"
+msgstr "გენერაცია"
 

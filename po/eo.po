@@ -1,18 +1,12 @@
-msgid "Generate"
-msgstr "Generu"
-
-msgid "Update"
-msgstr "Ĝisdatigi"
+msgid "Themes"
+msgstr "Etosoj"
 
 msgid "Menu"
 msgstr "Menuo"
 
-msgid "Places"
-msgstr "Lokoj"
+msgid "Update"
+msgstr "Ĝisdatigi"
 
-msgid "Recently Used"
-msgstr "Lastatempe uzata"
-
-msgid "Themes"
-msgstr "Etosoj"
+msgid "Generate"
+msgstr "Generu"
 

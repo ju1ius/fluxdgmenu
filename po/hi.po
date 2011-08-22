@@ -1,21 +1,15 @@
-msgid "Generate"
-msgstr "उत्पन्न करें"
-
-msgid "Update"
-msgstr "अद्यतन करें (U)"
-
-msgid "Configuration"
-msgstr "विन्यास"
+msgid "Themes"
+msgstr "प्रसंग"
 
 msgid "Menu"
 msgstr "मेनू"
 
-msgid "Places"
-msgstr "स्थान"
+msgid "Update"
+msgstr "अद्यतन करें"
 
-msgid "Recently Used"
-msgstr "हाल में प्रयुक्त"
+msgid "Configuration"
+msgstr "विन्यास"
 
-msgid "Themes"
-msgstr "प्रसंग"
+msgid "Generate"
+msgstr "उत्पन्न करें"
 

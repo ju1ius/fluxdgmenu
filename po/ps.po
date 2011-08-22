@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "جوړول"
+msgid "Themes"
+msgstr "کوندې"
+
+msgid "Menu"
+msgstr "غورنۍ"
 
 msgid "Update"
 msgstr "اوسمهالول"
@@ -7,15 +10,6 @@ msgstr "اوسمهالول"
 msgid "Configuration"
 msgstr "سازونه"
 
-msgid "Menu"
-msgstr "غورنۍ"
-
-msgid "Places"
-msgstr "ځايونه"
-
-msgid "Recently Used"
-msgstr "اوسن کارول شوي"
-
-msgid "Themes"
-msgstr "کوندې"
+msgid "Generate"
+msgstr "جوړول"
 

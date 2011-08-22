@@ -17,11 +17,6 @@ set -e
 # for details, see http://www.debian.org/doc/debian-policy/ or
 # the debian-policy package
 
-compilepy()
-{
-  python -m compileall -fq /usr/lib/fluxdgmenu
-}
-
 
 case "$1" in
     # This is triggered by any installation of a desktop entry
@@ -29,7 +24,6 @@ case "$1" in
       fxm-daemon update
     ;;
     configure)
-      compilepy()
       fxm-daemon generate-rootmenu
     ;;
     abort-upgrade|abort-remove|abort-deconfigure)

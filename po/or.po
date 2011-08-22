@@ -1,21 +1,15 @@
-msgid "Generate"
-msgstr "ସ୍ରୁଷ୍ଟି କରନ୍ତୁ (G)"
-
-msgid "Update"
-msgstr "ଅଦ୍ଯତନ (U)"
-
-msgid "Configuration"
-msgstr "ବିନ୍ୟାସ"
+msgid "Themes"
+msgstr "ପ୍ରସଙ୍ଗ"
 
 msgid "Menu"
 msgstr "ତାଲିକା"
 
-msgid "Places"
-msgstr "ସ୍ଥାନ"
+msgid "Update"
+msgstr "ଅଦ୍ଯତନ"
 
-msgid "Recently Used"
-msgstr "ନିକଟରେ ବ୍ୟବହୃତ"
+msgid "Configuration"
+msgstr "ବିନ୍ୟାସ"
 
-msgid "Themes"
-msgstr "ପ୍ରସଙ୍ଗ"
+msgid "Generate"
+msgstr "ସ୍ରୁଷ୍ଟି କରନ୍ତୁ"
 

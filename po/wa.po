@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "Djenerå"
+msgid "Themes"
+msgstr ""
+
+msgid "Menu"
+msgstr "Menu"
 
 msgid "Update"
 msgstr "Mete a djoû"
@@ -7,15 +10,6 @@ msgstr "Mete a djoû"
 msgid "Configuration"
 msgstr "Apontyî"
 
-msgid "Menu"
-msgstr "Menu"
-
-msgid "Places"
-msgstr "Motifs"
-
-msgid "Recently Used"
-msgstr ""
-
-msgid "Themes"
-msgstr ""
+msgid "Generate"
+msgstr "Djenerå"
 

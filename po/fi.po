@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "Luo"
+msgid "Themes"
+msgstr "Teemat"
+
+msgid "Menu"
+msgstr "Valikko"
 
 msgid "Update"
 msgstr "Päivitä"
@@ -7,15 +10,6 @@ msgstr "Päivitä"
 msgid "Configuration"
 msgstr "Asetukset"
 
-msgid "Menu"
-msgstr "Valikko"
-
-msgid "Places"
-msgstr "Sijainnit"
-
-msgid "Recently Used"
-msgstr "Äskettäin käytetyt"
-
-msgid "Themes"
-msgstr "Teemat"
+msgid "Generate"
+msgstr "Luo"
 

@@ -1,21 +1,15 @@
-msgid "Generate"
-msgstr "પેદા કરો (G)"
-
-msgid "Update"
-msgstr "બદલો (U)"
-
-msgid "Configuration"
-msgstr "રૂપરેખાંકન"
+msgid "Themes"
+msgstr "થીમો"
 
 msgid "Menu"
 msgstr "મેનુ"
 
-msgid "Places"
-msgstr "જગ્યાઓ"
+msgid "Update"
+msgstr "બદલો"
 
-msgid "Recently Used"
-msgstr "છેલ્લે વપરાયેલ"
+msgid "Configuration"
+msgstr "રૂપરેખાંકન"
 
-msgid "Themes"
-msgstr "થીમો"
+msgid "Generate"
+msgstr "પેદા કરો"
 

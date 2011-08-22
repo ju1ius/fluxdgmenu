@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "তৈরি করুন (G)"
+msgid "Themes"
+msgstr "থিম"
+
+msgid "Menu"
+msgstr "মেনু"
 
 msgid "Update"
 msgstr "আপডেট(U)"
@@ -7,15 +10,6 @@ msgstr "আপডেট(U)"
 msgid "Configuration"
 msgstr "কনফিগার প্রণালী"
 
-msgid "Menu"
-msgstr "মেনু"
-
-msgid "Places"
-msgstr "অবস্থান"
-
-msgid "Recently Used"
-msgstr "সম্প্রতি ব্যবহৃত"
-
-msgid "Themes"
-msgstr "থিম"
+msgid "Generate"
+msgstr "তৈরি করুন"
 

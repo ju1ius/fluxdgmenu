@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "Gin"
+msgid "Themes"
+msgstr "Téamaí"
+
+msgid "Menu"
+msgstr "Roghchlár"
 
 msgid "Update"
 msgstr "Nuashonraigh"
@@ -7,15 +10,6 @@ msgstr "Nuashonraigh"
 msgid "Configuration"
 msgstr "Socrú"
 
-msgid "Menu"
-msgstr "Roghchlár"
-
-msgid "Places"
-msgstr "̈́Áiteanna"
-
-msgid "Recently Used"
-msgstr "Úsáidte le Déanaí"
-
-msgid "Themes"
-msgstr "Téamaí"
+msgid "Generate"
+msgstr "Gin"
 

@@ -55,7 +55,7 @@ class RootMenu(applications.ApplicationsMenu):
 
     def recently_used_menu(self, entry, level):
         filename = "~/.fluxbox/fluxdgmenu/recently-used"
-        name = _('Recently Used')
+        name = entry.get_name()
         icon = self.find_icon(entry.get_icon()) if self.show_icons else ''
         return self.format_submenu(
             'fxm-recently-used', name, icon,

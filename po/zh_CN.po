@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "生成(G)"
+msgid "Themes"
+msgstr "主题"
+
+msgid "Menu"
+msgstr "菜单"
 
 msgid "Update"
 msgstr "更新(U)"
@@ -7,15 +10,6 @@ msgstr "更新(U)"
 msgid "Configuration"
 msgstr "配置"
 
-msgid "Menu"
-msgstr "菜单"
-
-msgid "Places"
-msgstr "位置"
-
-msgid "Recently Used"
-msgstr "最近使用的"
-
-msgid "Themes"
-msgstr "主题"
+msgid "Generate"
+msgstr "生成(G)"
 

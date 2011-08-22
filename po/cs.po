@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "Vygenerovat"
+msgid "Themes"
+msgstr "Motivy"
+
+msgid "Menu"
+msgstr "Menu"
 
 msgid "Update"
 msgstr "Aktualizovat"
@@ -7,15 +10,6 @@ msgstr "Aktualizovat"
 msgid "Configuration"
 msgstr "Nastavení"
 
-msgid "Menu"
-msgstr "Menu"
-
-msgid "Places"
-msgstr "Místa"
-
-msgid "Recently Used"
-msgstr "Naposledy použité"
-
-msgid "Themes"
-msgstr "Motivy"
+msgid "Generate"
+msgstr "Vygenerovat"
 

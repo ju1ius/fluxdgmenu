@@ -1,6 +1,3 @@
 msgid "Menu"
 msgstr "Saylaq"
 
-msgid "Recently Used"
-msgstr ""
-

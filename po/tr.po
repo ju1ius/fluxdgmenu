@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "Üret"
+msgid "Themes"
+msgstr "Temalar"
+
+msgid "Menu"
+msgstr "Menü"
 
 msgid "Update"
 msgstr "Güncelle"
@@ -7,15 +10,6 @@ msgstr "Güncelle"
 msgid "Configuration"
 msgstr "Yapılandırma"
 
-msgid "Menu"
-msgstr "Menü"
-
-msgid "Places"
-msgstr "Yerler"
-
-msgid "Recently Used"
-msgstr "Yakında Kullanılan"
-
-msgid "Themes"
-msgstr "Temalar"
+msgid "Generate"
+msgstr "Üret"
 

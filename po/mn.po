@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "Ерөнхий"
+msgid "Themes"
+msgstr "Гадаргуун Арьс"
+
+msgid "Menu"
+msgstr "Цэс"
 
 msgid "Update"
 msgstr "Шинэчлэх"
@@ -7,15 +10,6 @@ msgstr "Шинэчлэх"
 msgid "Configuration"
 msgstr "Тохируулах"
 
-msgid "Menu"
-msgstr "Цэс"
-
-msgid "Places"
-msgstr "Байрлалууд"
-
-msgid "Recently Used"
-msgstr ""
-
-msgid "Themes"
-msgstr "Гадаргуун Арьс"
+msgid "Generate"
+msgstr "Ерөнхий"
 

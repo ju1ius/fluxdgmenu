@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "Genereer"
+msgid "Themes"
+msgstr "Temas"
+
+msgid "Menu"
+msgstr "Kieslys"
 
 msgid "Update"
 msgstr "Dateer op"
@@ -7,15 +10,6 @@ msgstr "Dateer op"
 msgid "Configuration"
 msgstr "Konfigurasie"
 
-msgid "Menu"
-msgstr "Kieslys"
-
-msgid "Places"
-msgstr "Plekke"
-
-msgid "Recently Used"
-msgstr "Onlangs gebruik"
-
-msgid "Themes"
-msgstr "Temas"
+msgid "Generate"
+msgstr "Genereer"
 

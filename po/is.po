@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "Framleiða"
+msgid "Themes"
+msgstr "Þemu"
+
+msgid "Menu"
+msgstr ""
 
 msgid "Update"
 msgstr "Uppfæra"
@@ -7,15 +10,6 @@ msgstr "Uppfæra"
 msgid "Configuration"
 msgstr "Stilla nánar"
 
-msgid "Menu"
-msgstr ""
-
-msgid "Places"
-msgstr "Staðir"
-
-msgid "Recently Used"
-msgstr ""
-
-msgid "Themes"
-msgstr "Þemu"
+msgid "Generate"
+msgstr "Framleiða"
 

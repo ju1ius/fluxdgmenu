@@ -18,21 +18,12 @@ set -e
 # for details, see http://www.debian.org/doc/debian-policy/ or
 # the debian-policy package
 
-removepyc()
-{
-  find /usr/lib/fluxdgmenu -name *.pyc -name *.pyo | while read f
-  do
-    rm "$f"
-  done
-}
-
 case "$1" in
     upgrade|remove|purge)
       if pgrep fluxdgmenud > /dev/null
       then
         pkill fluxdgmenud
       fi
-      removepyc
       exit 0
     ;;
     failed-upgrade|abort-install|abort-upgrade|disappear)

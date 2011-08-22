@@ -1,7 +1,5 @@
 import os, sys, stat, re, StringIO, sqlite3, ConfigParser
 import xdg.IconTheme as IconTheme
-#import cXdg.IconTheme as IconTheme
-
 
 class Menu(object):
 

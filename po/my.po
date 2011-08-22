@@ -1,6 +1,3 @@
 msgid "Menu"
 msgstr "စာရင်းမှတ်"
 
-msgid "Recently Used"
-msgstr "လတ်တလော သုံးစွဲမှု"
-

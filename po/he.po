@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "יצירה"
+msgid "Themes"
+msgstr "ערכות נושא"
+
+msgid "Menu"
+msgstr "Menu"
 
 msgid "Update"
 msgstr "עדכן"
@@ -7,15 +10,6 @@ msgstr "עדכן"
 msgid "Configuration"
 msgstr "הגדרות"
 
-msgid "Menu"
-msgstr "Menu"
-
-msgid "Places"
-msgstr "מקומות"
-
-msgid "Recently Used"
-msgstr "בשימוש לאחרונה"
-
-msgid "Themes"
-msgstr "ערכות נושא"
+msgid "Generate"
+msgstr "יצירה"
 

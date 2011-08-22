@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "Opprett"
+msgid "Themes"
+msgstr "Drakt"
+
+msgid "Menu"
+msgstr "Meny"
 
 msgid "Update"
 msgstr "Oppdater"
@@ -7,15 +10,6 @@ msgstr "Oppdater"
 msgid "Configuration"
 msgstr "Innstillingar"
 
-msgid "Menu"
-msgstr "Meny"
-
-msgid "Places"
-msgstr "Stader"
-
-msgid "Recently Used"
-msgstr "Sist brukt"
-
-msgid "Themes"
-msgstr "Drakt"
+msgid "Generate"
+msgstr "Opprett"
 

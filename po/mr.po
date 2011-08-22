@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "बनवा (G)"
+msgid "Themes"
+msgstr "थीम्स"
+
+msgid "Menu"
+msgstr "मेनू"
 
 msgid "Update"
 msgstr "अद्ययावत(U)"
@@ -7,15 +10,6 @@ msgstr "अद्ययावत(U)"
 msgid "Configuration"
 msgstr "बाह्यस्वरूप"
 
-msgid "Menu"
-msgstr "मेनू"
-
-msgid "Places"
-msgstr "स्थान"
-
-msgid "Recently Used"
-msgstr "नुकतेच वापरलेले"
-
-msgid "Themes"
-msgstr "थीम्स"
+msgid "Generate"
+msgstr "बनवा"
 

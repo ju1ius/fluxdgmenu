@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "Suprimir"
+msgid "Themes"
+msgstr "Tèmas"
+
+msgid "Menu"
+msgstr "Menut"
 
 msgid "Update"
 msgstr "Metre a jorn"
@@ -7,15 +10,6 @@ msgstr "Metre a jorn"
 msgid "Configuration"
 msgstr "Configuracion"
 
-msgid "Menu"
-msgstr "Menut"
-
-msgid "Places"
-msgstr "Acorchis"
-
-msgid "Recently Used"
-msgstr ""
-
-msgid "Themes"
-msgstr "Tèmas"
+msgid "Generate"
+msgstr "Suprimir"
 

@@ -1,9 +1,3 @@
 msgid "Menu"
 msgstr "Menyu"
 
-msgid "Places"
-msgstr "Joylar"
-
-msgid "Recently Used"
-msgstr "Yaqinda ishlatilganlar"
-

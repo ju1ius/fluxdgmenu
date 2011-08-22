@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "Genel"
+msgid "Themes"
+msgstr "Neuzioù"
+
+msgid "Menu"
+msgstr "Meuziad"
 
 msgid "Update"
 msgstr "Hizivaat"
@@ -7,15 +10,6 @@ msgstr "Hizivaat"
 msgid "Configuration"
 msgstr "Kefluniadur"
 
-msgid "Menu"
-msgstr "Meuziad"
-
-msgid "Places"
-msgstr "Berradennoù"
-
-msgid "Recently Used"
-msgstr "Arveret nevez zo"
-
-msgid "Themes"
-msgstr "Neuzioù"
+msgid "Generate"
+msgstr "Genel"
 

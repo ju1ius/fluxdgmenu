@@ -1,5 +1,8 @@
-msgid "Generate"
-msgstr "Tetapkan"
+msgid "Themes"
+msgstr "Tema"
+
+msgid "Menu"
+msgstr "Menu"
 
 msgid "Update"
 msgstr "Perbaharui"
@@ -7,15 +10,6 @@ msgstr "Perbaharui"
 msgid "Configuration"
 msgstr "Konfigurasi"
 
-msgid "Menu"
-msgstr "Menu"
-
-msgid "Places"
-msgstr "Lokasi"
-
-msgid "Recently Used"
-msgstr "Baru-baru Ini Digunakan"
-
-msgid "Themes"
-msgstr "Tema"
+msgid "Generate"
+msgstr "Tetapkan"
 

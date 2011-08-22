@@ -1,6 +1,6 @@
-msgid "Update"
-msgstr "Жаңылоо"
-
 msgid "Themes"
 msgstr "Темалар"
+
+msgid "Update"
+msgstr "Жаңылоо"
 

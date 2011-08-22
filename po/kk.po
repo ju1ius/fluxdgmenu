@@ -1,15 +1,9 @@
-msgid "Update"
-msgstr "Жаңарту"
+msgid "Themes"
+msgstr "Темалар"
 
 msgid "Menu"
 msgstr "Орташа"
 
-msgid "Places"
-msgstr "Орындар"
-
-msgid "Recently Used"
-msgstr "Соңғы қолданылған"
-
-msgid "Themes"
-msgstr "Темалар"
+msgid "Update"
+msgstr "Жаңарту"
 
