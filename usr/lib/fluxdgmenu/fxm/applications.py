@@ -11,10 +11,13 @@ class ApplicationsMenu(base.Menu):
 
     def parse_config(self):
         super(ApplicationsMenu, self).parse_config()
+        show_all = self.config.getboolean('Menu', 'show_all')
+        if show_all:
+            self.show_flags = adapters.SHOW_EMPTY
         self.terminal_emulator = self.config.get('Menu', 'terminal')
 
     def parse_menu_file(self, menu_file):
-        root = self.adapter.get_root_directory(menu_file)
+        root = self.adapter.get_root_directory(menu_file, self.show_flags)
         output = "".join( self.directory(root) )
         output = self.format_menu(output)
         return output

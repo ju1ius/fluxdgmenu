@@ -1,15 +1,16 @@
 import xdg.Menu
-from . import NONE, TYPE_DIRECTORY, TYPE_ENTRY, TYPE_SEPARATOR
+from . import NONE, SHOW_EMPTY, TYPE_DIRECTORY, TYPE_ENTRY, TYPE_SEPARATOR
 
 class XdgAdapter(object):
     def get_type(self):
         return TYPE_DIRECTORY;
     def get_root_directory(self, menu_file, flags=NONE):
-        return XdgDirectoryAdapter(xdg.Menu.parse(menu_file))
+        return XdgDirectoryAdapter(xdg.Menu.parse(menu_file), flags)
 
 class XdgDirectoryAdapter(object):
-    def __init__(self, adaptee):
+    def __init__(self, adaptee, flags):
         self.adaptee = adaptee
+        self.flags = flags
 
     def get_type(self):
         return TYPE_DIRECTORY;
@@ -22,7 +23,8 @@ class XdgDirectoryAdapter(object):
         return self.adaptee.getIcon()
 
     def get_contents(self):
-        for entry in self.adaptee.getEntries():
+        show_empty = self.flags & SHOW_EMPTY
+        for entry in self.adaptee.getEntries(show_empty):
             if isinstance(entry, xdg.Menu.Separator):
                 yield XdgSeparatorAdapter()
             elif isinstance(entry, xdg.Menu.Menu):

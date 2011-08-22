@@ -30,9 +30,8 @@ def get_adapter(name):
     if not name in['gmenu', 'xdg', 'cXdg']:
         raise ValueError
     else:
-        adapter_name = "fluxdgmenu.adapters.%s_adapter" % name
+        adapter_name = "%s_adapter" % name
         adapter_class = "%sAdapter" % (name[0].upper() + name[1:])
-        __import__(adapter_name)
-        module = sys.modules[adapter_name]
+        module = __import__(adapter_name, globals())
         adapter = getattr(module, adapter_class)
         return adapter()

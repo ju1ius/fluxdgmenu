@@ -7,6 +7,8 @@
 usr/bin/fluxdgmenud
 usr/share/locale/*
 usr/lib/fluxdgmenu/cXdg
+test/profiles
+test/fxm
 
 # OS generated files #
 ######################

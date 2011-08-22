@@ -10,7 +10,7 @@ Vcs-Browser: http://github.com/ju1ius/fluxdgmenu
 
 Package: fluxdgmenu
 Architecture: any
-Depends: fluxbox, bash, libinotifytools0, python (>= 2.5), python-xdg (>= 0.18)
+Depends: fluxbox, libinotifytools0, python (>= 2.5), python-xdg (>= 0.18)
 Recommends: python-gtk2, python-gmenu, zenity
 Replaces: mint-fluxdgmenu
 Description: An automated XDG Menu system for Fluxbox.

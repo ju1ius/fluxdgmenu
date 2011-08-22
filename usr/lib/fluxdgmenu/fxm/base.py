@@ -1,43 +1,25 @@
-import os, sys, stat, re, StringIO, sqlite3, ConfigParser
+import os, sys, stat, re, sqlite3, ConfigParser
+import cStringIO as StringIO
 import xdg.IconTheme as IconTheme
+from . import config, cache
 
 class Menu(object):
-
-    default_config = """
-[Menu]
-filemanager: thunar
-terminal: x-terminal-emulator -T '%(title)s' -e '%(command)s'
-as_submenu: no
-[Recently Used]
-max_items: 20
-[Icons]
-show: yes
-use_gtk_theme: yes
-theme: Mint-X
-size: 24
-default: application-default-icon
-bookmarks: user-bookmarks
-folders: folder
-files: gtk-file
-"""
 
     def __init__(self):
         self.parse_config()
         self.exe_regex = re.compile(r' [^ ]*%[fFuUdDnNickvm]')
         if self.show_icons:
-            self.open_cache()
+            self.cache = cache.Cache()
+            self.cache.open()
 
     def __del__(self):
         if self.show_icons:
-            self.close_cache()
+            self.cache.close()
 
     def parse_config(self):
         self.config = ConfigParser.RawConfigParser()
-        self.config.readfp(StringIO.StringIO(self.default_config))
-        self.config.read([
-            '/etc/marchobmenu/menu.conf',
-            os.path.expanduser('~/.config/marchobmenu/menu.conf')
-        ])
+        self.config.readfp(StringIO.StringIO(config.DEFAULT_CONFIG))
+        self.config.read([config.SYSTEM_CONFIG_FILE, config.USER_CONFIG_FILE])
 
         self.show_icons = self.config.getboolean('Icons', 'show')
         if self.show_icons:
@@ -59,18 +41,6 @@ files: gtk-file
             else:
                 self.theme = self.config.get('Icons','theme')
 
-    def open_cache(self):
-        db_file = os.path.expanduser('~/.fluxbox/fluxdgmenu/icons.db')
-        self.cache_conn = sqlite3.connect(db_file)
-        self.cache_conn.execute(
-            "CREATE TABLE IF NOT EXISTS cache(key TEXT, path TEXT)"
-        )
-        self.cache_conn.row_factory = sqlite3.Row
-        self.cache_cursor = self.cache_conn.cursor()
-
-    def close_cache(self):
-        self.cache_conn.commit()
-        self.cache_cursor.close()
     
     def format_menu(self, content):
       return content
@@ -116,13 +86,13 @@ files: gtk-file
             key = name
         else:
             key = name + '::' + self.theme      
-        cached = self.fetch_cache_key(key)
+        cached = self.cache.get_icon(key)
         if cached:
             return cached['path'].encode('utf-8')
         else:
             path = self.get_icon_path(name)
             if path:
-                self.add_cache_key(key, path)
+                self.cache.add_icon(key, path)
                 return path.encode('utf-8')
         return ''
 
@@ -148,15 +118,3 @@ files: gtk-file
             )
         return path
 
-    def fetch_cache_key(self, key):
-        self.cache_cursor.execute(
-            'SELECT cache.key, cache.path FROM cache WHERE cache.key = ?',
-            [key]
-        )
-        return self.cache_cursor.fetchone()
-
-    def add_cache_key(self, key, path):
-        self.cache_cursor.execute(
-            'INSERT INTO cache(key, path) VALUES(?,?)',
-            [key, path]
-        )
