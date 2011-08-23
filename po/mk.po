@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "Теми"
+msgid "Update"
+msgstr "Ажурирај"
 
 msgid "Menu"
 msgstr "Мени"
 
-msgid "Update"
-msgstr "Ажурирај"
+msgid "Themes"
+msgstr "Теми"
 
-msgid "Configuration"
-msgstr "Конфигурација"
+msgid "Clear List"
+msgstr "Исчисти ја листата"
 
 msgid "Generate"
 msgstr "Генерирај"
+
+msgid "Configuration"
+msgstr "Конфигурација"
 

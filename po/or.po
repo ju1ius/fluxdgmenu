@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "ପ୍ରସଙ୍ଗ"
+msgid "Update"
+msgstr "ଅଦ୍ଯତନ"
 
 msgid "Menu"
 msgstr "ତାଲିକା"
 
-msgid "Update"
-msgstr "ଅଦ୍ଯତନ"
+msgid "Themes"
+msgstr "ପ୍ରସଙ୍ଗ"
 
-msgid "Configuration"
-msgstr "ବିନ୍ୟାସ"
+msgid "Clear List"
+msgstr "ତାଲିକାକୁ ସଫା କରନ୍ତୁ"
 
 msgid "Generate"
 msgstr "ସ୍ରୁଷ୍ଟି କରନ୍ତୁ"
+
+msgid "Configuration"
+msgstr "ବିନ୍ୟାସ"
 

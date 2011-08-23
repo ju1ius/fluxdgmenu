@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "Гадаргуун Арьс"
+msgid "Update"
+msgstr "Шинэчлэх"
 
 msgid "Menu"
 msgstr "Цэс"
 
-msgid "Update"
-msgstr "Шинэчлэх"
+msgid "Themes"
+msgstr "Гадаргуун Арьс"
 
-msgid "Configuration"
-msgstr "Тохируулах"
+msgid "Clear List"
+msgstr "Цэвэрлэх"
 
 msgid "Generate"
 msgstr "Ерөнхий"
+
+msgid "Configuration"
+msgstr "Тохируулах"
 

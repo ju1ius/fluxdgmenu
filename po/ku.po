@@ -1,11 +1,14 @@
-msgid "Themes"
-msgstr "Dirb"
+msgid "Update"
+msgstr "Rojane bike"
 
 msgid "Menu"
 msgstr "Menu"
 
-msgid "Update"
-msgstr "Rojane bike"
+msgid "Themes"
+msgstr "Dirb"
+
+msgid "Clear List"
+msgstr "Lîsteyê Paqij Bike"
 
 msgid "Generate"
 msgstr "Hilberîne"

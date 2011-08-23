@@ -10,6 +10,7 @@ if __name__ == "__main__":
         "_generate": 'gnome-system-tools',
         "configuration": 'libgnomeprintui',
         "themes": 'gnome-applets',
+        "_clear list": "gtk+"
         }
     ini_strings = {
         "recently used": ("gtk+","fxm-menu-recently-used.directory"),

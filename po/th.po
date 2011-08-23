@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "ชุดตกแต่ง"
+msgid "Update"
+msgstr "ปรับข้อมูล"
 
 msgid "Menu"
 msgstr ""
 
-msgid "Update"
-msgstr "ปรับข้อมูล"
+msgid "Themes"
+msgstr "ชุดตกแต่ง"
 
-msgid "Configuration"
-msgstr "ตั้งค่า"
+msgid "Clear List"
+msgstr "ล้างรายการ"
 
 msgid "Generate"
 msgstr "สุ่ม"
+
+msgid "Configuration"
+msgstr "ตั้งค่า"
 

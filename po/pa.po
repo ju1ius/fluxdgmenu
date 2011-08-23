@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "ਥੀਮ"
+msgid "Update"
+msgstr "ਅੱਪਡੇਟ(U)"
 
 msgid "Menu"
 msgstr "ਮੇਨੂ"
 
-msgid "Update"
-msgstr "ਅੱਪਡੇਟ(U)"
+msgid "Themes"
+msgstr "ਥੀਮ"
 
-msgid "Configuration"
-msgstr "ਸੰਰਚਨਾ"
+msgid "Clear List"
+msgstr "ਲਿਸਟ ਸਾਫ਼ ਕਰੋ(C)"
 
 msgid "Generate"
 msgstr "ਬਣਾਓ(G)"
+
+msgid "Configuration"
+msgstr "ਸੰਰਚਨਾ"
 

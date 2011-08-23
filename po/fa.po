@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "تم‌ها"
+msgid "Update"
+msgstr "به‌هنگام‌سازی"
 
 msgid "Menu"
 msgstr "منو"
 
-msgid "Update"
-msgstr "به‌هنگام‌سازی"
+msgid "Themes"
+msgstr "تم‌ها"
 
-msgid "Configuration"
-msgstr "پیکربندی"
+msgid "Clear List"
+msgstr "پاک کردن فهرست"
 
 msgid "Generate"
 msgstr "تولید"
+
+msgid "Configuration"
+msgstr "پیکربندی"
 

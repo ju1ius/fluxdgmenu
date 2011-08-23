@@ -1,9 +1,12 @@
-msgid "Themes"
-msgstr "Թեմաներ "
+msgid "Update"
+msgstr "Նորացնել"
 
 msgid "Menu"
 msgstr "Մենյու"
 
-msgid "Update"
-msgstr "Նորացնել"
+msgid "Themes"
+msgstr "Թեմաներ "
+
+msgid "Clear List"
+msgstr "Մաքրել ցուցակը"
 

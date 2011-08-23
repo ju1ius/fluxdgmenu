@@ -1,6 +1,6 @@
-msgid "Themes"
-msgstr "Temas"
-
 msgid "Update"
 msgstr "Actualizar"
+
+msgid "Themes"
+msgstr "Temas"
 

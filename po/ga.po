@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "Téamaí"
+msgid "Update"
+msgstr "Nuashonraigh"
 
 msgid "Menu"
 msgstr "Roghchlár"
 
-msgid "Update"
-msgstr "Nuashonraigh"
+msgid "Themes"
+msgstr "Téamaí"
 
-msgid "Configuration"
-msgstr "Socrú"
+msgid "Clear List"
+msgstr "Glan Liosta"
 
 msgid "Generate"
 msgstr "Gin"
+
+msgid "Configuration"
+msgstr "Socrú"
 

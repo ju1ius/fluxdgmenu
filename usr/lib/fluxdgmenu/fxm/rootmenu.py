@@ -3,7 +3,8 @@ from . import applications
 from .adapters import SHOW_EMPTY
         
 import gettext
-gettext.install("fluxdgmenu", "/usr/share/locale", unicode=1)      
+__t = gettext.translation("fluxdgmenu", "/usr/share/locale")
+_ = __t.ugettext      
 
 class RootMenu(applications.ApplicationsMenu):
 

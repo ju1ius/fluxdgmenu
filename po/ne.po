@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "विषयवस्तुहरू"
+msgid "Update"
+msgstr "अद्यावधिक गर्नुहोस्"
 
 msgid "Menu"
 msgstr "मेनु"
 
-msgid "Update"
-msgstr "अद्यावधिक गर्नुहोस्"
+msgid "Themes"
+msgstr "विषयवस्तुहरू"
 
-msgid "Configuration"
-msgstr "कन्फिगरेसन"
+msgid "Clear List"
+msgstr "खाली गर्नुहोस्"
 
 msgid "Generate"
 msgstr "जेनरेट गर्नुहोस्"
+
+msgid "Configuration"
+msgstr "कन्फिगरेसन"
 

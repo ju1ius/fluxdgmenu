@@ -1,3 +1,6 @@
 msgid "Menu"
 msgstr ""
 
+msgid "Clear List"
+msgstr "Durla"
+

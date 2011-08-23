@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "ಪರಿಸರವಿನ್ಯಾಸಗಳು"
+msgid "Update"
+msgstr "ಅಪ್ಡೇಟ್(U)"
 
 msgid "Menu"
 msgstr "ಅಂಶ ಪಟ್ಟಿ"
 
-msgid "Update"
-msgstr "ಅಪ್ಡೇಟ್(U)"
+msgid "Themes"
+msgstr "ಪರಿಸರವಿನ್ಯಾಸಗಳು"
 
-msgid "Configuration"
-msgstr "ಸಂರಚನೆ"
+msgid "Clear List"
+msgstr "ಪಟ್ಟಿಯನ್ನು ಅಳಿಸಿಹಾಕು(C)"
 
 msgid "Generate"
 msgstr "ಉತ್ಪಾದಿಸು(G)"
+
+msgid "Configuration"
+msgstr "ಸಂರಚನೆ"
 

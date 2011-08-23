@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "테마"
+msgid "Update"
+msgstr "업데이트(U)"
 
 msgid "Menu"
 msgstr "메뉴"
 
-msgid "Update"
-msgstr "업데이트(U)"
+msgid "Themes"
+msgstr "테마"
 
-msgid "Configuration"
-msgstr "설정"
+msgid "Clear List"
+msgstr "목록 지우기(C)"
 
 msgid "Generate"
 msgstr "만들기(G)"
+
+msgid "Configuration"
+msgstr "설정"
 

@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "Teemad"
+msgid "Update"
+msgstr "Värskenda"
 
 msgid "Menu"
 msgstr "Menüü"
 
-msgid "Update"
-msgstr "Värskenda"
+msgid "Themes"
+msgstr "Teemad"
 
-msgid "Configuration"
-msgstr "Sätted"
+msgid "Clear List"
+msgstr "Tühjenda loend"
 
 msgid "Generate"
 msgstr "Genereeri"
+
+msgid "Configuration"
+msgstr "Sätted"
 

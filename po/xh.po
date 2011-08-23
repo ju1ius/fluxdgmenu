@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "Umxholo"
+msgid "Update"
+msgstr "Hlaziya"
 
 msgid "Menu"
 msgstr "Imenyu"
 
-msgid "Update"
-msgstr "Hlaziya"
+msgid "Themes"
+msgstr "Umxholo"
 
-msgid "Configuration"
-msgstr "Misela inkqubo"
+msgid "Clear List"
+msgstr "Cima"
 
 msgid "Generate"
 msgstr "Yenza"
+
+msgid "Configuration"
+msgstr "Misela inkqubo"
 

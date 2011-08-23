@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "کوندې"
+msgid "Update"
+msgstr "اوسمهالول"
 
 msgid "Menu"
 msgstr "غورنۍ"
 
-msgid "Update"
-msgstr "اوسمهالول"
+msgid "Themes"
+msgstr "کوندې"
 
-msgid "Configuration"
-msgstr "سازونه"
+msgid "Clear List"
+msgstr "لړ پاکول"
 
 msgid "Generate"
 msgstr "جوړول"
+
+msgid "Configuration"
+msgstr "سازونه"
 

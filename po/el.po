@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "Θέματα"
+msgid "Update"
+msgstr "Ενημέρωση"
 
 msgid "Menu"
 msgstr "Μενού"
 
-msgid "Update"
-msgstr "Ενημέρωση"
+msgid "Themes"
+msgstr "Θέματα"
 
-msgid "Configuration"
-msgstr "Ρύθμιση"
+msgid "Clear List"
+msgstr "Εκκαθάριση λίστας"
 
 msgid "Generate"
 msgstr "Δημιουργία"
+
+msgid "Configuration"
+msgstr "Ρύθμιση"
 

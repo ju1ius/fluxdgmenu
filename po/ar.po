@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "السِمات"
+msgid "Update"
+msgstr "حدّث"
 
 msgid "Menu"
 msgstr "القائمة"
 
-msgid "Update"
-msgstr "حدّث"
+msgid "Themes"
+msgstr "السِمات"
 
-msgid "Configuration"
-msgstr "إعدادات"
+msgid "Clear List"
+msgstr "امسح القائمة"
 
 msgid "Generate"
 msgstr "ولِّد"
+
+msgid "Configuration"
+msgstr "إعدادات"
 

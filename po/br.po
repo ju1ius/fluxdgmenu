@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "Neuzioù"
+msgid "Update"
+msgstr "Hizivaat"
 
 msgid "Menu"
 msgstr "Meuziad"
 
-msgid "Update"
-msgstr "Hizivaat"
+msgid "Themes"
+msgstr "Neuzioù"
 
-msgid "Configuration"
-msgstr "Kefluniadur"
+msgid "Clear List"
+msgstr "Skarzhañ ar roll"
 
 msgid "Generate"
 msgstr "Genel"
+
+msgid "Configuration"
+msgstr "Kefluniadur"
 

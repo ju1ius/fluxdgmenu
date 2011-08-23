@@ -1,3 +1,6 @@
 msgid "Menu"
 msgstr "מעניו"
 
+msgid "Clear List"
+msgstr "מעק אָפּ"
+

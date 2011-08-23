@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "Témák"
+msgid "Update"
+msgstr "Frissítés"
 
 msgid "Menu"
 msgstr "Menü"
 
-msgid "Update"
-msgstr "Frissítés"
+msgid "Themes"
+msgstr "Témák"
 
-msgid "Configuration"
-msgstr "Beállítás"
+msgid "Clear List"
+msgstr "Lista törlése"
 
 msgid "Generate"
 msgstr "Létrehozás"
+
+msgid "Configuration"
+msgstr "Beállítás"
 

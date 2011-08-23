@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "テーマ"
+msgid "Update"
+msgstr "更新(U)"
 
 msgid "Menu"
 msgstr "メニュー"
 
-msgid "Update"
-msgstr "更新(U)"
+msgid "Themes"
+msgstr "テーマ"
 
-msgid "Configuration"
-msgstr "設定"
+msgid "Clear List"
+msgstr "一覧のクリア(C)"
 
 msgid "Generate"
 msgstr "生成(G)"
+
+msgid "Configuration"
+msgstr "設定"
 

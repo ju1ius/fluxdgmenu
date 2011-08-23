@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "තේමා"
+msgid "Update"
+msgstr "යාවත්කාලීන"
 
 msgid "Menu"
 msgstr "මෙනුව"
 
-msgid "Update"
-msgstr "යාවත්කාලීන"
+msgid "Themes"
+msgstr "තේමා"
 
-msgid "Configuration"
-msgstr "සුසර කිරීම්"
+msgid "Clear List"
+msgstr "ලැයිස්තුව පැහැදිලි කරන්න"
 
 msgid "Generate"
 msgstr "ජනනය"
+
+msgid "Configuration"
+msgstr "සුසර කිරීම්"
 

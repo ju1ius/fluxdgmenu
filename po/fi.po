@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "Teemat"
+msgid "Update"
+msgstr "Päivitä"
 
 msgid "Menu"
 msgstr "Valikko"
 
-msgid "Update"
-msgstr "Päivitä"
+msgid "Themes"
+msgstr "Teemat"
 
-msgid "Configuration"
-msgstr "Asetukset"
+msgid "Clear List"
+msgstr "Tyhjennä luettelo"
 
 msgid "Generate"
 msgstr "Luo"
+
+msgid "Configuration"
+msgstr "Asetukset"
 

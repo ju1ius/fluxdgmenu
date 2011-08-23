@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "Témy"
+msgid "Update"
+msgstr "Aktualizovať"
 
 msgid "Menu"
 msgstr "Ponuka"
 
-msgid "Update"
-msgstr "Aktualizovať"
+msgid "Themes"
+msgstr "Témy"
 
-msgid "Configuration"
-msgstr "Konfigurácia"
+msgid "Clear List"
+msgstr "Vyčistiť zoznam"
 
 msgid "Generate"
 msgstr "Vygenerovať"
+
+msgid "Configuration"
+msgstr "Konfigurácia"
 

@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "主题"
+msgid "Update"
+msgstr "更新(U)"
 
 msgid "Menu"
 msgstr "菜单"
 
-msgid "Update"
-msgstr "更新(U)"
+msgid "Themes"
+msgstr "主题"
 
-msgid "Configuration"
-msgstr "配置"
+msgid "Clear List"
+msgstr "清除列表(C)"
 
 msgid "Generate"
 msgstr "生成(G)"
+
+msgid "Configuration"
+msgstr "配置"
 

@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "Темы"
+msgid "Update"
+msgstr "Обновить"
 
 msgid "Menu"
 msgstr "Меню"
 
-msgid "Update"
-msgstr "Обновить"
+msgid "Themes"
+msgstr "Темы"
 
-msgid "Configuration"
-msgstr "Конфигурация"
+msgid "Clear List"
+msgstr "Очистить список"
 
 msgid "Generate"
 msgstr "Создать"
+
+msgid "Configuration"
+msgstr "Конфигурация"
 

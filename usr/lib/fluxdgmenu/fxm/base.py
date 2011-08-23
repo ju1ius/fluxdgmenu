@@ -80,23 +80,31 @@ class Menu(object):
 
     def find_icon(self, name):
         """Finds and cache icons"""
-        if not name:
-            name = self.default_icon
-        if os.path.isabs(name):
-            key = name
-        else:
-            key = name + '::' + self.theme      
-        cached = self.cache.get_icon(key)
+        cache_key = self.icon_name_get_cache_key(name)      
+        cached = self.cache.get_icon(cache_key)
         if cached:
             return cached['path'].encode('utf-8')
         else:
-            path = self.get_icon_path(name)
+            path = self.lookup_icon(name)
             if path:
-                self.cache.add_icon(key, path)
+                self.cache.add_icon(cache_key, path)
                 return path.encode('utf-8')
-        return ''
+            return self.lookup_default_icon().encode('utf-8')
 
-    def get_icon_path(self, name):
+    def icon_name_get_cache_key(self, name):
+        if not name:
+            name = self.default_icon
+        if os.path.isabs(name):
+            return name
+        return name + '::' + self.theme
+
+    def lookup_icon(self, name):
+        # Use xdg.IconTheme icon lookup, omitting svg icons
+        path = IconTheme.getIconPath(
+            name, self.icon_size, self.theme, ['png','xpm']
+        )
+        if path and not path.endswith('.svg'):
+            return path
         # Use gtk.IconTheme icon lookup
         # Way faster but less accurate at finding icons :(
         #if self.use_gtk_theme:
@@ -108,13 +116,8 @@ class Menu(object):
                     #self.default_icon, self.icon_size, self.gtk_icon_flags
                 #)
             #return icon.get_filename() if icon is not None else ''
-        # Use xdg.IconTheme icon lookup, omitting svg icons
-        path = IconTheme.getIconPath(
-            name, self.icon_size, self.theme, ['png','xpm']
-        )
-        if not path or path.endswith('.svg'):
-            path = IconTheme.getIconPath(
-                self.default_icon, self.icon_size, self.theme, ['png', 'xpm']
-            )
-        return path
 
+    def lookup_default_icon(self):
+        return IconTheme.getIconPath(
+            self.default_icon, self.icon_size, self.theme, ['png', 'xpm']
+        )

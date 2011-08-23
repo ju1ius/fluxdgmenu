@@ -1,8 +1,8 @@
-msgid "Themes"
-msgstr "Endrika"
-
 msgid "Update"
 msgstr "Fanavaozana"
+
+msgid "Themes"
+msgstr "Endrika"
 
 msgid "Generate"
 msgstr "Hamorona"

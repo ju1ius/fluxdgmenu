@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "Matyvy"
+msgid "Update"
+msgstr "Aktualizuj"
 
 msgid "Menu"
 msgstr "Menu"
 
-msgid "Update"
-msgstr "Aktualizuj"
+msgid "Themes"
+msgstr "Matyvy"
 
-msgid "Configuration"
-msgstr "Kanfihuracyja"
+msgid "Clear List"
+msgstr "Vyčyść śpis"
 
 msgid "Generate"
 msgstr "Zhieneruj"
+
+msgid "Configuration"
+msgstr "Kanfihuracyja"
 

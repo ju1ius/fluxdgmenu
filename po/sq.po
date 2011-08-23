@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "Temat"
+msgid "Update"
+msgstr "Përditëso"
 
 msgid "Menu"
 msgstr "Menu"
 
-msgid "Update"
-msgstr "Përditëso"
+msgid "Themes"
+msgstr "Temat"
 
-msgid "Configuration"
-msgstr "Konfigurimi"
+msgid "Clear List"
+msgstr "Pastro listën"
 
 msgid "Generate"
 msgstr "Gjenero"
+
+msgid "Configuration"
+msgstr "Konfigurimi"
 

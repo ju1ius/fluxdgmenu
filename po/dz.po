@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "བརྗོད་དོན་ཚུ།"
+msgid "Update"
+msgstr "དུས་མཐུན་བཟོ།"
 
 msgid "Menu"
 msgstr "དཀར་ཆག"
 
-msgid "Update"
-msgstr "དུས་མཐུན་བཟོ།"
+msgid "Themes"
+msgstr "བརྗོད་དོན་ཚུ།"
 
-msgid "Configuration"
-msgstr "རིམ་སྒྲིག"
+msgid "Clear List"
+msgstr "ཐོ་ཡིག་བསལ།(C)"
 
 msgid "Generate"
 msgstr "བཟོ་བསྐྲུན་འབད།(G)"
+
+msgid "Configuration"
+msgstr "རིམ་སྒྲིག"
 

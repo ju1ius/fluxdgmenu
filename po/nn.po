@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "Drakt"
+msgid "Update"
+msgstr "Oppdater"
 
 msgid "Menu"
 msgstr "Meny"
 
-msgid "Update"
-msgstr "Oppdater"
+msgid "Themes"
+msgstr "Drakt"
 
-msgid "Configuration"
-msgstr "Innstillingar"
+msgid "Clear List"
+msgstr "Tøm lista"
 
 msgid "Generate"
 msgstr "Opprett"
+
+msgid "Configuration"
+msgstr "Innstillingar"
 

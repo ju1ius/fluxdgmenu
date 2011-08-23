@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "థీమ్సు"
+msgid "Update"
+msgstr "నవీకరించు"
 
 msgid "Menu"
 msgstr "జాబితా"
 
-msgid "Update"
-msgstr "నవీకరించు"
+msgid "Themes"
+msgstr "థీమ్సు"
 
-msgid "Configuration"
-msgstr "ఆకృతీకరణ"
+msgid "Clear List"
+msgstr "జాబితాను శుభ్రంచేయుము(C)"
 
 msgid "Generate"
 msgstr "జనియింపచేయుము"
+
+msgid "Configuration"
+msgstr "ఆకృతీకరణ"
 

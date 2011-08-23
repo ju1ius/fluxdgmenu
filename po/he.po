@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "ערכות נושא"
+msgid "Update"
+msgstr "עדכן"
 
 msgid "Menu"
 msgstr "Menu"
 
-msgid "Update"
-msgstr "עדכן"
+msgid "Themes"
+msgstr "ערכות נושא"
 
-msgid "Configuration"
-msgstr "הגדרות"
+msgid "Clear List"
+msgstr "פינוי הרשימה"
 
 msgid "Generate"
 msgstr "יצירה"
+
+msgid "Configuration"
+msgstr "הגדרות"
 

@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "Gaiak"
+msgid "Update"
+msgstr "Eguneratu"
 
 msgid "Menu"
 msgstr "Menua"
 
-msgid "Update"
-msgstr "Eguneratu"
+msgid "Themes"
+msgstr "Gaiak"
 
-msgid "Configuration"
-msgstr "Konfigurazioa"
+msgid "Clear List"
+msgstr "Garbitu zerrenda"
 
 msgid "Generate"
 msgstr "Sortu"
+
+msgid "Configuration"
+msgstr "Konfigurazioa"
 

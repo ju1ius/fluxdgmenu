@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "Temos"
+msgid "Update"
+msgstr "Atnaujinti"
 
 msgid "Menu"
 msgstr "Meniu"
 
-msgid "Update"
-msgstr "Atnaujinti"
+msgid "Themes"
+msgstr "Temos"
 
-msgid "Configuration"
-msgstr "Konfigūracija"
+msgid "Clear List"
+msgstr "Išvalyti sąrašą"
 
 msgid "Generate"
 msgstr "Generuoti"
+
+msgid "Configuration"
+msgstr "Konfigūracija"
 

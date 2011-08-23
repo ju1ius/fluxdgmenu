@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr ""
+msgid "Update"
+msgstr "Mete a djoû"
 
 msgid "Menu"
 msgstr "Menu"
 
-msgid "Update"
-msgstr "Mete a djoû"
+msgid "Themes"
+msgstr ""
 
-msgid "Configuration"
-msgstr "Apontyî"
+msgid "Clear List"
+msgstr "Netyî djivêye"
 
 msgid "Generate"
 msgstr "Djenerå"
+
+msgid "Configuration"
+msgstr "Apontyî"
 

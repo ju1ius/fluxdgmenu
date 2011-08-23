@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "கருத்துகள்"
+msgid "Update"
+msgstr "இற்றைபடுத்து"
 
 msgid "Menu"
 msgstr "பட்டி"
 
-msgid "Update"
-msgstr "இற்றைபடுத்து"
+msgid "Themes"
+msgstr "கருத்துகள்"
 
-msgid "Configuration"
-msgstr "கட்டமை"
+msgid "Clear List"
+msgstr "பட்டியலை துடை"
 
 msgid "Generate"
 msgstr "உருவாக்கு"
+
+msgid "Configuration"
+msgstr "கட்டமை"
 

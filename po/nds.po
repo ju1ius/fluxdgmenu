@@ -1,9 +1,12 @@
 msgid "Menu"
 msgstr "Menü"
 
-msgid "Configuration"
-msgstr "Instellens"
+msgid "Clear List"
+msgstr "List opklaren"
 
 msgid "Generate"
 msgstr ""
+
+msgid "Configuration"
+msgstr "Instellens"
 

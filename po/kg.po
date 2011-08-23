@@ -1,3 +1,6 @@
 msgid "Menu"
 msgstr "katikati"
 
+msgid "Clear List"
+msgstr "vunzae lutaangulu"
+

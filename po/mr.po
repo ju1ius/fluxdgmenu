@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "थीम्स"
+msgid "Update"
+msgstr "अद्ययावत(U)"
 
 msgid "Menu"
 msgstr "मेनू"
 
-msgid "Update"
-msgstr "अद्ययावत(U)"
+msgid "Themes"
+msgstr "थीम्स"
 
-msgid "Configuration"
-msgstr "बाह्यस्वरूप"
+msgid "Clear List"
+msgstr "यादी साफ करा(C)"
 
 msgid "Generate"
 msgstr "बनवा"
+
+msgid "Configuration"
+msgstr "बाह्यस्वरूप"
 

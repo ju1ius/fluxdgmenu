@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "Tēmas"
+msgid "Update"
+msgstr "Atjaunināt"
 
 msgid "Menu"
 msgstr "Izvēlne"
 
-msgid "Update"
-msgstr "Atjaunināt"
+msgid "Themes"
+msgstr "Tēmas"
 
-msgid "Configuration"
-msgstr "Konfigurācija"
+msgid "Clear List"
+msgstr "Attīrīt sarakstu"
 
 msgid "Generate"
 msgstr "Ģenerēt"
+
+msgid "Configuration"
+msgstr "Konfigurācija"
 

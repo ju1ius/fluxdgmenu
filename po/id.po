@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "Tema"
+msgid "Update"
+msgstr "Perbaharui"
 
 msgid "Menu"
 msgstr "Menu"
 
-msgid "Update"
-msgstr "Perbaharui"
+msgid "Themes"
+msgstr "Tema"
 
-msgid "Configuration"
-msgstr "Konfigurasi"
+msgid "Clear List"
+msgstr "Kosongkan Daftar"
 
 msgid "Generate"
 msgstr "Tetapkan"
+
+msgid "Configuration"
+msgstr "Konfigurasi"
 

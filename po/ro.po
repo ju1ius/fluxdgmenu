@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "Teme"
+msgid "Update"
+msgstr "Actualizează"
 
 msgid "Menu"
 msgstr "Meniu"
 
-msgid "Update"
-msgstr "Actualizează"
+msgid "Themes"
+msgstr "Teme"
 
-msgid "Configuration"
-msgstr "Configurare"
+msgid "Clear List"
+msgstr "Golește lista"
 
 msgid "Generate"
 msgstr "Generează"
+
+msgid "Configuration"
+msgstr "Configurare"
 

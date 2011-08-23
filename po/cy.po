@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "Themâu"
+msgid "Update"
+msgstr "Diweddaru"
 
 msgid "Menu"
 msgstr "Dewislen"
 
-msgid "Update"
-msgstr "Diweddaru"
+msgid "Themes"
+msgstr "Themâu"
 
-msgid "Configuration"
-msgstr "Cyfluniad"
+msgid "Clear List"
+msgstr "Clirio'r Rhestr"
 
 msgid "Generate"
 msgstr "Creu"
+
+msgid "Configuration"
+msgstr "Cyfluniad"
 

@@ -1,9 +1,12 @@
-msgid "Themes"
-msgstr "Temalar"
+msgid "Update"
+msgstr "Yañart"
 
 msgid "Menu"
 msgstr "Menü"
 
-msgid "Update"
-msgstr "Yañart"
+msgid "Themes"
+msgstr "Temalar"
+
+msgid "Clear List"
+msgstr "Listeni Temizle"
 

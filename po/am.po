@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr ""
+msgid "Update"
+msgstr "አሻሽል"
 
 msgid "Menu"
 msgstr "ሜኑ"
 
-msgid "Update"
-msgstr "አሻሽል"
+msgid "Themes"
+msgstr ""
 
-msgid "Configuration"
-msgstr "ለውጡ"
+msgid "Clear List"
+msgstr "ሰርዝ"
 
 msgid "Generate"
 msgstr "አጠቃላይ"
+
+msgid "Configuration"
+msgstr "ለውጡ"
 

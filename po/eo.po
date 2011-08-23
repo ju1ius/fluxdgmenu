@@ -1,11 +1,14 @@
-msgid "Themes"
-msgstr "Etosoj"
+msgid "Update"
+msgstr "Ĝisdatigi"
 
 msgid "Menu"
 msgstr "Menuo"
 
-msgid "Update"
-msgstr "Ĝisdatigi"
+msgid "Themes"
+msgstr "Etosoj"
+
+msgid "Clear List"
+msgstr "Vakigi liston"
 
 msgid "Generate"
 msgstr "Generu"

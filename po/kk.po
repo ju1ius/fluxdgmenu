@@ -1,9 +1,12 @@
-msgid "Themes"
-msgstr "Темалар"
+msgid "Update"
+msgstr "Жаңарту"
 
 msgid "Menu"
 msgstr "Орташа"
 
-msgid "Update"
-msgstr "Жаңарту"
+msgid "Themes"
+msgstr "Темалар"
+
+msgid "Clear List"
+msgstr "Тізімді тазарту"
 

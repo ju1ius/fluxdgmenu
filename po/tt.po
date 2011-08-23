@@ -1,3 +1,6 @@
 msgid "Menu"
 msgstr "Saylaq"
 
+msgid "Clear List"
+msgstr "Buşat"
+

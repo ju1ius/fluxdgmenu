@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "Sắc thái"
+msgid "Update"
+msgstr "Cập nhật"
 
 msgid "Menu"
 msgstr "Trình đơn"
 
-msgid "Update"
-msgstr "Cập nhật"
+msgid "Themes"
+msgstr "Sắc thái"
 
-msgid "Configuration"
-msgstr "Cấu hình"
+msgid "Clear List"
+msgstr "Xóa danh sách"
 
 msgid "Generate"
 msgstr "Tạo ra"
+
+msgid "Configuration"
+msgstr "Cấu hình"
 

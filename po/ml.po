@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "പ്രമേയങ്ങള്‍"
+msgid "Update"
+msgstr "പരിഷ്ക്കരിക്കുക"
 
 msgid "Menu"
 msgstr "മെനു"
 
-msgid "Update"
-msgstr "പരിഷ്ക്കരിക്കുക"
+msgid "Themes"
+msgstr "പ്രമേയങ്ങള്‍"
 
-msgid "Configuration"
-msgstr "ക്രമീകരണം"
+msgid "Clear List"
+msgstr "പട്ടിക വെടിപ്പാക്കുക"
 
 msgid "Generate"
 msgstr "ഉണ്ടാക്കുക"
+
+msgid "Configuration"
+msgstr "ക്രമീകരണം"
 

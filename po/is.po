@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "Þemu"
+msgid "Update"
+msgstr "Uppfæra"
 
 msgid "Menu"
 msgstr ""
 
-msgid "Update"
-msgstr "Uppfæra"
+msgid "Themes"
+msgstr "Þemu"
 
-msgid "Configuration"
-msgstr "Stilla nánar"
+msgid "Clear List"
+msgstr "Hreinsa"
 
 msgid "Generate"
 msgstr "Framleiða"
+
+msgid "Configuration"
+msgstr "Stilla nánar"
 

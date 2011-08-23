@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "ئۇسلۇب"
+msgid "Update"
+msgstr "يېڭىلا(U)"
 
 msgid "Menu"
 msgstr "تىزىملىك"
 
-msgid "Update"
-msgstr "يېڭىلا(U)"
+msgid "Themes"
+msgstr "ئۇسلۇب"
 
-msgid "Configuration"
-msgstr "تەڭشەك"
+msgid "Clear List"
+msgstr "تىزىمنى تازىلا(C)"
 
 msgid "Generate"
 msgstr "قۇر(G)"
+
+msgid "Configuration"
+msgstr "تەڭشەك"
 

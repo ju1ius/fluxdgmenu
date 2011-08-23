@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "થીમો"
+msgid "Update"
+msgstr "બદલો"
 
 msgid "Menu"
 msgstr "મેનુ"
 
-msgid "Update"
-msgstr "બદલો"
+msgid "Themes"
+msgstr "થીમો"
 
-msgid "Configuration"
-msgstr "રૂપરેખાંકન"
+msgid "Clear List"
+msgstr "યાદી સાફ કરો"
 
 msgid "Generate"
 msgstr "પેદા કરો"
+
+msgid "Configuration"
+msgstr "રૂપરેખાંકન"
 

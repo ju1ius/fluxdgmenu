@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "Temalar"
+msgid "Update"
+msgstr "Güncelle"
 
 msgid "Menu"
 msgstr "Menü"
 
-msgid "Update"
-msgstr "Güncelle"
+msgid "Themes"
+msgstr "Temalar"
 
-msgid "Configuration"
-msgstr "Yapılandırma"
+msgid "Clear List"
+msgstr "Listeyi Temizle"
 
 msgid "Generate"
 msgstr "Üret"
+
+msgid "Configuration"
+msgstr "Yapılandırma"
 

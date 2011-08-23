@@ -1,11 +1,14 @@
-msgid "Themes"
-msgstr "Teme"
+msgid "Update"
+msgstr "Ažuriraj"
 
 msgid "Menu"
 msgstr "Meni"
 
-msgid "Update"
-msgstr "Ažuriraj"
+msgid "Themes"
+msgstr "Teme"
+
+msgid "Clear List"
+msgstr "Očisti"
 
 msgid "Configuration"
 msgstr "Konfiguruši"

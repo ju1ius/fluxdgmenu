@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "Insanganyamatsiko"
+msgid "Update"
+msgstr "Kuvugurura"
 
 msgid "Menu"
 msgstr "ibikubiyemo"
 
-msgid "Update"
-msgstr "Kuvugurura"
+msgid "Themes"
+msgstr "Insanganyamatsiko"
 
-msgid "Configuration"
-msgstr "Kugena Imiterere"
+msgid "Clear List"
+msgstr "Gusiba"
 
 msgid "Generate"
 msgstr ""
+
+msgid "Configuration"
+msgstr "Kugena Imiterere"
 

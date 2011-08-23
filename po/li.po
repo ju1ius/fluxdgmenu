@@ -1,6 +1,9 @@
 msgid "Menu"
 msgstr "Menu"
 
+msgid "Clear List"
+msgstr "Wösje"
+
 msgid "Configuration"
 msgstr "Kóngfiggerere"
 

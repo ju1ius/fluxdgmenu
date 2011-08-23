@@ -1,3 +1,6 @@
 msgid "Menu"
 msgstr "Меню"
 
+msgid "Clear List"
+msgstr "Рўйхатни тозалаш"
+

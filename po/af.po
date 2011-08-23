@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "Temas"
+msgid "Update"
+msgstr "Dateer op"
 
 msgid "Menu"
 msgstr "Kieslys"
 
-msgid "Update"
-msgstr "Dateer op"
+msgid "Themes"
+msgstr "Temas"
 
-msgid "Configuration"
-msgstr "Konfigurasie"
+msgid "Clear List"
+msgstr "Maak lys skoon"
 
 msgid "Generate"
 msgstr "Genereer"
+
+msgid "Configuration"
+msgstr "Konfigurasie"
 

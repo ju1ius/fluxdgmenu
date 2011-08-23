@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "Tèmas"
+msgid "Update"
+msgstr "Metre a jorn"
 
 msgid "Menu"
 msgstr "Menut"
 
-msgid "Update"
-msgstr "Metre a jorn"
+msgid "Themes"
+msgstr "Tèmas"
 
-msgid "Configuration"
-msgstr "Configuracion"
+msgid "Clear List"
+msgstr "Netejar la tièra"
 
 msgid "Generate"
 msgstr "Suprimir"
+
+msgid "Configuration"
+msgstr "Configuracion"
 

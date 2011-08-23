@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "თემები"
+msgid "Update"
+msgstr "განახლება"
 
 msgid "Menu"
 msgstr "მენიუ"
 
-msgid "Update"
-msgstr "განახლება"
+msgid "Themes"
+msgstr "თემები"
 
-msgid "Configuration"
-msgstr "კონფიგურაცია"
+msgid "Clear List"
+msgstr "სიის გასუფთავება"
 
 msgid "Generate"
 msgstr "გენერაცია"
+
+msgid "Configuration"
+msgstr "კონფიგურაცია"
 

@@ -1,15 +1,18 @@
-msgid "Themes"
-msgstr "Teman"
+msgid "Update"
+msgstr "Uppdatera"
 
 msgid "Menu"
 msgstr "Meny"
 
-msgid "Update"
-msgstr "Uppdatera"
+msgid "Themes"
+msgstr "Teman"
 
-msgid "Configuration"
-msgstr "Konfiguration"
+msgid "Clear List"
+msgstr "Töm lista"
 
 msgid "Generate"
 msgstr "Skapa"
+
+msgid "Configuration"
+msgstr "Konfiguration"
 
