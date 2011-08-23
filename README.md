@@ -21,8 +21,11 @@ Install dependencies (assuming you already have fluxbox bash and python...):
 
 You can also optionally install the following packages:
 
-* python-gtk2: enables fluxdgmenu to use your current GTK icon theme
-* python-gmenu: makes menu generation 2 to 10 times faster
+* python-gtk2:    enables fluxdgmenu to use your current GTK icon theme
+* python-gmenu:   makes menu generation 10 times faster...
+* python-gobject: enables the recently used files menu to display item icons
+                  according to their mime type.
+* zenity:         enables fluxdgmenu to display progressbars during menu generation.
 
 Clone the git repository if you haven't already
 
