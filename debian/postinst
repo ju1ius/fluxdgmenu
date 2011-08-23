@@ -30,6 +30,7 @@ case "$1" in
     ;;
     configure)
       compile_py
+      #FIXME find a way to get real user name !!
       #fxm-daemon generate-rootmenu
     ;;
     abort-upgrade|abort-remove|abort-deconfigure)
