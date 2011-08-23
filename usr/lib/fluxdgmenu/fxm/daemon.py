@@ -52,13 +52,15 @@ def update(opts=None):
     if opts.with_recently_used:
         update_recently_used()
 
-def update_icons():
+def clear_cache():
     """Updates the menu and flush the icon cache"""
     try:
         cache.clear()
     except OSError, why:
         sys.exit("Could not remove %s: %s" % (config.CACHE_DB, why))
     update()
+    update_bookmarks()
+    update_recently_used()
 
 def update_bookmarks():
     import fxm.bookmarks
@@ -83,7 +85,7 @@ def clear_recently_used():
     update_recently_used()
 
 def generate_rootmenu():
-    update_icons()
+    clear_cache()
     update_bookmarks()
     update_recently_used()
     rootmenu = os.path.expanduser('~/.fluxbox/menu')

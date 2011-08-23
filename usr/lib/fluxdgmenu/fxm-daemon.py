@@ -14,8 +14,10 @@ if __name__ == '__main__':
   update                regenerates the applications menu
   update-bookmarks      regenerates the bookmarks menu
   update-recently-used  regenerates the recently used files menu
-  update-icons          regenerates the icon cache,
-                        then updates applications and bookmarks menus
+  clear-recently-used   clears the recently used files menu
+  clear-cache           regenerates the icon cache,
+                        then updates applications, bookmarks,
+                        and recently used files menus.
   generate-rootmenu     generates a rootmenu
   enable-triggers       add dpkg-triggers
   disable-triggers      remove dpkg-triggers
@@ -53,7 +55,7 @@ About dpkg-triggers:
     )
     parser.add_option(
         '-a', '--all', action='store_true',
-        help="""Equivalent of -br"""
+        help="""equivalent to -br"""
     )
     parser.add_option(
         '-b', '--with-bookmarks', action='store_true',
@@ -117,11 +119,11 @@ About dpkg-triggers:
             utils.zenity_progress(command)
         else:
             daemon.generate_rootmenu()
-    elif command == 'update-icons':
+    elif command == 'clear-cache':
         if options.progress:
             utils.zenity_progress(command)
         else:
-            daemon.update_icons()
+            daemon.clear_cache()
     elif command == 'enable-triggers':
         daemon.enable_triggers()
     elif command == 'disable-triggers':

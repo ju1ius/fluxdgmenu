@@ -20,7 +20,7 @@
 #define BOOKMARKS_FILE        ".gtk-bookmarks"
 #define RECENTLY_USED_FILE    ".recently-used.xbel"
 #define APPS_EVENTS           IN_CLOSE_WRITE|IN_DELETE|IN_MOVE
-#define BOOKMARKS_EVENTS      IN_MOVED_TO
+#define BOOKMARKS_EVENTS      IN_CLOSE_WRITE
 #define HOME                  getenv("HOME")
 
 void signal_handler(int signum);
